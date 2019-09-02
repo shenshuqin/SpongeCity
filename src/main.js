@@ -1,7 +1,7 @@
 import Vue from 'vue'
 // 1. 导入 vue-router 包
 import VueRouter from 'vue-router'
-// 2. 手动安装 VueRouter 
+// 2. 手动安装 VueRouter
 Vue.use(VueRouter)
 
 // console.log("ok")
@@ -10,11 +10,8 @@ Vue.use(VueRouter)
 import $ from 'jquery'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/js/bootstrap.js'
-import './css/app.css'
-import './css/homecontainer.css'
-import './css/login.css'
-import './css/raillflow.css'
-
+import md5 from 'js-md5';
+import './public/css/app.css'
 // 导入 MUI 的样式表， 和 Bootstrap 用法没有差别
 // import './lib/mui/css/mui.min.css'
 import './lib/font/iconfont.css'
@@ -35,7 +32,7 @@ import app from './App.vue'
 
 // 导入 自定义路由模块
 import router from './router.js'
-
+Vue.prototype.$md5 = md5;
 var vm = new Vue({
   el: '#app',
     $,

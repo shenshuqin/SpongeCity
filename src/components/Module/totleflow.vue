@@ -5,7 +5,7 @@
                 <div class="row">
                     <div class="navs-left col-xs-8 col-sm-8 col-md-8 col-lg-8">
                         <a class="navbar-brand" href="#">
-                            <img class="logo" alt="Brand" src="../../images/logo.png">
+                            <img class="logo" alt="Brand" src="../../public/images/logo.png">
                         </a>
                         <a href="#" class="navbar-brand navbar-link">海绵城市监测系统</a>
                     </div>
@@ -75,38 +75,64 @@
 </template>
 
 <script>
+    import axios from 'axios'
     import echarts from 'echarts'
     export default {
         data() {
-            return {}
-        },
-        mounted() {
-            let this_ = this;
-            let myChart = echarts.init(document.getElementById('chart_example'),'light');
-            let option = {
-                xAxis: {
-                    type: 'category',
-                    boundaryGap: false,
-                    data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-                },
-                yAxis: {
-                    type: 'value'
-                },
-                series: [{
-                    data: [820, 932, 901, 934, 1290, 1330, 1320],
-                    type: 'line',
-                    areaStyle: {}
-                }]
-            };
-            myChart.setOption(option);
 
-            //建议加上以下这一行代码，不加的效果图如下（当浏览器窗口缩小的时候）。超过了div的界限（红色边框）
-            window.addEventListener('resize',function() {myChart.resize()});
+            return {
+                series_data:[100,100,100,100,150,150,150],
+            }
         },
-        methods: {},
+
+        mounted() {
+            this.drawLine();
+
+            setTimeout(this.getdata, 2000)
+
+        },
+        methods: {
+
+            drawLine(this_ = this){
+                let myChart = echarts.init(document.getElementById('chart_example'));
+                let option = {
+                    xAxis: {
+                        type: 'category',
+                        boundaryGap: false,
+                        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+                    },
+                    yAxis: {
+                        type: 'value'
+                    },
+                    series: [{
+                        data: this_.series_data,
+                        type: 'line',
+                        areaStyle: {}
+                    }]
+                };
+                myChart.setOption(option);
+
+                //建议加上以下这一行代码，不加的效果图如下（当浏览器窗口缩小的时候）。超过了div的界限（红色边框）
+                window.addEventListener('resize',function() {myChart.resize()});
+            },
+
+            getdata(this_ = this){
+                axios({
+                    url: 'http://localhost:3001/data',
+                    method:'get',
+                }).then(function(res)
+                {
+                    console.log(res);
+                    console.log(this_.series_data);
+                    this_.series_data = res.data.y_data;
+                    this_.drawLine();
+                })
+            }
+
+        },
         watch: {},
         created() {
-
+            // this.getdata()
         }
     }
 </script>

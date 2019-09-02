@@ -2,31 +2,29 @@
     <div class="login">
         <!-- <div class="cloud"><img src="cloud.png" alt=""></div> -->
         <div class="cloud">
-            <img src="../../images/cloud01.png" alt="">
-            <img src="../../images/cloud02.png" alt="">
+            <img src="../../public/images/cloud01.png" alt="">
+            <img src="../../public/images/cloud02.png" alt="">
         </div>
-        <form class="login-wrap" action=""  autocomplete="off" novalidate>
-            <img class="avatar" src="../../images/default.png">
+        <div class="login-wrap" action="">
+            <img class="avatar" src="../../public/images/default.png">
             <div id="dmsg" class="alert alert-danger" style="display: none">
                 <strong class="msg"></strong>
             </div>
             <div class="form-group">
-                <label for="email" class="sr-only">用户名</label>
-                <input v-model.trim="username" id="email" name="email" type="email" class="form-control" placeholder="用户名" autofocus value="">
+                <label class="sr-only">用户名</label>
+                <input v-model.trim="username" id="email" name="email"  class="form-control" placeholder="用户名" autofocus value="">
             </div>
             <div class="form-group">
                 <label for="password" class="sr-only">密码</label>
                 <input v-model.trim="password" id="password" name="password" type="password" class="form-control" placeholder="密码">
             </div>
-
-<!--            <router-link class="" to="/home">-->
                 <button class="btn btn-primary btn-block" @click="login">登 录</button>
-<!--            </router-link>-->
-        </form>
+        </div>
     </div>
 
 </template>
 <script>
+    import {setCookie,getCookie} from '../../public/js/cookie.js'
     import axios from 'axios'
     //跨域请求???
     axios.defaults.withCredentials = true;
@@ -39,25 +37,45 @@
                 password:''
             }
         },
+        mounted() {
+
+        },
         methods: {
             login() {
-                //处理axio发送的数据
-                var params = new URLSearchParams();
-                params.append('username', this.username);
-                params.append('password', this.password);
-                axios.post(this.HOST+'/home/system/login',params).then(res => {
-                    if(res.data.code ==1){
-                        $(".msg").text("登录成功!")
-                        sessionStorage.username = this.username;
-                        this.$router.push({path:'/home'})
+
+                var  _this=this;
+                var md5Pswd = this.$md5(this.password).toLocaleUpperCase(); // 将密码进行MD5加密
+                var data={
+                    "username":this.username,
+                    "password":md5Pswd
+                };
+                console.log(data)
+                axios({
+                    url: 'http://47.106.83.135:80/sponge/user/login',
+                    method:'post',
+                    dataType: 'json',
+                    //发送格式为json
+                    data:data,
+                    headers:
+                       {
+                         'Content-Type': 'application/json'
+                       }
+                }).then(res => {
+                    console.log("00");
+                    if(res.data.status === 1){
+                        console.log(_this.username);
+                        setCookie("username",_this.username);
+                        $(".msg").text("登录成功!");
+                        _this.$router.push({path:'/home'})
                     }else{
+                        console.log("失败");
                         $("#dmsg").css("display","block").addClass("shake animated");
                         $(".msg").text("用户名或密码错误!")
                     }
-                })
-                // axios.get('http://localhost:53000').then(res=>{
-                //     console.log("000");
-                // })
+
+                }).catch(err => {
+                    console.log(err);
+                });
             }
         }
     }

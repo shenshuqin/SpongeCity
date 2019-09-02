@@ -5,7 +5,7 @@
                 <div class="row">
                     <div class="navs-left col-xs-8 col-sm-8 col-md-8 col-lg-8">
                         <a class="navbar-brand" href="#">
-                            <img class="logo" alt="Brand" src="../../images/logo.png">
+                            <img class="logo" alt="Brand" src="../../public/images/logo.png">
                         </a>
                         <a href="#" class="navbar-brand navbar-link">海绵城市监测系统</a>
                     </div>
