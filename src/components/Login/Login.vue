@@ -42,14 +42,12 @@
         },
         methods: {
             login() {
-
                 var  _this=this;
                 var md5Pswd = this.$md5(this.password).toLocaleUpperCase(); // 将密码进行MD5加密
                 var data={
                     "username":this.username,
                     "password":md5Pswd
                 };
-                console.log(data)
                 axios({
                     url: 'http://47.106.83.135:80/sponge/user/login',
                     method:'post',
@@ -63,7 +61,10 @@
                 }).then(res => {
                     console.log("00");
                     if(res.data.status === 1){
-                        console.log(_this.username);
+                        console.log(res)
+                        // console.log(_this.username);
+                        // console.log(res.data.data[0].token);
+                        setCookie("token",res.data.data[0].token);
                         setCookie("username",_this.username);
                         $(".msg").text("登录成功!");
                         _this.$router.push({path:'/home'})

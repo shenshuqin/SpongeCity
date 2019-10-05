@@ -26,7 +26,10 @@ import './lib/animate/animate.min.css'
  import 'mint-ui/lib/style.css'
 // // 将 MintUI 安装到 Vue 中
  Vue.use(MintUI) // 把所有的组件，注册为全局的组件
-
+//导入element ui
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
+Vue.use(ElementUI);
 // 导入 app 组件
 import app from './App.vue'
 

@@ -1,6 +1,12 @@
 body{
     background-color: #fff !important;
 }
+html {
+    box-sizing: border-box;
+}
+*,*::before,*::after {
+    box-sizing: inherit;
+}
 .logo{
     width:65px;
     height: 36px;
@@ -56,24 +62,31 @@ body{
 .mr100{
     margin-right: 100px;
 }
+.pl100{
+    padding-left: 100px;
+}
+.pr100{
+    padding-right: 100px;
+}
 .box{
     /*width:30%;*/
+    box-sizing: border-box;
     height: auto;
     background-color: #fff;
     display: flex;
-    margin-bottom: 8px;
-
-
+    margin-bottom: 20px;
+    /*border:1px solid red;*/
 }
 .box .box-main{
     width:80%;
     justify-content: center;
     align-items: center;
     height: auto;
-    border: 1px solid #EBEBEB;
+    border: 2px solid #dfdfdf;
     border-radius: 5px;
-    box-shadow :2px 2px 2px #cccccc ;
+    /*box-shadow :2px 2px 2px #cccccc ;*/
 }
+
 .box .box-main p:nth-of-type(1){
     font-size: 50px;
     color: #4b97ff;
@@ -83,7 +96,8 @@ body{
 .box .box-main p:nth-of-type(2){
     text-align: center;
     font-size: 18px;
-    margin-top: 40px;
+    margin-top: 0px;
+    margin-bottom: 40px;
 }
 /*login.css*/
 .login {

@@ -4,10 +4,13 @@ import VueRouter from 'vue-router'
 import HomeContainer from './components/Home/HomeContainer.vue'
 import Login from './components/Login/Login.vue'
 import Rainflow from './components/Module/Raillflow.vue'
-import Waterlevel from './components/Module/waterlevel.vue'
-import Waterflow from './components/Module/waterflow.vue'
+import Air from './components/Module/air.vue'
+import Soil from './components/Module/soil.vue'
 import Totleflow from './components/Module/totleflow.vue'
-import Rainutl from './components/Module/rainutl.vue'
+import Wind from './components/Module/wind.vue'
+import PM from './components/Module/PM.vue'
+import Admin from './components/Admin/Admin.vue'
+import Sensor from './components/Admin/sensor.vue'
 
 //  创建路由对象
 var router = new VueRouter({
@@ -16,10 +19,13 @@ var router = new VueRouter({
     {path:'/login' , component:Login},
     {path:'/home' , component:HomeContainer},
     {path:'/rainflow' , component:Rainflow},
-    {path:'/waterlevel' , component:Waterlevel},
-    {path:'/waterflow' , component:Waterflow},
+    {path:'/air' , component:Air},
+    {path:'/soil' , component:Soil},
     {path:'/totleflow' , component:Totleflow},
-    {path:'/rainutl' , component:Rainutl},
+    {path:'/wind' , component:Wind},
+    {path:'/pm' , component:PM},
+    {path:'/admin' , component:Admin},
+    {path:'/sensor' , component:Sensor},
   ]
 })
 
