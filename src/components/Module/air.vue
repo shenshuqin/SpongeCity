@@ -4,9 +4,9 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="navs-left col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                        <a class="navbar-brand" href="#">
+                        <router-link class="navbar-brand" to="/home" >
                             <img class="logo" alt="Brand" src="../../public/images/logo.png">
-                        </a>
+                        </router-link>
                         <a href="#" class="navbar-brand navbar-link">海绵城市监测系统</a>
                     </div>
                     <div class="navs-right col-xs-4 col-sm-4 col-md-4 col-lg-4">
@@ -60,7 +60,7 @@
                         <input class="form-control" id="time_end" type="date" value="2015-09-24"/>
 
                     </div>
-                    <button type="button" @click="send_data" class="btn btn-info sub_btn btn-block">提交</button>
+                    <button type="button" @click="" class="btn btn-info sub_btn btn-block">提交</button>
                 </div>
                 <div class="col-md-6 raill-right">
                     <!--               <div :class="className" :id="id" :style="{height:height,width:width}" ref="myEchart"></div>-->
@@ -82,6 +82,8 @@
     export default {
         data() {
             return {
+                timer1:'',
+                time2:'',
                 dateList1:[],
                 dateList2:[],
                 valueList1:[],
@@ -92,88 +94,97 @@
             // this.drawLine();
             this.getdata_temp();
             this.getdata_hum();
+            // this.timer1 = setInterval(this.getdata_temp, 3000);
+            // this.timer1 = setInterval(this.getdata_hum, 3000);
           },
         methods: {
             drawLine(this_=this){
-                var colors = ['#5793f3', '#d14a61', '#675bba'];
-                let myChart = echarts.init(document.getElementById('chart_example'),'light');
+                let myChart = echarts.init(document.getElementById('chart_example'));
+                // var colors = ['#5793f3', '#d14a61', '#675bba'];
+                // let myChart = echarts.init(document.getElementById('chart_example'),'light');
                 let option = {
-                    color: colors,
+                    title: {
+                        text: '空气温湿度监测',
+                        subtext: '湖南文理学院'
+                    },
                     tooltip: {
-                        trigger: 'none',
-                        axisPointer: {
-                            type: 'cross'
-                        }
+                        trigger: 'axis'
                     },
                     legend: {
-                        data:['空气温度', '空气湿度']
+                        data:['空气温度','空气湿度']
                     },
-                    grid: {
-                        top: 70,
-                        bottom: 50
+                    toolbox: {
+                        show: true,
+                        feature: {
+                            dataZoom: {
+                                yAxisIndex: 'none'
+                            },
+                            dataView: {readOnly: false},
+                            magicType: {type: ['line', 'bar']},
+                            restore: {},
+                            saveAsImage: {}
+                        }
                     },
-                    xAxis: [
-                        {
-                            type: 'category',
-                            axisTick: {
-                                alignWithLabel: true
-                            },
-                            axisLine: {
-                                onZero: false,
-                                lineStyle: {
-                                    color: colors[1]
-                                }
-                            },
-                            axisPointer: {
-                                label: {
-                                    formatter: function (params) {
-                                        return '空气温度 ' + params.value
-                                            + (params.seriesData.length ? '：' + params.seriesData[0].data : '');
-                                    }
-                                }
-                            },
-                            data:this_.dateList1
-                        },
-                        {
-                            type: 'category',
-                            axisTick: {
-                                alignWithLabel: true
-                            },
-                            axisLine: {
-                                onZero: false,
-                                lineStyle: {
-                                    color: colors[0]
-                                }
-                            },
-                            axisPointer: {
-                                label: {
-                                    formatter: function (params) {
-                                        return '空气湿度  ' + params.value
-                                            + (params.seriesData.length ? '：' + params.seriesData[0].data : '');
-                                    }
-                                }
-                            },
-                            data: this_.dateList2
+                    xAxis:  {
+                        type: 'category',
+                        boundaryGap: false,
+                        // data: ['周一','周二','周三','周四','周五','周六','周日']
+                        data:this_.dateList1,
+                    },
+                    yAxis: {
+                        type: 'value',
+                        axisLabel: {
+                            formatter: '{value}'
                         }
-                    ],
-                    yAxis: [
-                        {
-                            type: 'value'
-                        }
-                    ],
+                    },
                     series: [
                         {
                             name:'空气温度',
                             type:'line',
-                            xAxisIndex: 1,
-                            smooth: true,
-                            data: this_.valueList1
+                            // data:[11, 11, 15, 13, 12, 13, 10],
+                            data: this_.valueList1,
+                            markPoint: {
+                                data: [
+                                    {type: 'max', name: '最大值'},
+                                    {type: 'min', name: '最小值'}
+                                ]
+                            },
+                            markLine: {
+                                data: [
+                                    {type: 'average', name: '平均值'}
+                                ]
+                            }
                         },
                         {
                             name:'空气湿度',
                             type:'line',
-                            smooth: true,
-                            data: this_.valueList2
+                            // data:[1, -2, 2, 5, 3, 2, 0],
+                            data: this_.valueList2,
+                            markPoint: {
+                                data: [
+                                    {name: '周最低', value: -2, xAxis: 1, yAxis: -1.5}
+                                ]
+                            },
+                            markLine: {
+                                data: [
+                                    {type: 'average', name: '平均值'},
+                                    [{
+                                        symbol: 'none',
+                                        x: '90%',
+                                        yAxis: 'max'
+                                    }, {
+                                        symbol: 'circle',
+                                        label: {
+                                            normal: {
+                                                position: 'start',
+                                                formatter: '最大值'
+                                            }
+                                        },
+                                        type: 'max',
+                                        name: '最高点'
+                                    }]
+                                ]
+                            }
                         }
                     ]
                 };
@@ -185,12 +196,13 @@
             },
             getdata_temp(this_ = this) {
                 axios({
-                    url: 'http://47.106.83.135:80/sponge/data/sensor?type=1',
+                    // url: 'http://47.106.83.135:80/sponge/data/sensor?sensor_id=1',
+                    url: 'http://47.106.83.135:80/sponge/avg_data/sensor?sensor_id=1',
                     method: 'get',
                     type: 'json',
                     headers: this_.my_header
                 }).then(function (res) {
-                    console.log(res);
+                    // console.log(res);
                     var data = res.data.data;
                     var len = data.length;
                     var timearr = [];
@@ -201,20 +213,30 @@
                          airtemparr.push(data[i].value);
                         // console.log(data[i].datetime)
                     }
-                    // console.log(flowarr);
+                    console.log(airtemparr);
                     this_.dateList1= timearr;
                     this_.valueList1 = airtemparr;
-                    this_.drawLine();
+                    // this_.drawLine();
+                    if (len !== 0) {
+                        // 初始化图表
+                        this_.drawLine()
+                    } else {
+                        // 以下是暂无数据显示样式(样式根据本身需求进行调整)
+                        var html = '<div><sapn style="font-size: 18px;font-weight: bold;">图表数据</sapn><span  style="position: absolute;top: 40%;margin-left: 10%;color:#868686; font-size: 20px;">暂无数据</span></div>'
+                        document.getElementById('chart_example').innerHTML = html
+                        document.getElementById('chart_example').removeAttribute('_echarts_instance_')
+                    }
                 })
             },
             getdata_hum(this_ = this) {
                 axios({
-                    url: 'http://47.106.83.135:80/sponge/data/sensor?type=2',
+                    // url: 'http://47.106.83.135:80/sponge/data/sensor?sensor_id=2',
+                    url: 'http://47.106.83.135:80/sponge/avg_data/sensor?sensor_id=2',
                     method: 'get',
                     type: 'json',
                     headers: this_.my_header
                 }).then(function (res) {
-                    console.log(res);
+                    // console.log(res);
                     var data = res.data.data;
                     var len = data.length;
                     var timearr = [];
@@ -225,16 +247,28 @@
                         airhumarr.push(data[i].value);
                         // console.log(data[i].datetime)
                     }
-                    // console.log(flowarr);
+                    console.log(this_.valueList2);
                     this_.dateList2= timearr;
                     this_.valueList2 = airhumarr;
-                    this_.drawLine();
+                    if (len !== 0) {
+                        // 初始化图表
+                        this_.drawLine()
+                    } else {
+                        // 以下是暂无数据显示样式(样式根据本身需求进行调整)
+                        var html = '<div><sapn style="font-size: 18px;font-weight: bold;">图表数据</sapn><span  style="position: absolute;top: 40%;margin-left: 10%;color:#868686; font-size: 20px;">暂无数据</span></div>'
+                        document.getElementById('chart_example').innerHTML = html
+                        document.getElementById('chart_example').removeAttribute('_echarts_instance_')
+                    }
                 })
             },
         },
         watch: {},
         created() {
 
+        },
+        beforeDestroy() {
+            clearInterval(this.timer1);
+            clearInterval(this.timer2);
         }
     }
 </script>

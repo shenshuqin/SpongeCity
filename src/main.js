@@ -6,7 +6,12 @@ Vue.use(VueRouter)
 
 // console.log("ok")
 // 导入bootstrap样式
+import BaiduMap from 'vue-baidu-map'
 
+Vue.use(BaiduMap, {
+    // ak 是在百度地图开发者平台申请的密钥 详见 http://lbsyun.baidu.com/apiconsole/key */
+    ak: '8zH64Yz09eqZCsRowtehvAFtjm3oUqpr'
+})
 import $ from 'jquery'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/js/bootstrap.js'

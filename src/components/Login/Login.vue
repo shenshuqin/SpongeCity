@@ -1,9 +1,13 @@
 <template>
     <div class="login">
         <!-- <div class="cloud"><img src="cloud.png" alt=""></div> -->
+        <div class="cloud_word">
         <div class="cloud">
             <img src="../../public/images/cloud01.png" alt="">
             <img src="../../public/images/cloud02.png" alt="">
+
+        </div>
+        <div class="title_sp">海绵城市监测系统</div>
         </div>
         <div class="login-wrap" action="">
             <img class="avatar" src="../../public/images/default.png">

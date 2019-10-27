@@ -1,130 +1,344 @@
 <template>
     <div class="home">
-        <div class="navs">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="navs-left col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                        <a class="navbar-brand" href="#">
-                            <img class="logo" alt="Brand" src="../../public/images/logo.png">
-                        </a>
-                        <a href="#" class="navbar-brand navbar-link">海绵城市监测系统</a>
-                    </div>
-                    <div class="navs-right col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                        <p class="navbar-text navbar-right">
-                            <router-link class="" to="/admin">
-                            <span class="iconfont fonts">&#xe621;</span>
+        <div id="navbar-top">
+        <nav class="navbar navbar-default navbar-static navbar-fixed-top" role="navigation" data-spy="affix">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">切换菜单</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand homeback" href="#">
+<!--                        <img class="logo" alt="Brand" src="../../public/images/logo.png">-->
+<!--                        <span href="#" class="">海绵城市监测系统</span>-->
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li >
+                            <router-link class="" to="/home">
+                            <span>首页</span>
                             </router-link>
-                            <span style="font-size:15px;padding-left: 10px">{{msg}}</span>
-                        </p>
-                    </div>
+                        </li>
+                        <li class="dropdown">
+                            <router-link class="" to="/about">
+                                <span class="dropdown-toggle scrollTo">关于我们</span>
+                            </router-link>
+                        </li>
+                        <li class="dropdown">
+                            <router-link class="" to="/detect">
+                            <span class="dropdown-toggle scrollTo">监测中心</span>
+                            </router-link>
+                        </li>
+                        <li>
+                            <router-link class="" to="/map">
+                            <span  >基地展示</span>
+                            </router-link>
+                        </li>
+                        <li>
+                            <router-link class="" to="/admin">
+                            <span  role="button" >后台管理</span>
+                            </router-link>
+                        </li>
+                    </ul>
                 </div>
             </div>
+        </nav>
         </div>
     <div class="main">
-    <img src="../../public/images/main.jpg">
-    </div>
-    <div class="container-fluid">
-        <div class="row">
-<!--            <p class="title">监测模块</p>-->
-            <p class="title"><img src="../../public/images/title.png"></p>
-            <router-link class="" to="/rainflow">
-            <div class="box col-md-4  " >
-                <div class="box-main center-block ml100" >
-                    <p class="iconfont">&#xe623;</p>
-                    <p class="box-cont">雨量监测</p>
-                </div>
+        <el-carousel indicator-position="outside" height="400px">
+            <el-carousel-item >
+                <h3>海绵城市监测系统</h3>
+            </el-carousel-item>
+            <el-carousel-item >
+                <h3>海绵城市监测系统</h3>
+            </el-carousel-item>
+            <el-carousel-item >
+                <h3>海绵城市监测系统</h3>
+            </el-carousel-item>
+        </el-carousel>
+<!--项目介绍-->
+        <div class="section1 container-fluid">
+            <div class="row">
+            <div class="sec_title">
+                <p>PROJECT INTRODUCTION</p>
+                <p>项目介绍</p>
             </div>
-            </router-link>
-            <router-link class="" to="/air">
-            <div class="box col-md-4 ">
-                <div class="box-main center-block">
-                    <p class="iconfont">&#xe622;</p>
-                    <p class="box-cont">空气监测</p>
+            <div class="sec_main">
+                <div class="left col-md-6">
+                    <img src="../../public/images/school.jpg">
                 </div>
-            </div>
-            </router-link>
-            <router-link class="" to="/soil">
-            <div class="box col-md-4">
-                <div class="box-main center-block mr100">
-                    <p class="iconfont">&#xe66b;</p>
-                    <p class="box-cont">土壤监测</p>
+                <div class="right col-md-6">
+                    <p class="line"></p>
+                    <p class="right_cot">构建低影响开发雨水系统，规划控制目标一般包括径流总量控制、径流峰值控制、径流污染控制、雨水资源化利用等。各地应结合水环境现状、水文地质条件等特点，合理选择其中一项或多项目标作为规划控制目标。鉴于径流污染控制目标、 雨水资源化利用目标大多可通过径流总量控制实现， 各地低影响开发雨水系统构建可选择径流总量控制作为首要的规划控制目标。</p>
+                    <button type="button" class="btn btn-info more">查看更多</button>
                 </div>
+
             </div>
-            </router-link>
-            <router-link class="" to="/totleflow">
-            <div class="box col-md-4 ">
-                <div class="box-main center-block ml100">
-                    <p class="iconfont">&#xe659;</p>
-                    <p class="box-cont">臭氧,光照强度,气压监测</p>
-                </div>
             </div>
-            </router-link>
-            <router-link class="" to="/wind">
-            <div class="box col-md-4 ">
-                <div class="box-main center-block">
-                    <p class="iconfont">&#xe61c;</p>
-                    <p class="box-cont">风速,风向监测</p>
-                </div>
-            </div>
-            </router-link>
-            <router-link class="" to="/pm">
-            <div class="box col-md-4 ">
-                <div class="box-main center-block mr100">
-                    <p class="iconfont">&#xe693;</p>
-                    <p class="box-cont">PM值监测</p>
-                </div>
-            </div>
-            </router-link>
         </div>
-    </div>
+<!--       section1 end-->
+        <div class="contentpart">
+            <div class="container">
+                <div class="indexabout text-center">
+
+                    <h4>项目简介</h4>
+                    <h2>携手共建海绵城市，缔造中国都市新面貌！</h2>
+                    <p>海绵城市建设专注于海绵城市设计、产品制造与施工建设的创新。在雨水渗透领域，开发了专利产品透水海绵砖、透水混凝土路面、雨水渗透管、雨水渗透井、渗透沟等透水产品，全面解决雨...</p>
+                </div>
+            </div>
+        </div>
+        <div class="section3 container-fluid">
+            <div class="row">
+                <div class="sec_title">
+                    <p>ITEM ADVANTAGE</p>
+                    <p>项目优势</p>
+                </div>
+                <div>
+                    <div class="container-fluid sec3">
+                    <div class="row sec3_main ">
+                        <div class="col-md-3">
+                            <div class="youshipart text-center">
+                                <div class="icon-wrapper">  <span class="iconfont fonts">&#xe610;</span>  </div>
+                                <h3>先进的制砖技术</h3>
+                                结合最先进的工艺和独家专利技术，研发出创造新型环保透水砖，为海绵城市建设添砖加瓦。
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="youshipart text-center">
+                                <div class="icon-wrapper"> <span class="iconfont fonts">&#xe612;</span> </div>
+                                <h3>可靠的实力</h3>
+                                专注海绵城市，多年产品研发经验，众多项目实例积淀，流程规范化管理，技术实力遥遥领先。
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="youshipart text-center">
+                                <div class="icon-wrapper"> <span class="iconfont fonts">&#xe60b;</span> </div>
+                                <h3>一站式服务</h3>
+                                渗透海绵城市的各个环节，设计方案，产品生产，现场施工，技术咨询等，每一步都有专业技术团队管控，免去后顾之忧。
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="youshipart text-center">
+                                <div class="icon-wrapper"> <span class="iconfont fonts">&#xe7b4;</span></div>
+                                <h3>长远发展眼光</h3>
+                                不断完善和改进现有产品服务的同时，开拓海绵城市理念的新领域，挖掘新技术，扩展新市场。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            </div>
+        <!--  sec3 end-->
+        </div>
+<!--        main end-->
+        <div class="footer container-fluid">
+            <div class="row">
+                <div class="col-md-4 footer_box">
+                    <router-link class="" to="/home"><p>首页</p></router-link>
+                    <router-link class="" to="/about"><p>关于我们</p></router-link>
+                </div>
+                <div class="col-md-4 footer_box">
+                    <router-link class="" to="/detect"><p>监测中心</p></router-link>
+                    <router-link class="" to="/map"><p>基地展示</p></router-link>
+                </div>
+                <div class="col-md-4 footer_box">
+                    <p>联系方式</p>
+                    <p>电话:18229695956</p>
+                    <p>邮箱:2934103556@qq.com</p>
+                    <p>地址:湖南省常德市武陵区湖南文理学院创客空间</p>
+                </div>
+                <p class="text-center"> Copyright © 2019</p>
+            </div>
+        </div>
+<!--        footer end-->
     </div>
 </template>
 <script>
-    import {getCookie} from '../../public/js/cookie.js';
+
     export  default {
         data(){
             return{
-                msg:getCookie("username")
+
             }
         },
         mounted(){
-          this.arr();
-          this.animate();
-          this.mobile_css();
+            // this.animate();
         },
         methods:{
-            arr(){
-                console.log(getCookie("username"))
-            },
-         animate(){
-             $(".box-main").hover(function(){
-                 console.log("1");
-                 $(this).addClass("animated pulse");
-             }, function() {
-                  // 鼠标移出时移出hover类
-                  $(this).removeClass('animated pulse')
-             });
 
-         },
-            mobile_css(){
-               var width =  window.screen.width;
-               console.log(width)
-                if(width<=768){
-                    var dom =  $(".box-main");
-                    dom.eq(0).removeClass('ml100');
-                    dom.eq(2).removeClass('mr100');
-                    dom.eq(3).removeClass('ml100');
-                    dom.eq(5).removeClass('mr100');
-                }
-            }
         }
     }
     </script>
 <style scoped>
- /*.box-main:hover{*/
- /*    background-color: #ccc;*/
- /*}*/
-    .box-cont{
+    .el-carousel__item h3 {
+        color: #fff;
+        font-size: 35px;
+        /*opacity: 0.75;*/
+        line-height: 300px;
+        margin-left:280px;
+        margin-top: 20px;
+        font-family: '黑体';
+    }
+    .el-carousel__item:nth-of-type(1){
+        background: url("../../public/images/slide2.png");
+        background-size: 100% 100%;
+    }
+    .el-carousel__item:nth-of-type(2){
+        background: url("../../public/images/slide1.png");
+        background-size: 100% 100%;
+    }
+    .el-carousel__item:nth-of-type(3){
+        background: url("../../public/images/slide2.png");
+        background-size: 100% 100%;
+    }
+    .section1,.section2{
+        width:100%;
+        height: auto;
+        margin-top: 40px;
+    }
+    .sec_title{
+        width:100%;
+        height:auto;
+        text-align: center;
+        /*border:1px solid red;*/
+    }
+    .sec_title p:nth-of-type(1){
+        font-size: 26px;
+        font-weight: bold;
+        color:#222222;
+    }
+    .sec_title p:nth-of-type(2){
+        font-size: 20px;
+        color:#4C4C4C;
+        position:relative;
+    }
+    .sec_title p:nth-of-type(2):before{
+        content: '';
+        width:55px;
+        height: 2px;
+        background-color:#8c8c8c;
+        position:absolute;
+        top:40%;
+        left:40%;
+    }
+    .sec_title p:nth-of-type(2):after{
+        content: '';
+        width:55px;
+        height: 2px;
+        background-color: #8c8c8c;
+        position:absolute;
+        top:40%;
+        right:40%;
+    }
+    .sec_main{
+        margin-top: 40px;
+    }
+    .left{
+        /*border:1px solid red;*/
+        height: auto;
+    }
+    .left img{
+        width:56%;
+        height: 250px;
+        margin-left:40%;
+    }
+    .right .line{
+        width:68px;
+        height: 2px;
+        background-color: #296eaf;
+        margin-top: 20px;
+    }
+    .right_cot{
+        width:72%;
+        height:auto;
+        margin-top: 20px;
+        font-size: 14px;
+        font-family: "黑体";
+        line-height: 30px;
+        margin-bottom: 20px;
+        /*border:1px solid red;*/
+    }
+     .more{
+         /*margin-left: 20px;*/
+         width:120px;
+    }
+    .sect2_main{
+        width:60%;
+        height: auto;
+        /*border:1px solid red;*/
+        margin: 30px auto;
+        display: flex;
+        flex-flow: wrap;
+        flex-direction: row;
+    }
+    .sect2_main div{
+        width:50%;
+        position:relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 10px;
 
     }
-    </style>
+    .sect2_main div img{
+        width:96%;
+
+    }
+    .sect2_main div p{
+        position: absolute;
+        top:45%;
+        left:45%;
+        color:#fff;
+        font-size: 30px;
+    }
+    .contentpart{
+        margin-top: 40px;
+        margin-bottom: 40px;
+        padding: 60px 0;
+        background: #d8d8d8 url(../../public/images/bg.jpg) no-repeat center center fixed !important;
+
+    }
+    .indexabout {
+        padding: 30px 20%;
+        /*margin-top: 30px;*/
+        color: #fff;
+    }
+    .contentpart {
+        padding: 60px 0;
+    }
+    .sec3_main{
+        width:80%;
+        margin: 0 auto;
+
+    }
+    .sec3{
+        background-color: #f9f9f9;
+    }
+    .youshipart {
+        width:100%;
+        margin: 20px;
+        background: #fff;
+        min-height: 280px;
+        /*border:1px solid red;*/
+    }
+    .icon-wrapper {
+        position: relative;
+        height: 80px;
+        margin-bottom: 30px;
+    }
+    .icon-wrapper{
+        position: relative;
+        height: 60px;
+        line-height: 60px;
+        padding-top: 30px;
+        margin-bottom: 40px;
+    }
+    .fonts{
+        font-size: 35px;
+    }
+</style>

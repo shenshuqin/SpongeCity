@@ -4,9 +4,9 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="navs-left col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                        <a class="navbar-brand" href="#">
+                        <router-link class="navbar-brand" to="/home" >
                             <img class="logo" alt="Brand" src="../../public/images/logo.png">
-                        </a>
+                        </router-link>
                         <a href="#" class="navbar-brand navbar-link">海绵城市监测系统</a>
                     </div>
                     <div class="navs-right col-xs-4 col-sm-4 col-md-4 col-lg-4">
@@ -60,7 +60,7 @@
                         <input class="form-control" id="time_end" type="date" value="2015-09-24"/>
 
                     </div>
-                    <button type="button" @click="send_data" class="btn btn-info sub_btn btn-block">提交</button>
+                    <button type="button" @click="" class="btn btn-info sub_btn btn-block">提交</button>
                 </div>
                 <div class="col-md-6 raill-right">
                     <!--               <div :class="className" :id="id" :style="{height:height,width:width}" ref="myEchart"></div>-->
@@ -82,6 +82,9 @@
     export default {
         data() {
             return {
+                timer1:'',
+                timer2:'',
+                timer3:'',
                 dateList1:[],
                 dateList2:[],
                 dateList3:[],
@@ -95,6 +98,9 @@
             this.getdata1();
             this.getdata2();
             this.getdata3();
+            // this.timer1 = setInterval(this.getdata1, 3000);
+            // this.timer2 = setInterval(this.getdata2, 3000);
+            // this.timer3 = setInterval(this.getdata3, 3000);
         },
         methods: {
 
@@ -171,7 +177,8 @@
 
             getdata1(this_ = this){
                 axios({
-                    url: 'http://47.106.83.135:80/sponge/data/sensor?type=5',
+                    // url: 'http://47.106.83.135:80/sponge/data/sensor?sensor_id=5',
+                    url: 'http://47.106.83.135:80/sponge/avg_data/sensor?sensor_id=5',
                     method: 'get',
                     type: 'json',
                     headers: this_.my_header
@@ -190,12 +197,21 @@
                     // console.log(flowarr);
                     this_.dateList1= timearr;
                     this_.valueList1 = ozonearr;
-                    this_.drawLine();
+                    if (len !== 0) {
+                        // 初始化图表
+                        this_.drawLine()
+                    } else {
+                        // 以下是暂无数据显示样式(样式根据本身需求进行调整)
+                        var html = '<div><sapn style="font-size: 18px;font-weight: bold;">图表数据</sapn><span  style="position: absolute;top: 40%;margin-left: 10%;color:#868686; font-size: 20px;">暂无数据</span></div>'
+                        document.getElementById('chart_example').innerHTML = html
+                        document.getElementById('chart_example').removeAttribute('_echarts_instance_')
+                    }
                 })
             },
             getdata2(this_ = this){
                 axios({
-                    url: 'http://47.106.83.135:80/sponge/data/sensor?type=6',
+                    // url: 'http://47.106.83.135:80/sponge/data/sensor?sensor_id=6',
+                    url: 'http://47.106.83.135:80/sponge/avg_data/sensor?sensor_id=6',
                     method: 'get',
                     type: 'json',
                     headers: this_.my_header
@@ -214,12 +230,21 @@
                     // console.log(flowarr);
                     this_.dateList1= timearr;
                     this_.valueList2 = lightarr;
-                    this_.drawLine();
+                    if (len !== 0) {
+                        // 初始化图表
+                        this_.drawLine()
+                    } else {
+                        // 以下是暂无数据显示样式(样式根据本身需求进行调整)
+                        var html = '<div><sapn style="font-size: 18px;font-weight: bold;">图表数据</sapn><span  style="position: absolute;top: 40%;margin-left: 10%;color:#868686; font-size: 20px;">暂无数据</span></div>'
+                        document.getElementById('chart_example').innerHTML = html
+                        document.getElementById('chart_example').removeAttribute('_echarts_instance_')
+                    }
                 })
             },
             getdata3(this_ = this){
                 axios({
-                    url: 'http://47.106.83.135:80/sponge/data/sensor?type=7',
+                    // url: 'http://47.106.83.135:80/sponge/data/sensor?sensor_id=7',
+                    url: 'http://47.106.83.135:80/sponge/avg_data/sensor?sensor_id=7',
                     method: 'get',
                     type: 'json',
                     headers: this_.my_header
@@ -238,7 +263,15 @@
                     // console.log(flowarr);
                     this_.dateList1= timearr;
                     this_.valueList3 = gasarr;
-                    this_.drawLine();
+                    if (len !== 0) {
+                        // 初始化图表
+                        this_.drawLine()
+                    } else {
+                        // 以下是暂无数据显示样式(样式根据本身需求进行调整)
+                        var html = '<div><sapn style="font-size: 18px;font-weight: bold;">图表数据</sapn><span  style="position: absolute;top: 40%;margin-left: 10%;color:#868686; font-size: 20px;">暂无数据</span></div>'
+                        document.getElementById('chart_example').innerHTML = html
+                        document.getElementById('chart_example').removeAttribute('_echarts_instance_')
+                    }
                 })
             }
 
@@ -246,6 +279,11 @@
         watch: {},
         created() {
             // this.getdata()
+        },
+        beforeDestroy() {
+            clearInterval(this.timer1);
+            clearInterval(this.timer2);
+            clearInterval(this.timer3);
         }
     }
 </script>

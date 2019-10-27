@@ -4,9 +4,9 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="navs-left col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                        <a class="navbar-brand" href="#">
+                        <router-link class="navbar-brand" to="/home" >
                             <img class="logo" alt="Brand" src="../../public/images/logo.png">
-                        </a>
+                        </router-link>
                         <a href="#" class="navbar-brand navbar-link">海绵城市监测系统</a>
                     </div>
                     <div class="navs-right col-xs-4 col-sm-4 col-md-4 col-lg-4">
@@ -34,22 +34,25 @@
                     </el-form>
                 </div>
                 <div class="main container-fluid">
-                    <router-link class="" to="/sensor">
+
                     <el-card class="box-card " style="display: inline-block" v-for="item in data" :key="item.id">
                     <!-- item取值 data[0] data[1]...                        -->
                         <div class="box-header">
-                            <span>基站1</span>
+                            <span>基站{{item.nid}}</span>
                             <span class="iconfont fonts" style="margin-left: 20px">&#xe651;</span>
                             <i @click="dialogVisible2 = true" class="el-icon-edit-outline pull-right"></i>
                         </div>
+                        <router-link class="box-main" to="/sensor">
                         <div class="box-main">
                             <p>设备ID:{{item.nid}}</p>
                             <p>地点:{{item.name}}</p>
+                            <p>经纬度:{{item.location}}</p>
                             <p>状态:{{item.status}}</p>
 
                         </div>
+                        </router-link>
                     </el-card>
-                    </router-link>
+
                 </div>
             </div>
             </div>
@@ -165,6 +168,7 @@
         /*border:1px solid red;*/
     }
     .main{
+        text-decoration: none;
         /*display: flex;*/
         /*justify-content: center;*/
         /*align-items: center;*/
@@ -174,6 +178,7 @@
         width:33%;
         margin-right: 10px;
         height:200px;
+       text-decoration: none;
     }
     .main .box-card:hover{
         background-color: #f3f6fd;
@@ -182,7 +187,9 @@
        border-bottom:1px solid #ccc;
    }
    .main .box-main{
+       color:#222222;
        margin-top: 16px;
+       text-decoration: none;
    }
     .text {
         font-size: 14px;
@@ -197,5 +204,8 @@
     }
     #form_body{
        margin-bottom: -20px;
+    }
+    .fonts{
+        margin-left: 20px
     }
 </style>

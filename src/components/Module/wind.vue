@@ -4,9 +4,9 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="navs-left col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                        <a class="navbar-brand" href="#">
+                        <router-link class="navbar-brand" to="/home" >
                             <img class="logo" alt="Brand" src="../../public/images/logo.png">
-                        </a>
+                        </router-link>
                         <a href="#" class="navbar-brand navbar-link">海绵城市监测系统</a>
                     </div>
                     <div class="navs-right col-xs-4 col-sm-4 col-md-4 col-lg-4">
@@ -60,7 +60,7 @@
                         <input class="form-control" id="time_end" type="date" value="2015-09-24"/>
 
                     </div>
-                    <button type="button" @click="send_data" class="btn btn-info sub_btn btn-block">提交</button>
+                    <button type="button" @click="" class="btn btn-info sub_btn btn-block">提交</button>
                 </div>
                 <div class="col-md-6 raill-right">
                     <!--               <div :class="className" :id="id" :style="{height:height,width:width}" ref="myEchart"></div>-->
@@ -82,6 +82,8 @@
     export default {
         data() {
             return {
+                timer1:'',
+                timer2:'',
                 timeData:[],
                 valueList1:[],
                 valueList2:[]
@@ -90,113 +92,81 @@
         mounted(){
             this.getdata_direction();
             this.getdata_speed();
+            // this.setInterval(this.getdata_direction,3000);
+            // this.setInterval(this.getdata_speed,3000);
              },
         methods: {
             drawLine(this_=this){
 
-                let myChart = echarts.init(document.getElementById('chart_example'));
+                let myChart = echarts.init(document.getElementById('chart_example'),'light');
                 let option = {
-                    title: {
-                        text: '雨量流量关系图',
-                        subtext: '数据来自西安兰特水电测控技术有限公司',
-                        x: 'center'
+                    title : {
+                        text: '风速风向监测',
+                        subtext: '湖南文理学院'
                     },
-                    tooltip: {
-                        trigger: 'axis',
-                        axisPointer: {
-                            animation: false
-                        }
+                    tooltip : {
+                        trigger: 'axis'
                     },
                     legend: {
-                        data:['流量','降雨量'],
-                        x: 'left'
+                        data:['风速','风向']
                     },
                     toolbox: {
-                        feature: {
-                            dataZoom: {
-                                yAxisIndex: 'none'
-                            },
-                            restore: {},
-                            saveAsImage: {}
+                        show : true,
+                        feature : {
+                            dataView : {show: true, readOnly: false},
+                            magicType : {show: true, type: ['line', 'bar']},
+                            restore : {show: true},
+                            saveAsImage : {show: true}
                         }
                     },
-                    axisPointer: {
-                        link: {xAxisIndex: 'all'}
-                    },
-                    dataZoom: [
-                        {
-                            show: true,
-                            realtime: true,
-                            start: 30,
-                            end: 70,
-                            xAxisIndex: [0, 1]
-                        },
-                        {
-                            type: 'inside',
-                            realtime: true,
-                            start: 30,
-                            end: 70,
-                            xAxisIndex: [0, 1]
-                        }
-                    ],
-                    grid: [{
-                        left: 50,
-                        right: 50,
-                        height: '35%'
-                    }, {
-                        left: 50,
-                        right: 50,
-                        top: '55%',
-                        height: '35%'
-                    }],
+                    calculable : true,
                     xAxis : [
                         {
                             type : 'category',
-                            boundaryGap : false,
-                            axisLine: {onZero: true},
-                            data: this_.timeData
-                        },
-                        {
-                            gridIndex: 1,
-                            type : 'category',
-                            boundaryGap : false,
-                            axisLine: {onZero: true},
                             data: this_.timeData,
-                            position: 'top'
                         }
                     ],
                     yAxis : [
                         {
-                            name : '流量(m^3/s)',
-                            type : 'value',
-                            max : 500
-                        },
-                        {
-                            gridIndex: 1,
-                            name : '降雨量(mm)',
-                            type : 'value',
-                            inverse: true
+                            type : 'value'
                         }
                     ],
                     series : [
                         {
-                            name:'流量',
-                            type:'line',
-                            symbolSize: 8,
-                            hoverAnimation: false,
-                            data:this_.valueList1
+                            name:'风速',
+                            data: this_.valueList1,
+                            type:'bar',
+                            markPoint : {
+                                data : [
+                                    {type : 'max', name: '最大值'},
+                                    {type : 'min', name: '最小值'}
+                                ]
+                            },
+                            markLine : {
+                                data : [
+                                    {type : 'average', name: '平均值'}
+                                ]
+                            }
                         },
                         {
-                            name:'降雨量',
-                            type:'line',
-                            xAxisIndex: 1,
-                            yAxisIndex: 1,
-                            symbolSize: 8,
-                            hoverAnimation: false,
-                            data: this_.valueList2
+                            name:'风向',
+                            type:'bar',
+                            data: this_.valueList2,
+                            markPoint : {
+                                data : [
+                                    {name : '年最高', value : 182.2, xAxis: 7, yAxis: 183},
+                                    {name : '年最低', value : 2.3, xAxis: 11, yAxis: 3}
+                                ]
+                            },
+                            markLine : {
+                                data : [
+                                    {type : 'average', name : '平均值'}
+                                ]
+                            }
                         }
                     ]
                 };
+
                 myChart.setOption(option);
 
                 //建议加上以下这一行代码，不加的效果图如下（当浏览器窗口缩小的时候）。超过了div的界限（红色边框）
@@ -205,7 +175,8 @@
             },
             getdata_speed(this_ = this) {
                 axios({
-                    url: 'http://47.106.83.135:80/sponge/data/sensor?type=10',
+                    url: 'http://47.106.83.135:80/sponge/avg_data/sensor?sensor_id=10',
+                    // url: 'http://47.106.83.135:80/sponge/data/sensor?sensor_id=10',
                     method: 'get',
                     type: 'json',
                     headers: this_.my_header
@@ -224,12 +195,21 @@
                     // console.log(flowarr);
                     this_.timeData= timearr;
                     this_.valueList1 = wind_speedarr;
-                    this_.drawLine();
+                    if (len !== 0) {
+                        // 初始化图表
+                        this_.drawLine()
+                    } else {
+                        // 以下是暂无数据显示样式(样式根据本身需求进行调整)
+                        var html = '<div><sapn style="font-size: 18px;font-weight: bold;">图表数据</sapn><span  style="position: absolute;top: 40%;margin-left: 10%;color:#868686; font-size: 20px;">暂无数据</span></div>'
+                        document.getElementById('chart_example').innerHTML = html
+                        document.getElementById('chart_example').removeAttribute('_echarts_instance_')
+                    }
                 })
             },
             getdata_direction(this_ = this) {
                 axios({
-                    url: 'http://47.106.83.135:80/sponge/data/sensor?type=11',
+                    // url: 'http://47.106.83.135:80/sponge/data/sensor?sensor_id=11',
+                    url: 'http://47.106.83.135:80/sponge/avg_data/sensor?sensor_id=11',
                     method: 'get',
                     type: 'json',
                     headers: this_.my_header
@@ -253,13 +233,25 @@
                     console.log(timearr);
                     this_.timeData= timearr;
                     this_.valueList2 = wind_dirarr;
-                    this_.drawLine();
+                    if (len !== 0) {
+                        // 初始化图表
+                        this_.drawLine()
+                    } else {
+                        // 以下是暂无数据显示样式(样式根据本身需求进行调整)
+                        var html = '<div><sapn style="font-size: 18px;font-weight: bold;">图表数据</sapn><span  style="position: absolute;top: 40%;margin-left: 10%;color:#868686; font-size: 20px;">暂无数据</span></div>'
+                        document.getElementById('chart_example').innerHTML = html
+                        document.getElementById('chart_example').removeAttribute('_echarts_instance_')
+                    }
                 })
             },
         },
         watch: {},
         created() {
 
+        },
+        beforeDestroy() {
+            clearInterval(this.timer1);
+            clearInterval(this.timer2);
         }
     }
 </script>

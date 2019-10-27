@@ -4,9 +4,9 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="navs-left col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                        <a class="navbar-brand" href="#">
+                        <router-link class="navbar-brand" to="/home" >
                             <img class="logo" alt="Brand" src="../../public/images/logo.png">
-                        </a>
+                        </router-link>
                         <a href="#" class="navbar-brand navbar-link">海绵城市监测系统</a>
                     </div>
                     <div class="navs-right col-xs-4 col-sm-4 col-md-4 col-lg-4">
@@ -82,6 +82,8 @@
     export default {
         data() {
             return {
+                timer1:'',
+                timer2:'',
                 timeData:[],
                 valueList1:[],
                 valueList2:[]
@@ -91,111 +93,83 @@
             // this.drawLine();
             this.getdata_temp();
             this.getdata_hum();
+            // this.timer1 = setInterval(this.getdata_temp, 3000);
+            // this.timer2 = setInterval(this.getdata_hum, 3000);
         },
         methods: {
             drawLine(this_=this){
                 // var colors = ['#5793f3', '#d14a61', '#675bba'];
-                var colors = ['#36ba51', '#5793f3', '#675bba'];
                 let myChart = echarts.init(document.getElementById('chart_example'),'light');
                 let option = {
-                    title: {
-                        text: '土壤温湿度关系图',
-                        subtext: '数据来自湖南文理',
-                        x: 'center'
+                    title : {
+                        text: '土壤温湿度监测',
+                        subtext: '湖南文理学院'
                     },
-                    tooltip: {
-                        trigger: 'axis',
-                        axisPointer: {
-                            animation: false
-                        }
+                    tooltip : {
+                        trigger: 'axis'
                     },
                     legend: {
-                        data:['土壤温度','土壤湿度'],
-                        x: 'left'
+                        data:['土壤温度','土壤湿度']
                     },
                     toolbox: {
-                        feature: {
-                            dataZoom: {
-                                yAxisIndex: 'none'
-                            },
-                            restore: {},
-                            saveAsImage: {}
+                        show : true,
+                        feature : {
+                            dataView : {show: true, readOnly: false},
+                            magicType : {show: true, type: ['line', 'bar']},
+                            restore : {show: true},
+                            saveAsImage : {show: true}
                         }
                     },
-                    axisPointer: {
-                        link: {xAxisIndex: 'all'}
-                    },
-                    dataZoom: [
-                        {
-                            show: true,
-                            realtime: true,
-                            start: 30,
-                            end: 70,
-                            xAxisIndex: [0, 1]
-                        },
-                        {
-                            type: 'inside',
-                            realtime: true,
-                            start: 30,
-                            end: 70,
-                            xAxisIndex: [0, 1]
-                        }
-                    ],
-                    grid: [{
-                        left: 50,
-                        right: 50,
-                        height: '35%'
-                    }, {
-                        left: 50,
-                        right: 50,
-                        top: '55%',
-                        height: '35%'
-                    }],
+                    calculable : true,
                     xAxis : [
                         {
                             type : 'category',
-                            boundaryGap : false,
-                            axisLine: {onZero: true},
-                            data: this_.timeData
-                        },
-                        {
-                            gridIndex: 1,
-                            type : 'category',
-                            boundaryGap : false,
-                            axisLine: {onZero: true},
                             data: this_.timeData,
-                            position: 'top'
                         }
                     ],
                     yAxis : [
                         {
-                            name : '温度(m^3/s)',
-                            type : 'value',
-                            max : 500
-                        },
-                        {
-                            gridIndex: 1,
-                            name : '土壤温度',
-                            type : 'value',
-                            inverse: true
+                            type : 'value'
                         }
                     ],
                     series : [
                         {
-                            name:'湿度',
-                            type:'line',
-                            symbolSize: 8,
-                            hoverAnimation: false,
-                            data:this_.valueList1
+                            name:'土壤温度',
+                            data:this_.valueList2,
+                            type:'bar',
+                            markPoint : {
+                                data : [
+                                    {type : 'max', name: '最大值'},
+                                    {type : 'min', name: '最小值'}
+                                ]
+                            },
+                            markLine : {
+                                data : [
+                                    {type : 'average', name: '平均值'}
+                                ]
+                            },
+                            itemStyle: {
+                                color:"#cc8f27"
+                            }
                         },
                         {
                             name:'土壤湿度',
-                            type:'line',
-                            xAxisIndex: 1,
-                            yAxisIndex: 1,
-                            symbolSize: 8,
-                            hoverAnimation: false,
-                            data: this_.valueList2
+                            type:'bar',
+                            data:this_.valueList1,
+                            markPoint : {
+                                data : [
+                                    {name : '年最高', value : 182.2, xAxis: 7, yAxis: 183},
+                                    {name : '年最低', value : 2.3, xAxis: 11, yAxis: 3}
+                                ]
+                            },
+                            itemStyle: {
+                                color:"#34539c"
+                            },
+                            markLine : {
+                                data : [
+                                    {type : 'average', name : '平均值'}
+                                ]
+                            }
                         }
                     ]
                 };
@@ -207,7 +181,8 @@
             },
             getdata_temp(this_ = this) {
                 axios({
-                    url: 'http://47.106.83.135:80/sponge/data/sensor?type=3',
+                    // url: 'http://47.106.83.135:80/sponge/data/sensor?sensor_id=3',
+                    url: 'http://47.106.83.135:80/sponge/avg_data/sensor?sensor_id=3',
                     method: 'get',
                     type: 'json',
                     headers: this_.my_header
@@ -226,12 +201,21 @@
                     // console.log(flowarr);
                     this_.timeData =timearr;
                     this_.valueList1 = airtemparr;
-                    this_.drawLine();
+                    if (len !== 0) {
+                        // 初始化图表
+                        this_.drawLine()
+                    } else {
+                        // 以下是暂无数据显示样式(样式根据本身需求进行调整)
+                        var html = '<div><sapn style="font-size: 18px;font-weight: bold;">图表数据</sapn><span  style="position: absolute;top: 40%;margin-left: 10%;color:#868686; font-size: 20px;">暂无数据</span></div>'
+                        document.getElementById('chart_example').innerHTML = html
+                        document.getElementById('chart_example').removeAttribute('_echarts_instance_')
+                    }
                 })
             },
             getdata_hum(this_ = this) {
                 axios({
-                    url: 'http://47.106.83.135:80/sponge/data/sensor?type=4',
+                    // url: 'http://47.106.83.135:80/sponge/data/sensor?sensor_id=4',
+                    url: 'http://47.106.83.135:80/sponge/avg_data/sensor?sensor_id=4',
                     method: 'get',
                     type: 'json',
                     headers: this_.my_header
@@ -250,13 +234,25 @@
                     // console.log(flowarr);
                     this_.timeData =timearr;
                     this_.valueList2 = airhumarr;
-                    this_.drawLine();
+                    if (len !== 0) {
+                        // 初始化图表
+                        this_.drawLine()
+                    } else {
+                        // 以下是暂无数据显示样式(样式根据本身需求进行调整)
+                        var html = '<div><sapn style="font-size: 18px;font-weight: bold;">图表数据</sapn><span  style="position: absolute;top: 40%;margin-left: 10%;color:#868686; font-size: 20px;">暂无数据</span></div>'
+                        document.getElementById('chart_example').innerHTML = html
+                        document.getElementById('chart_example').removeAttribute('_echarts_instance_')
+                    }
                 })
             },
         },
         watch: {},
         created() {
 
+        },
+        beforeDestroy() {
+            clearInterval(this.timer1);
+            clearInterval(this.timer2);
         }
     }
 </script>

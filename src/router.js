@@ -10,7 +10,11 @@ import Totleflow from './components/Module/totleflow.vue'
 import Wind from './components/Module/wind.vue'
 import PM from './components/Module/PM.vue'
 import Admin from './components/Admin/Admin.vue'
+import Map from './components/Admin/map.vue'
 import Sensor from './components/Admin/sensor.vue'
+import SensorData from './components/SensorData/sensordata.vue'
+import Detect from './components/Home/Detect.vue'
+import About from './components/About/about.vue'
 
 //  创建路由对象
 var router = new VueRouter({
@@ -26,6 +30,10 @@ var router = new VueRouter({
     {path:'/pm' , component:PM},
     {path:'/admin' , component:Admin},
     {path:'/sensor' , component:Sensor},
+    {path:'/map' , component:Map},
+    {path:'/sensordata' , component:SensorData},
+    {path:'/detect' , component:Detect},
+    {path:'/about' , component:About},
   ]
 })
 
