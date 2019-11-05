@@ -1,26 +1,8 @@
 <template>
     <div class="waterflow">
-        <div class="navs">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="navs-left col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                        <router-link class="navbar-brand" to="/home" >
-                            <img class="logo" alt="Brand" src="../../public/images/logo.png">
-                        </router-link>
-                        <a href="#" class="navbar-brand navbar-link">海绵城市监测系统</a>
-                    </div>
-                    <div class="navs-right col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                        <p class="navbar-text navbar-right">
-                            <span class="iconfont fonts">&#xe6de;</span>
-                            <span style="font-size:15px;padding-left: 10px">shenshuqin</span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
         <!--        nav结束-->
-        <p style="width:100%;height: 1px;background-color: #ccc"></p>
-        <div class="main container-fluid">
+<!--        <p style="width:100%;height: 1px;background-color: #ccc"></p>-->
+        <div class="main container-fluid" :styel="{minHeight:minHeight+'px'}">
 
             <div class="row">
                 <div class="col-md-6 raill-left">
@@ -85,6 +67,7 @@
                 timer1:'',
                 timer2:'',
                 timer3:'',
+                minHeight:'',
                 dateList1:[],
                 dateList2:[],
                 valueList1:[],
@@ -92,11 +75,20 @@
                 valueList3:[],
             }
         },
+        created(){
+            this.$emit('header', true);
+            this.$emit('footer', true);
+        },
         mounted() {
             // this.drawLine();
             this.getdata_pm2();
             this.getdata_pm1();
             this.getdata_pm10();
+            this.minHeight = document.documentElement.clientHeight - 230;
+            var this_ = this;
+            window.onresize = function () {
+                this_.minHeight = document.documentElement.clientHeight - 230
+            }
             // this.timer1 = setInterval(this.getdata_pm2, 3000);
             // this.timer2 = setInterval(this.getdata_pm1, 3000);
             // this.timer3 = setInterval(this.getdata_pm10, 3000);
@@ -296,9 +288,6 @@
             },
         },
         watch: {},
-        created() {
-
-        },
         beforeDestroy() {
             clearInterval(this.timer1);
             clearInterval(this.timer2);
@@ -313,6 +302,7 @@
     .main{
         max-width: 980px;
         margin: auto;
+        margin-top:50px;
         /*height: auto;*/
     }
     .main .raillflow-title{

@@ -15,6 +15,7 @@ import Sensor from './components/Admin/sensor.vue'
 import SensorData from './components/SensorData/sensordata.vue'
 import Detect from './components/Home/Detect.vue'
 import About from './components/About/about.vue'
+import Test from './components/About/test.vue'
 
 //  创建路由对象
 var router = new VueRouter({
@@ -34,6 +35,7 @@ var router = new VueRouter({
     {path:'/sensordata' , component:SensorData},
     {path:'/detect' , component:Detect},
     {path:'/about' , component:About},
+    {path:'/test' , component:Test},
   ]
 })
 

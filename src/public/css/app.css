@@ -128,7 +128,7 @@ body{
     font-size: 40px;
     color: #f9f9f9;
     font-family: '楷体';
-    margin-top:10%;
+    margin-top:7%;
     /*margin: 10px auto;*/
 }
 .login .login-wrap .avatar {
@@ -163,7 +163,7 @@ body {
 }
 .cloud{
     position: absolute;
-    top: 15px;
+    top: 10px;
     left: 0;
 }.cloud img:first-child{
      animation: cloud06 40s linear infinite alternate;

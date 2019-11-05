@@ -1,52 +1,5 @@
 <template>
     <div class="home">
-        <div id="navbar-top">
-        <nav class="navbar navbar-default navbar-static navbar-fixed-top" role="navigation" data-spy="affix">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">切换菜单</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand homeback" href="#">
-<!--                        <img class="logo" alt="Brand" src="../../public/images/logo.png">-->
-<!--                        <span href="#" class="">海绵城市监测系统</span>-->
-                    </a>
-                </div>
-                <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li >
-                            <router-link class="" to="/home">
-                            <span>首页</span>
-                            </router-link>
-                        </li>
-                        <li class="dropdown">
-                            <router-link class="" to="/about">
-                                <span class="dropdown-toggle scrollTo">关于我们</span>
-                            </router-link>
-                        </li>
-                        <li class="dropdown">
-                            <router-link class="" to="/detect">
-                            <span class="dropdown-toggle scrollTo">监测中心</span>
-                            </router-link>
-                        </li>
-                        <li>
-                            <router-link class="" to="/map">
-                            <span  >基地展示</span>
-                            </router-link>
-                        </li>
-                        <li>
-                            <router-link class="" to="/admin">
-                            <span  role="button" >后台管理</span>
-                            </router-link>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        </div>
     <div class="main">
         <el-carousel indicator-position="outside" height="400px">
             <el-carousel-item >
@@ -136,26 +89,7 @@
         <!--  sec3 end-->
         </div>
 <!--        main end-->
-        <div class="footer container-fluid">
-            <div class="row">
-                <div class="col-md-4 footer_box">
-                    <router-link class="" to="/home"><p>首页</p></router-link>
-                    <router-link class="" to="/about"><p>关于我们</p></router-link>
-                </div>
-                <div class="col-md-4 footer_box">
-                    <router-link class="" to="/detect"><p>监测中心</p></router-link>
-                    <router-link class="" to="/map"><p>基地展示</p></router-link>
-                </div>
-                <div class="col-md-4 footer_box">
-                    <p>联系方式</p>
-                    <p>电话:18229695956</p>
-                    <p>邮箱:2934103556@qq.com</p>
-                    <p>地址:湖南省常德市武陵区湖南文理学院创客空间</p>
-                </div>
-                <p class="text-center"> Copyright © 2019</p>
-            </div>
-        </div>
-<!--        footer end-->
+
     </div>
 </template>
 <script>
@@ -166,6 +100,10 @@
 
             }
         },
+        created:function () {
+            this.$emit('header', true);
+            this.$emit('footer', true);
+        },
         mounted(){
             // this.animate();
         },
@@ -175,6 +113,16 @@
     }
     </script>
 <style scoped>
+    .home{
+        display: flex;
+        flex-direction: column;
+    }
+    .main{
+        /*display: flex;*/
+        flex: 1;
+        height: auto;
+        /*overflow-y: auto;*/
+    }
     .el-carousel__item h3 {
         color: #fff;
         font-size: 35px;

@@ -1,25 +1,25 @@
 <template>
     <div>
-        <div class="navs">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="navs-left col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                        <router-link class="navbar-brand" to="/home" >
-                            <img class="logo" alt="Brand" src="../../public/images/logo.png">
-                        </router-link>
-                        <a href="#" class="navbar-brand navbar-link">海绵城市监测系统</a>
-                    </div>
-                    <div class="navs-right col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                        <p class="navbar-text navbar-right">
-                            <span class="iconfont fonts">&#xe6de;</span>
-                            <span style="font-size:15px;padding-left: 10px">{{msg}}</span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
+<!--        <div class="navs">-->
+<!--            <div class="container-fluid">-->
+<!--                <div class="row">-->
+<!--                    <div class="navs-left col-xs-8 col-sm-8 col-md-8 col-lg-8">-->
+<!--                        <router-link class="navbar-brand" to="/home" >-->
+<!--                            <img class="logo" alt="Brand" src="../../public/images/logo.png">-->
+<!--                        </router-link>-->
+<!--                        <a href="#" class="navbar-brand navbar-link">海绵城市监测系统</a>-->
+<!--                    </div>-->
+<!--                    <div class="navs-right col-xs-4 col-sm-4 col-md-4 col-lg-4">-->
+<!--                        <p class="navbar-text navbar-right">-->
+<!--                            <span class="iconfont fonts">&#xe6de;</span>-->
+<!--                            <span style="font-size:15px;padding-left: 10px">{{msg}}</span>-->
+<!--                        </p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
 <!--        nav end-->
-        <el-container>
+        <el-container :style="{minHeight:minHeight+'px'}">
             <el-header>
                 <p>基站一传感器列表</p>
             </el-header>
@@ -53,6 +53,8 @@
             return{
                 data:[],
                 sid:'',
+                minHeight:'',
+                sensorID:'',
                 my_header: {
                     'Content-Type': 'application/json',
                     'Authorization': "Basic " + getCookie('token')
@@ -61,21 +63,31 @@
 
             }
         },
+        created: function(this_=this) {
+            this.$emit('header', true);
+            this.$emit('footer', true);
+            var sensorID = this.$route.query.sensor_id;
+            // var sensorID = 1;
+        },
         mounted(){
             this.getdata();
+            this.minHeight = document.documentElement.clientHeight - 230;
+            var this_ = this;
+            window.onresize = function () {
+                this_.minHeight = document.documentElement.clientHeight - 230
+            }
             // this. getLocalTime(nS)
         },
         //作用域1
         methods:{
-            // getLocalTime(nS) {
-            //     return new Date(parseInt(nS) * 1000).toLocaleString().replace(/年|月/g, "-").replace(/日/g, " ");
-            // },
+
           //作用域1
             getdata(this_ = this){//作用域1
                 //作用域2 this undefined
                 axios({
                     // url: ' http://localhost:3001/rail',
-                    url: 'http://47.106.83.135:80/sponge/sensors/list',
+                    // url: "http://47.106.83.135:80/sponge/detail_data/sensor?sensor_id=1",
+                    url:`http://47.106.83.135:80/sponge/detail_data/sensor?sensor_id=${this.sensorID}`,
                     method: 'get',
                     type: 'json',
                     headers: this.my_header
@@ -88,16 +100,20 @@
                         // var update_time = new_data[i].update_time;
                         new_data[i].update_time = timestampToTime(new_data[i].update_time)
                     }
-                    console.log(new_data);
+                    // console.log(new_data);
                     console.log(this_.data);
                     this_.$set(this_, "data", new_data);//将this_.data的索引为0的元素设置成data 原型 Vue.$set(object, key/index, value/object)
-                    console.log(this_.data);
+                    // console.log(this_.data);
                 });
             },
         }
     }
     </script>
 <style scoped>
+    .el-container{
+        margin-top:50px;
+        /*height: 500px;*/
+    }
     .el-header{
         background-color: #B3C0D1;
         color: #333;

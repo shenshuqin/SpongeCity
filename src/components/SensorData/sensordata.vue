@@ -1,25 +1,25 @@
 <template>
     <div>
-        <div class="navs">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="navs-left col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                        <router-link class="navbar-brand" to="/home" >
-                            <img class="logo" alt="Brand" src="../../public/images/logo.png">
-                        </router-link>
-                        <a href="#" class="navbar-brand navbar-link">海绵城市监测系统</a>
-                    </div>
-                    <div class="navs-right col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                        <p class="navbar-text navbar-right">
-                            <span class="iconfont fonts">&#xe6de;</span>
-                            <span style="font-size:15px;padding-left: 10px">{{msg}}</span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
+<!--        <div class="navs">-->
+<!--            <div class="container-fluid">-->
+<!--                <div class="row">-->
+<!--                    <div class="navs-left col-xs-8 col-sm-8 col-md-8 col-lg-8">-->
+<!--                        <router-link class="navbar-brand" to="/home" >-->
+<!--                            <img class="logo" alt="Brand" src="../../public/images/logo.png">-->
+<!--                        </router-link>-->
+<!--                        <a href="#" class="navbar-brand navbar-link">海绵城市监测系统</a>-->
+<!--                    </div>-->
+<!--                    <div class="navs-right col-xs-4 col-sm-4 col-md-4 col-lg-4">-->
+<!--                        <p class="navbar-text navbar-right">-->
+<!--                            <span class="iconfont fonts">&#xe6de;</span>-->
+<!--                            <span style="font-size:15px;padding-left: 10px">{{msg}}</span>-->
+<!--                        </p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
         <!--        nav end-->
-        <div class="main">
+        <div class="main" :style="{minHeight:minHeight+'px'}">
             <div class="title">{{type}}</div>
         <el-table
                 :data="tableData"
@@ -55,6 +55,7 @@
         data(){
             return{
                 type:'',
+                minHeight:'',
                 my_header: {
                     'Content-Type': 'application/json',
                     'Authorization': "Basic " + getCookie('token')
@@ -64,6 +65,8 @@
             }
         },
         created: function(this_=this) {
+            this.$emit('header', true);
+            this.$emit('footer', false);
             var newsID=this.$route.query.id;
             this_.type= this.$route.query.name;
 
@@ -97,6 +100,11 @@
         },
         mounted(){
             // this.getdata()
+            this.minHeight  = document.documentElement.clientHeight-230;
+            var this_ = this;
+            window.onresize = function(){
+                this_.minHeight = document.documentElement.clientHeight-230
+            }
         },
         //作用域1
         methods:{

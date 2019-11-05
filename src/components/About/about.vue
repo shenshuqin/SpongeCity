@@ -57,26 +57,6 @@
                 <p class="cont_main">海绵城市建设专注于海绵城市设计、产品制造与施工建设的创新型科技企业。在雨水渗透领域，开发了专利产品透水海绵砖、透水混凝土路面、雨水渗透管、雨水渗透井、渗透沟等透水产品，全面解决雨水渗透排放问题，改善城市积水、洪涝等现象。在雨水收集领域，公司具有领先的专利产品和技术优势，设计了国内领先的自流型雨水弃流过滤装置、雨水自动过滤器、雨水控制器、可清洗雨水蓄水模块等产品。在黑臭水体治理领域，自主研发的河道净化设备已获得多项专利。公司拥有美丽乡村配套设施，污水处理工艺--土壤法（独有专利技术）。在废气处理领域，具有雄厚的技术实力和自主研发设备。公司注重品质，不断完善自身，努力为客户奉献更好的产品和服务，携手共建海绵城市。</p>
             </div>
         </div>
-        <div class="footer container-fluid">
-            <div class="row">
-                <div class="col-md-4 footer_box">
-                    <router-link class="" to="/home"><p>首页</p></router-link>
-                    <router-link class="" to="/about"><p>关于我们</p></router-link>
-                </div>
-                <div class="col-md-4 footer_box">
-                    <router-link class="" to="/detect"><p>监测中心</p></router-link>
-                    <router-link class="" to="/map"><p>基地展示</p></router-link>
-                </div>
-                <div class="col-md-4 footer_box">
-                    <p>联系方式</p>
-                    <p>电话:18229695956</p>
-                    <p>邮箱:2934103556@qq.com</p>
-                    <p>地址:湖南省常德市武陵区湖南文理学院创客空间</p>
-                </div>
-                <p class="text-center"> Copyright © 2019</p>
-            </div>
-        </div>
-        <!--        footer end-->
     </div>
 </template>
 <script>
@@ -123,5 +103,9 @@
         line-height: 30px;
         margin:10px auto;
         text-indent:25px;
+    }
+    .section1{
+        width:100%;
+        height: 360px;
     }
 </style>

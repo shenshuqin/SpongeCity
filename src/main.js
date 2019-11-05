@@ -36,8 +36,12 @@ import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 Vue.use(ElementUI);
 // 导入 app 组件
+//引入mock.js
+require('./mock.js');
 import app from './App.vue'
+import  VueResource  from 'vue-resource'
 
+Vue.use(VueResource)
 // 导入 自定义路由模块
 import router from './router.js'
 Vue.prototype.$md5 = md5;

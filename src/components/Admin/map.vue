@@ -1,58 +1,11 @@
 <template>
-<div>
-    <div id="navbar-top">
-        <nav class="navbar navbar-default navbar-static navbar-fixed-top" role="navigation" data-spy="affix">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">切换菜单</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand homeback" href="#">
-                    </a>
-                </div>
-                <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li >
-                            <router-link class="" to="/home">
-                                <span >首页</span>
-                            </router-link>
-                        </li>
-                        <li class="dropdown">
-                            <router-link class="" to="/about">
-                                <span class="dropdown-toggle scrollTo">关于我们</span>
-                            </router-link>
-                        </li>
-                        <li class="dropdown">
-                            <router-link class="" to="/detect">
-                                <span class="dropdown-toggle scrollTo">监测中心</span>
-                            </router-link>
-                        </li>
-                        <li>
-                            <router-link class="" to="/map">
-                                <a href="" target="_blank">基地展示</a>
-                            </router-link>
-                        </li>
-                        <li>
-                            <router-link class="" to="/admin">
-                                <span class="btnclick" role="button" >后台管理</span>
-                            </router-link>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </div>
-<!--    nav end-->
-
+<div class="home">
     <el-container>
         <el-aside width="300px">
             <div class="nid_title">
                 基站列表
             </div>
-            <el-collapse v-model="activeNames" @change="handleChange">
+            <el-collapse  v-model="activeNames" @change="handleChange">
                 <el-collapse-item v-for="item in data" :key="item.id" :title="'基站'+item.nid" :name="item.nid">
                     <div>地点:{{item.name}}</div>
                     <div>经纬度:{{item.location}}</div>
@@ -78,7 +31,7 @@
                 </div>
         </el-main>
     </el-container>
-    <div class="footer container-fluid">
+    <div class="footer container-fluid" id="foo">
         <div class="row">
             <div class="col-md-4 footer_box">
                 <router-link class="" to="/home"><p>首页</p></router-link>
@@ -97,7 +50,6 @@
             <p class="text-center"> Copyright © 2019</p>
         </div>
     </div>
-    <!--        footer end-->
 </div>
 </template>
 <script>
@@ -108,12 +60,20 @@
             return {
                 coordinates:[],
                 data: [],
+                activeNames: ['1']
             }
+        },
+        created(){
+            // this.$emit('header', false);
+            this.$emit('footer', false);
         },
         mounted(){
             this.getdata();
         },
         methods: {
+            handleChange(val) {
+                console.log(val);
+            },
             infoWindowClose (index) {
                 this.coordinates[index].info_wind_show = false;
                 // console.log(this.coordinates[index].info_wind_show);
@@ -145,14 +105,15 @@
                         [coordinate.lng, coordinate.lat,coordinate.nidname] = [Number(lnglat[0]), Number(lnglat[1]),nidname];
                         this_.coordinates.push(coordinate);
                     });
+                    console.log( this_.coordinates)
                 });
             },
             jump(index){
                 let this_ = this;
-                this_.$router.push({
+                this.$router.push({
                     path:"/sensor",
                         query:{
-                           nidname:this_.coordinates[index].nidname,
+                           sensor_id:this_.coordinates[index].nidname,
 
                     }
 
@@ -166,8 +127,26 @@
     #navbar-top{
         width:100%;
         height:60px;
-        /*border:1px solid red;*/
     }
+    .home{
+        /*width:100%;*/
+        /*height: 500px;*/
+        /*position:relative;*/
+    }
+    .el-container{
+        width:100%;
+        /*height: 420px;*/
+        margin-bottom: 120px;
+        margin-top: 80px;
+
+        /*margin-bottom:100px;*/
+    }
+    /*#foo{*/
+    /*    width:100%;*/
+    /*    position:absolute; bottom:0px; left:0px;*/
+    /*    !*border:1px solid red;*!*/
+    /*    height: auto;*/
+    /*}*/
     .maps{
         width:100%;
         /*margin-top: 80px;*/
