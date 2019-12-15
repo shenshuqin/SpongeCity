@@ -48,7 +48,7 @@
             </nav>
         </div>
         <div class="main">
-            <img src="../../public/images/main.jpg">
+            <img src="http://hlimgserver.oss-cn-shanghai.aliyuncs.com/img/main.jpg">
         </div>
         <div class="container-fluid sec clearfix">
             <div class="row">
@@ -153,7 +153,7 @@
 </script>
 <style scoped>
     /*.box-main:hover{*/
-    /*    background-color: #ccc;*/
+    /*    background-color: #666666;*/
     /*}*/
     .houtai{
         border:none;

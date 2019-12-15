@@ -1,24 +1,5 @@
 <template>
     <div>
-<!--        <div class="navs">-->
-<!--            <div class="container-fluid">-->
-<!--                <div class="row">-->
-<!--                    <div class="navs-left col-xs-8 col-sm-8 col-md-8 col-lg-8">-->
-<!--                        <router-link class="navbar-brand" to="/home" >-->
-<!--                            <img class="logo" alt="Brand" src="../../public/images/logo.png">-->
-<!--                        </router-link>-->
-<!--                        <a href="#" class="navbar-brand navbar-link">海绵城市监测系统</a>-->
-<!--                    </div>-->
-<!--                    <div class="navs-right col-xs-4 col-sm-4 col-md-4 col-lg-4">-->
-<!--                        <p class="navbar-text navbar-right">-->
-<!--                            <span class="iconfont fonts">&#xe6de;</span>-->
-<!--                            <span style="font-size:15px;padding-left: 10px">{{msg}}</span>-->
-<!--                        </p>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        nav end-->
         <el-container :style="{minHeight:minHeight+'px'}">
             <el-header>
                 <p>基站一传感器列表</p>
@@ -32,7 +13,7 @@
                         <p>编号{{item.sid}}</p>
                         <p>{{item.sname}}</p>
                         <p>{{item.type}}</p>
-                        <p>{{item.location}}</p>
+<!--                        <p>{{item.location}}</p>-->
                         <div class="data">{{item.data}}</div>
                         <div class="time_font">{{item.update_time}}</div>
                     </el-card>
@@ -49,28 +30,29 @@
     import {getCookie} from '../../public/js/cookie.js';
     import {timestampToTime} from '../../public/js/time.js';
     export  default {
-        data(){
-            return{
-                data:[],
-                sid:'',
-                minHeight:'',
-                sensorID:'',
+        data() {
+            return {
+                data: [],
+                sid: '',
+                minHeight: '',
+                timer: '',
+                sensorID: null,
                 my_header: {
                     'Content-Type': 'application/json',
                     'Authorization': "Basic " + getCookie('token')
                 },
-                msg:getCookie("username"),
+                msg: getCookie("username"),
 
             }
         },
-        created: function(this_=this) {
+        created: function (this_ = this) {
             this.$emit('header', true);
             this.$emit('footer', true);
-            var sensorID = this.$route.query.sensor_id;
-            // var sensorID = 1;
+            this.sensorID = this.$route.query.nid;
         },
-        mounted(){
+        mounted() {
             this.getdata();
+            this.timer = setInterval(this.getdata, 10000);
             this.minHeight = document.documentElement.clientHeight - 230;
             var this_ = this;
             window.onresize = function () {
@@ -79,34 +61,37 @@
             // this. getLocalTime(nS)
         },
         //作用域1
-        methods:{
+        methods: {
 
-          //作用域1
-            getdata(this_ = this){//作用域1
+            //作用域1
+            getdata(this_ = this) {//作用域1
                 //作用域2 this undefined
                 axios({
                     // url: ' http://localhost:3001/rail',
-                    // url: "http://47.106.83.135:80/sponge/detail_data/sensor?sensor_id=1",
-                    url:`http://47.106.83.135:80/sponge/detail_data/sensor?sensor_id=${this.sensorID}`,
+                    // url: "http://47.106.83.135:8000/sponge/sensors/list?nid=2",
+                    url: `http://47.106.83.135:8000/sponge/sensors/list?nid=${this.sensorID}`,
                     method: 'get',
                     type: 'json',
                     headers: this.my_header
 
                 }).then(function (res) {
-                    // console.log(res.data.data);
+                    console.log("nid" + res);
                     var new_data = res.data.data;
-                    for(var i=0;i<new_data.length;i++){
+                    for (var i = 0; i < new_data.length; i++) {
                         ////??????
                         // var update_time = new_data[i].update_time;
                         new_data[i].update_time = timestampToTime(new_data[i].update_time)
                     }
-                    // console.log(new_data);
+                    console.log(new_data);
                     console.log(this_.data);
                     this_.$set(this_, "data", new_data);//将this_.data的索引为0的元素设置成data 原型 Vue.$set(object, key/index, value/object)
                     // console.log(this_.data);
                 });
             },
-        }
+        },
+        beforeDestroy() {
+            clearInterval(this.timer);
+        },
     }
     </script>
 <style scoped>
@@ -169,8 +154,8 @@
         right:6px;
     }
     .box-card .data{
-        font-size: 20px;
-        color:yellowgreen;
+        font-size: 28px;
+        color:#5FB878;
     }
     .section1{
         width:100%;

@@ -20,7 +20,10 @@
             </div>
             <div class="form-group">
                 <label for="password" class="sr-only">密码</label>
-                <input v-model.trim="password" id="password" name="password" type="password" class="form-control" placeholder="密码">
+                <input v-model.trim="password" id="password" name="password" type="password" class="form-control" placeholder="密码" @keyup.enter="login">
+            </div>
+            <div class="form-group">
+                <el-checkbox v-model="checked">记住密码</el-checkbox>
             </div>
                 <button class="btn btn-primary btn-block" @click="login">登 录</button>
         </div>
@@ -28,6 +31,7 @@
 
 </template>
 <script>
+    const Base64 = require('js-base64').Base64;
     import {setCookie,getCookie} from '../../public/js/cookie.js'
     import axios from 'axios'
     //跨域请求???
@@ -38,12 +42,25 @@
            // 使用return包裹后数据中变量只在当前组件中生效，不会影响其他组件。
             return {
                 username:'',
-                password:''
+                password:'',
+                checked: true
             }
         },
         created:function () {
             this.$emit('header', false);
             this.$emit('footer', false);
+            // 在页面加载时从cookie获取登录信息
+            let username = getCookie("username");
+            let password = Base64.decode(getCookie("password"));
+            // let password = getCookie("password");
+            // console.log(getCookie("password"));
+            let checked = getCookie("checked");
+            // 如果存在赋值给表单，并且将记住密码勾选
+            if (username) {
+                this.username = username;
+                this.password = password;
+                this.checked = true;
+            }
         },
         mounted() {
 
@@ -57,7 +74,7 @@
                     "password":md5Pswd
                 };
                 axios({
-                    url: 'http://47.106.83.135:80/sponge/user/login',
+                    url: 'http://47.106.83.135:8000/sponge/user/login',
                     method:'post',
                     dataType: 'json',
                     //发送格式为json
@@ -67,15 +84,16 @@
                          'Content-Type': 'application/json'
                        }
                 }).then(res => {
-                    console.log("00");
+                    // console.log("00");
                     if(res.data.status === 1){
-                        console.log(res)
+                        // console.log(res)
                         // console.log(_this.username);
                         // console.log(res.data.data[0].token);
                         setCookie("token",res.data.data[0].token);
-                        setCookie("username",_this.username);
+                        // setCookie("username",_this.username);
                         $(".msg").text("登录成功!");
                         _this.$router.push({path:'/home'})
+                        this.setUserInfo();
                     }else{
                         console.log("失败");
                         $("#dmsg").css("display","block").addClass("shake animated");
@@ -85,7 +103,24 @@
                 }).catch(err => {
                     console.log(err);
                 });
-            }
+            },
+            //存储用户信息
+            setUserInfo: function() {
+                // 判断用户是否勾选记住密码，如果勾选，向cookie中储存登录信息，
+                // 如果没有勾选，储存的信息为空
+                if (this.checked) {
+                    console.log(this.password);
+                    setCookie("username", this.username, 7);
+                    // base64加密密码
+                    let password = Base64.encode(this.password);
+                    setCookie("password",password,7);
+                    // console.log(password);
+                    // setCookie("password",this.password,7)
+                } else {
+                    setCookie("username", "");
+                    setCookie("password", "");
+                }
+            },
         }
     }
     </script>

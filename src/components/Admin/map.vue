@@ -1,5 +1,5 @@
 <template>
-<div class="home">
+<div class="home" :style="{minHeight:minHeight+'px'}">
     <el-container>
         <el-aside width="300px">
             <div class="nid_title">
@@ -15,7 +15,7 @@
         <el-main>
                 <div class="maps">
                     <div class="maps_title">基站位置</div>
-                <baidu-map class="map" :center="{lng: 111.677854, lat: 29.054359}" :zoom="17">
+                <baidu-map class="map" :center="{lng: 111.678984, lat: 29.056653}" :zoom="17">
                 <bm-navigation anchor="BMAP_ANCHOR_TOP_RIGHT"></bm-navigation>
                 <div v-for="(item,index) in coordinates" :key="item.id" >
                     <bm-marker :position="{lng:item.lng, lat:item.lat}" :dragging="true" animation="BMAP_ANIMATION_BOUNCE" @click="infoWindowOpen(index)">
@@ -31,25 +31,6 @@
                 </div>
         </el-main>
     </el-container>
-    <div class="footer container-fluid" id="foo">
-        <div class="row">
-            <div class="col-md-4 footer_box">
-                <router-link class="" to="/home"><p>首页</p></router-link>
-                <router-link class="" to="/about"><p>关于我们</p></router-link>
-            </div>
-            <div class="col-md-4 footer_box">
-                <router-link class="" to="/detect"><p>监测中心</p></router-link>
-                <router-link class="" to="/map"><p>基地展示</p></router-link>
-            </div>
-            <div class="col-md-4 footer_box">
-                <p>联系方式</p>
-                <p>电话:18229695956</p>
-                <p>邮箱:2934103556@qq.com</p>
-                <p>地址:湖南省常德市武陵区湖南文理学院创客空间</p>
-            </div>
-            <p class="text-center"> Copyright © 2019</p>
-        </div>
-    </div>
 </div>
 </template>
 <script>
@@ -65,10 +46,15 @@
         },
         created(){
             // this.$emit('header', false);
-            this.$emit('footer', false);
+            this.$emit('footer', true);
         },
         mounted(){
             this.getdata();
+            this.minHeight  = document.documentElement.clientHeight-230;
+            var this_ = this;
+            window.onresize = function(){
+                this_.minHeight = document.documentElement.clientHeight-230
+            }
         },
         methods: {
             handleChange(val) {
@@ -88,7 +74,7 @@
                 //作用域2 this undefined
                 axios({
                     // url: ' http://localhost:3001/rail',
-                    url: 'http://47.106.83.135:80/sponge/nodes/list',
+                    url: 'http://47.106.83.135:8000/sponge/nodes/list',
                     method: 'get',
                     type: 'json',
                     headers: this.my_header
@@ -113,7 +99,7 @@
                 this.$router.push({
                     path:"/sensor",
                         query:{
-                           sensor_id:this_.coordinates[index].nidname,
+                           nid:this_.coordinates[index].nidname,
 
                     }
 

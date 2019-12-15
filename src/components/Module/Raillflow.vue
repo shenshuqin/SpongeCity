@@ -2,7 +2,7 @@
     <div class="raillflow">
 <!--        nav结束-->
 <!--        <p style="width:100%;height: 1px;background-color: #ccc"></p>-->
-        <div class="main container-fluid" :styel="{minHeight:minHeight+'px'}">
+        <div class="main container-fluid" :style="{minHeight:minHeight+'px'}">
 
             <div class="row">
                 <div class="col-md-6 raill-left">
@@ -45,11 +45,7 @@
                     <button type="button" @click="send_data" class="btn btn-info sub_btn btn-block">提交</button>
                 </div>
                 <div class="col-md-6 raill-right">
-<!--               <div :class="className" :id="id" :style="{height:height,width:width}" ref="myEchart"></div>-->
-<!--                    <x-chart :id="id" :option="option"></x-chart>-->
-
                     <div id="chart_example" style="width:560px;height:500px;">
-
                     </div>
             </div>
         </div>
@@ -83,7 +79,7 @@
             this.$emit('footer', true);
         },
         mounted() {
-            this.drawLine();
+            // this.drawLine();
             this.get_address();
             this.getdata_flow();
             this.getdata_rain();
@@ -134,7 +130,7 @@
             request_get(addr_rank, addr_id) {
                 axios({
                     // url: ' http://localhost:3001/rail',
-                    url: 'http://47.106.83.135:80/sponge/data/sensor',
+                    url: 'http://47.106.83.135:8000/sponge/data/sensor',
                     method: 'get',
                     type: 'json',
                     headers: this.my_header
@@ -151,10 +147,10 @@
                 var address1 = $("#sel1 option:selected").text();
                 var address2 = $("#sel2 option:selected").text();
                 var address3 = $("#sel3 option:selected").text();
-                // var url=' http://47.106.83.135:80/sponge/data/sensor?Interval='+interval+'&Address='+address1/address2/address3+'&start='+time_start+'&end='+time_end;
-                var url=`http://47.106.83.135:80/sponge/data/sensor?Interval=${interval}&Address=${address1}/${address2}/${address3}&start=${time_start}&end=${time_end}`;
+                // var url=' http://47.106.83.135:8000/sponge/data/sensor?Interval='+interval+'&Address='+address1/address2/address3+'&start='+time_start+'&end='+time_end;
+                var url=`http://47.106.83.135:8000/sponge/data/sensor?Interval=${interval}&Address=${address1}/${address2}/${address3}&start=${time_start}&end=${time_end}`;
                 axios({
-                    url: 'http://47.106.83.135:80/sponge/data/sensor',
+                    url: 'http://47.106.83.135:8000/sponge/data/sensor',
                     method: 'get',
                     type: 'json',
                     headers: this.my_header
@@ -165,15 +161,6 @@
             drawLine(this_ = this) {
                 let myChart = echarts.init(document.getElementById('chart_example'));
                 let option = {
-                    // noDataLoadingOption: {
-                    //     text: '暂无数据',
-                    //     effect: 'bubble',
-                    //     effectOption: {
-                    //         effect: {
-                    //             n: 0
-                    //         }
-                    //     }
-                    // },
                     title : {
                         text: '蒸发量和降水量',
                         subtext: '湖南文理学院'
@@ -250,13 +237,13 @@
             },
             getdata_flow(this_ = this) {
                 axios({
-                    // url: 'http://47.106.83.135:80/sponge/avg_data/sensor?sensor_id=9',
-                    url: 'http://47.106.83.135:80/sponge/avg_data/sensor?sensor_id=9',
+                    // url: 'http://47.106.83.135:8000/sponge/avg_data/sensor?sensor_id=9',
+                    url: 'http://47.106.83.135:8000/sponge/avg_data/sensor?sensor_id=9',
                     method: 'get',
                     type: 'json',
                     headers: this_.my_header
                 }).then(function (res) {
-                    console.log(res);
+                    // console.log(res);
                     var data = res.data.data;
                     var len = data.length;
                     var timearr = [];
@@ -267,8 +254,9 @@
                         flowarr.push(data[i].value);
                         // console.log(data[i].datetime)
                     }
-                    if (len !== 0) {
+                    if (len) {
                         // 初始化图表
+                        console.log("画图")
                         this_.drawLine()
                     } else {
                         // 以下是暂无数据显示样式(样式根据本身需求进行调整)
@@ -284,13 +272,13 @@
             },
             getdata_rain(this_ = this) {
                 axios({
-                    // url: 'http://47.106.83.135:80/sponge/avg_data/sensor?sensor_id=8',
-                    url: 'http://47.106.83.135:80/sponge/avg_data/sensor?sensor_id=8',
+                    // url: 'http://47.106.83.135:8000/sponge/avg_data/sensor?sensor_id=8',
+                    url: 'http://47.106.83.135:8000/sponge/avg_data/sensor?sensor_id=8',
                     method: 'get',
                     type: 'json',
                     headers: this_.my_header
                 }).then(function (res) {
-                    console.log(res);
+                    // console.log(res);
                     var data = res.data.data;
                     var len = data.length;
                     var timearr = [];
@@ -302,7 +290,7 @@
                     }
                     this_.xAxix_data = timearr;
                     this_.series_jdata = rainarr;
-                    if (len !== 0) {
+                    if (len) {
                         // 初始化图表
                         this_.drawLine()
                     } else {
@@ -329,7 +317,7 @@
     .main{
         max-width: 980px;
         margin: auto;
-        margin-top:50px;
+        margin-top:8%;
     }
     .main .raillflow-title{
         text-indent: 9px;
@@ -343,10 +331,10 @@
     .raill-left{
         margin-top: 8px;
         /*border:1px solid #ccc;*/
-        /*border:1px solid red;*/
+        /* border:1px solid red; */
     }
     .raill-right{
-        /*border:1px solid red;*/
+        /* border:1px solid red; */
     }
     .form-group{
         width:68%;

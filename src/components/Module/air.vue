@@ -1,25 +1,5 @@
 <template>
     <div class="waterlevel">
-<!--        <div class="navs">-->
-<!--            <div class="container-fluid">-->
-<!--                <div class="row">-->
-<!--                    <div class="navs-left col-xs-8 col-sm-8 col-md-8 col-lg-8">-->
-<!--                        <router-link class="navbar-brand" to="/home" >-->
-<!--                            <img class="logo" alt="Brand" src="../../public/images/logo.png">-->
-<!--                        </router-link>-->
-<!--                        <a href="#" class="navbar-brand navbar-link">海绵城市监测系统</a>-->
-<!--                    </div>-->
-<!--                    <div class="navs-right col-xs-4 col-sm-4 col-md-4 col-lg-4">-->
-<!--                        <p class="navbar-text navbar-right">-->
-<!--                            <span class="iconfont fonts">&#xe6de;</span>-->
-<!--                            <span style="font-size:15px;padding-left: 10px">shenshuqin</span>-->
-<!--                        </p>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-        <!--        nav结束-->
-<!--        <p style="width:100%;height: 1px;background-color: #ccc"></p>-->
         <div class="main container-fluid " :style="{minHeight:minHeight+'px'}">
 
             <div class="row">
@@ -206,8 +186,8 @@
             },
             getdata_temp(this_ = this) {
                 axios({
-                    // url: 'http://47.106.83.135:80/sponge/data/sensor?sensor_id=1',
-                    url: 'http://47.106.83.135:80/sponge/avg_data/sensor?sensor_id=1',
+                    // url: 'http://47.106.83.135:8000/sponge/data/sensor?sensor_id=1',
+                    url: 'http://47.106.83.135:8000/sponge/avg_data/sensor?sensor_id=1',
                     method: 'get',
                     type: 'json',
                     headers: this_.my_header
@@ -240,8 +220,8 @@
             },
             getdata_hum(this_ = this) {
                 axios({
-                    // url: 'http://47.106.83.135:80/sponge/data/sensor?sensor_id=2',
-                    url: 'http://47.106.83.135:80/sponge/avg_data/sensor?sensor_id=2',
+                    // url: 'http://47.106.83.135:8000/sponge/data/sensor?sensor_id=2',
+                    url: 'http://47.106.83.135:8000/sponge/avg_data/sensor?sensor_id=2',
                     method: 'get',
                     type: 'json',
                     headers: this_.my_header
@@ -289,7 +269,7 @@
     .main{
         max-width: 980px;
         margin: auto;
-        margin-top:50px;
+        margin-top:8%;
         /*height: auto;*/
     }
     .main .raillflow-title{

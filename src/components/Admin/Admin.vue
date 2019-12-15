@@ -1,23 +1,5 @@
 <template>
     <div>
-<!--        <div class="navs">-->
-<!--            <div class="container-fluid">-->
-<!--                <div class="row">-->
-<!--                    <div class="navs-left col-xs-8 col-sm-8 col-md-8 col-lg-8">-->
-<!--                        <router-link class="navbar-brand" to="/home" >-->
-<!--                            <img class="logo" alt="Brand" src="../../public/images/logo.png">-->
-<!--                        </router-link>-->
-<!--                        <a href="#" class="navbar-brand navbar-link">海绵城市监测系统</a>-->
-<!--                    </div>-->
-<!--                    <div class="navs-right col-xs-4 col-sm-4 col-md-4 col-lg-4">-->
-<!--                        <p class="navbar-text navbar-right">-->
-<!--                            <span class="iconfont fonts">&#xe6de;</span>-->
-<!--                            <span style="font-size:15px;padding-left: 10px">{{msg}}</span>-->
-<!--                        </p>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
         <div class="container-fluid admin" :style="{minHeight:minHeight+'px'}">
             <div class="row">
                 <div class="col-md-8 mt20">
@@ -26,7 +8,7 @@
                 <div class="col-md-4  mt20 ">
                     <el-form :inline="true" :model="formInline" class="demo-form-inline">
                         <el-form-item >
-                            <el-input v-model="formInline.user" placeholder="基站名"></el-input>
+                            <el-input  v-focus @keydown.enter.native="searchEnterFun" v-model="formInline.user" placeholder="基站id"></el-input>
                         </el-form-item>
                         <el-form-item>
                             <el-button size="medium" type="primary" @click="onSubmit">查询</el-button>
@@ -35,7 +17,7 @@
                 </div>
                 <div class="main container-fluid">
 
-                    <el-card class="box-card " style="display: inline-block" v-for="(item,index) in data" :key="item.id">
+                    <el-card class="box-card " style="display: inline-block" v-for="(item,index) in data" :key="index">
                     <!-- item取值 data[0] data[1]...                        -->
                         <div class="box-header">
                             <span>基站{{item.nid}}</span>
@@ -43,7 +25,7 @@
                             <i @click="remove(item.nid)" style="margin-left: 20%" class="glyphicon glyphicon-trash"></i>
                             <i @click="dialogVisible2 = true;select(item.nid)" class="el-icon-edit-outline pull-right"></i>
                         </div>
-                        <router-link class="box-main" :to="{path:'/sensor',query:{sensor_id:item.nid}}">
+                        <router-link class="box-main" :to="{path:'/sensor',query:{nid:item.nid}}">
 <!--                        <div class="box-main" @click="jump(index)">-->
                         <div class="box-main" >
                             <p>设备ID:{{item.nid}}</p>
@@ -60,9 +42,6 @@
             </div>
         <el-dialog title="添加基站" :visible.sync="dialogVisible" width="36%">
             <el-form ref="form" :model="form" label-width="80px" id="form_body">
-                <el-form-item label="基站名">
-                    <el-input v-model="form.name"></el-input>
-                </el-form-item>
                 <el-form-item label="基站ID">
                     <el-input v-model="form.id"></el-input>
                 </el-form-item>
@@ -84,9 +63,6 @@
 
         <el-dialog title="修改基站" :visible.sync="dialogVisible2" width="36%">
             <el-form ref="form" :model="form2" label-width="80px" id="form_body2">
-                <el-form-item label="基站名">
-                    <el-input v-model="form2.name" ></el-input>
-                </el-form-item>
                 <el-form-item label="基站ID">
                     <el-input v-model="form2.id"></el-input>
                 </el-form-item>
@@ -110,6 +86,7 @@
 <script>
     import {getCookie} from '../../public/js/cookie.js';
     import axios from 'axios';
+    import Qs from 'qs';
     export  default {
         data(){
             return{
@@ -119,17 +96,16 @@
                 dialogVisible2:false,
                 my_header: {
                     'Content-Type': 'application/json',
-                    'Authorization': "Basic " + getCookie('token')
+                    'Authorization': "Basic " + getCookie('token'),
+                    'Access-Control-Allow-Origin': '*'
                 },
                 form: {
-                    name: '',
                     id:'',
                     address:'',
                     location:'',
                     status:''
                 },
                 form2: {
-                    name: '',
                     id:'',
                     address:'',
                     location:'',
@@ -143,45 +119,71 @@
                 }
             }
         },
-
+        directives: {
+            focus: {
+                // 指令的定义
+                inserted: function (el) {
+                el.querySelector('input').focus()
+                }
+            }
+        },
         created(){
             this.$emit('header', true);
             this.$emit('footer', true);
             //作用域1
-            this.getdata();//this指当前的vue实例的作用域 即作用域1
+            // this.onSubmit();
+
         },
         mounted(){
+            this.getdata();//this指当前的vue实例的作用域 即作用域1
+
             this.minHeight  = document.documentElement.clientHeight-230;
             var this_ = this;
             window.onresize = function(){
                 this_.minHeight = document.documentElement.clientHeight-230
             }
         },
+        computed: {
+            search() {
+                return this.formInline.user;
+            }
+        },
+        watch: {
+            search(newValue, oldValue) {
+                if (newValue === "") {
+                    //如果为空，执行方法获取list
+                    this.getdata();
+                }
+            }
+        },
         //作用域1
         methods:{
-            // jump(index){
-            //     let this_ = this;
-            //     this_.$router.push({
-            //         path:"/sensor",
-            //         query:{
-            //             id:this_.data[index].nid,
-            //
-            //         }
-            //
-            //     })
+
+            // searchEnterFun(e){
+            //    var keyCode = window.event ?e.keyCode:e.which;
+            //    if(keyCode == 13){
+            //        this.clear();
+            //    }
             // },
-            onSubmit(this_ = this) {
+
+            onSubmit() {
+                let this_ = this;
                 axios({
                     // url: ' http://localhost:3001/rail',
-                    url: 'http://47.106.83.135:80/sponge/nodes/list',
-                    method: 'post',
+                    url: 'http://47.106.83.135:8000/sponge/nodes/get?nid='+this.formInline.user,
+                    method: 'get',
                     type: 'json',
-                    data:{name:this_. formInline.user},
+                    // data:{name:this_. formInline.user},
                     headers: this.my_header
 
                 }).then(function (res) {
+                    var news_data = [];
+                      news_data.push(res.data.data);
+                    console.log(news_data);
+                    this_.$set(this_, "data", news_data);//将this_.data的索引为0的元素设置成data 原型 Vue.$set(object, key/index, value/object)
+                    console.log(this_.data.length);
                     // this_.getdata()
-                    window.location.reload();
+                    // window.location.reload();
                 });
             },
             //作用域1
@@ -190,7 +192,7 @@
                 axios({
                     // url: ' http://localhost:3001/rail',
                     // url: 'https://www.test.com',
-                    url: 'http://47.106.83.135:80/sponge/nodes/list',
+                    url: 'http://47.106.83.135:8000/sponge/nodes/list',
                     method: 'get',
                     type: 'json',
                     headers: this.my_header
@@ -198,20 +200,31 @@
                 }).then(function (res) {
                     // console.log(res)
                     var new_data = res.data.data;
+                    console.log(new_data)
                     this_.$set(this_, "data", new_data);//将this_.data的索引为0的元素设置成data 原型 Vue.$set(object, key/index, value/object)
-                    console.log(this_.data)
+                    console.log(this_.data.length)
                 });
             },
             add(this_ = this){
+                // console.log("000");
+                  let  data={
+                    "nid":this_.form.id,
+                    "address":this_.form.address,
+                    "location":this_.form.location,
+                     "status":this_.form.status,
+                      "secret_key":"abcdefghijklmnopqrstuvwxyz0123"
+                };
                 axios({
-                    // url: ' http://localhost:3001/rail',
-                    url: 'http://47.106.83.135:80/sponge/nodes/list',
+                    url: 'http://47.106.83.135:8000/sponge/nodes/add',
                     method: 'post',
                     type: 'json',
-                    data:{name:this_.from.name,id:this_.form.id,address:this_.form.address,location:this_.form.location,status:this_.form.status},
+                    // data:{nid:this_.form.id,address:this_.form.address,location:this_.form.location,status:this_.form.status},
+                   // data:Qs.stringify(data),
+                    data:data,
                     headers: this.my_header
 
                 }).then(function (res) {
+                    console.log("添加成功")
                 // 调用成功重新刷新页面
                 //     var res = res.body;
                 //     if(res.code == 200){
@@ -221,53 +234,64 @@
                 });
             },
             remove(nid){
-                var this_= this;
-                this.$http.post('/list',{
-                    params: {
-                        nid: nid
-                    }
-                }).then(res => {
-                    console.log(res)
-                    this_.data = res.data.data;
-                });
-                // axios({
-                //     // url: ' http://localhost:3001/rail',
-                //     url: '/list',
-                //     method: 'post',
-                //     type: 'json',
-                //     data:{nid:nid},
-                //     headers: this.my_header
-                //
-                // }).then(function (res) {
-                //     // console.log(res)
-                //     // window.location.reload();
+                // var this_= this;
+                // this.$http.post('/list',{
+                //     params: {
+                //         nid: nid
+                //     }
+                // }).then(res => {
+                //     console.log(res)
+                //     this_.data = res.data.data;
                 // });
-            },
-            selsect(id){
-                var this_ = this;
                 axios({
                     // url: ' http://localhost:3001/rail',
-                    url: 'http://47.106.83.135:80/sponge/nodes/list',
+                    url: '/list',
                     method: 'post',
                     type: 'json',
-                    data:{id:id},
+                    data:{nid:nid},
                     headers: this.my_header
 
                 }).then(function (res) {
-                    this_.form2.name = res.nid;
-                    this_.form2.id = res.nid;
-                    this_.form2.address = res.nid;
-                    this_.form2.location = res.nid;
-                    this_.form2.status = res.nid;
+                    // console.log(res)
+                    window.location.reload();
+                });
+            },
+            select(id){
+                console.log("0000")
+                var this_ = this;
+                axios({
+                    // url: ' http://localhost:3001/rail',
+                    url: 'http://47.106.83.135:8000/sponge/nodes/get?nid='+id,
+                    method: 'get',
+                    type: 'json',
+                    // data:{nid:id},
+                    headers: this.my_header
+
+                }).then(function (res) {
+                    console.log(res);
+                    var data = res.data.data;
+                    this_.form2.name = data.nid;
+                    this_.form2.id = data.nid;
+                    this_.form2.address = data.name;
+                    this_.form2.location = data.location;
+                    this_.form2.status = data.status;
                 });
             },
             modefy(this_ = this){
+                let data={
+                    "nid":this_.form2.id,
+                    "address":this_.form2.address,
+                    "location":this_.form2.location,
+                    "status":this_.form2.status,
+                    "secret_key":"abcdefghijklmnopqrstuvwxyz0123"
+                };
                 axios({
                     // url: ' http://localhost:3001/rail',
-                    url: 'http://47.106.83.135:80/sponge/nodes/list',
-                    method: 'post',
+                    url: 'http://47.106.83.135:8000/sponge/nodes/edit',
+                    method: 'put',
                     type: 'json',
-                    data:{name:this_.from.name,id:this_.form.id,address:this_.form.address,location:this_.form.location,status:this_.form.status},
+                    // data:{nid:this_.form2.id,address:this_.form2.address,location:this_.form2.location,status:this_.form2.status},
+                    data:data,
                     headers: this.my_header
 
                 }).then(function (res) {
@@ -295,7 +319,7 @@
         /*border:1px solid red;*/
     }
    .main .box-card{
-        width:33%;
+        width:32%;
         margin-right: 10px;
         height:200px;
        text-decoration: none;

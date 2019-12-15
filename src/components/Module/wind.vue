@@ -20,7 +20,7 @@
 <!--        </div>-->
         <!--        nav结束-->
 <!--        <p style="width:100%;height: 1px;background-color: #ccc"></p>-->
-        <div class="main container-fluid"  :styel="{minHeight:minHeight+'px'}">
+        <div class="main container-fluid"  :style="{minHeight:minHeight+'px'}">
 
             <div class="row">
                 <div class="col-md-6 raill-left">
@@ -185,8 +185,8 @@
             },
             getdata_speed(this_ = this) {
                 axios({
-                    url: 'http://47.106.83.135:80/sponge/avg_data/sensor?sensor_id=10',
-                    // url: 'http://47.106.83.135:80/sponge/data/sensor?sensor_id=10',
+                    url: 'http://47.106.83.135:8000/sponge/avg_data/sensor?sensor_id=10',
+                    // url: 'http://47.106.83.135:8000/sponge/data/sensor?sensor_id=10',
                     method: 'get',
                     type: 'json',
                     headers: this_.my_header
@@ -218,8 +218,8 @@
             },
             getdata_direction(this_ = this) {
                 axios({
-                    // url: 'http://47.106.83.135:80/sponge/data/sensor?sensor_id=11',
-                    url: 'http://47.106.83.135:80/sponge/avg_data/sensor?sensor_id=11',
+                    // url: 'http://47.106.83.135:8000/sponge/data/sensor?sensor_id=11',
+                    url: 'http://47.106.83.135:8000/sponge/avg_data/sensor?sensor_id=11',
                     method: 'get',
                     type: 'json',
                     headers: this_.my_header
@@ -269,7 +269,7 @@
     .main{
         max-width: 980px;
         margin: auto;
-        margin-top:50px;
+        margin-top:8%;
         /*height: auto;*/
     }
     .main .raillflow-title{

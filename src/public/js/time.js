@@ -5,7 +5,7 @@ function timestampToTime(timestamp) {
     var D = date.getDate() + ' ';
     var h = date.getHours() + ':';
     var m = date.getMinutes() + ':';
-    var s = date.getSeconds();
+    var s = date.getSeconds()<0?'0'+( date.getSeconds()): date.getSeconds();
     return Y+M+D+h+m+s;
 }
 export { //很关键

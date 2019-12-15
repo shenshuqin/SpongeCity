@@ -2,7 +2,7 @@
     <div class="waterflow">
         <!--        nav结束-->
 <!--        <p style="width:100%;height: 1px;background-color: #ccc"></p>-->
-        <div class="main container-fluid"  :styel="{minHeight:minHeight+'px'}">
+        <div class="main container-fluid" :style="{minHeight:minHeight+'px'}">
 
             <div class="row">
                 <div class="col-md-6 raill-left">
@@ -42,7 +42,7 @@
                         <input class="form-control" id="time_end" type="date" value="2015-09-24"/>
 
                     </div>
-                    <button type="button" @click="send_data" class="btn btn-info sub_btn btn-block">提交</button>
+                    <button type="button"  class="btn btn-info sub_btn btn-block">提交</button>
                 </div>
                 <div class="col-md-6 raill-right">
                     <!--               <div :class="className" :id="id" :style="{height:height,width:width}" ref="myEchart"></div>-->
@@ -173,8 +173,8 @@
             },
             getdata_temp(this_ = this) {
                 axios({
-                    // url: 'http://47.106.83.135:80/sponge/data/sensor?sensor_id=3',
-                    url: 'http://47.106.83.135:80/sponge/avg_data/sensor?sensor_id=3',
+                    // url: 'http://47.106.83.135:8000/sponge/data/sensor?sensor_id=3',
+                    url: 'http://47.106.83.135:8000/sponge/avg_data/sensor?sensor_id=3',
                     method: 'get',
                     type: 'json',
                     headers: this_.my_header
@@ -206,8 +206,8 @@
             },
             getdata_hum(this_ = this) {
                 axios({
-                    // url: 'http://47.106.83.135:80/sponge/data/sensor?sensor_id=4',
-                    url: 'http://47.106.83.135:80/sponge/avg_data/sensor?sensor_id=4',
+                    // url: 'http://47.106.83.135:8000/sponge/data/sensor?sensor_id=4',
+                    url: 'http://47.106.83.135:8000/sponge/avg_data/sensor?sensor_id=4',
                     method: 'get',
                     type: 'json',
                     headers: this_.my_header
@@ -252,7 +252,7 @@
     .main{
         max-width: 980px;
         margin: auto;
-        margin-top:50px;
+        margin-top:8%;
     }
     .main .raillflow-title{
         text-indent: 9px;

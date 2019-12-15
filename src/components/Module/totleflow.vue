@@ -2,7 +2,7 @@
     <div class="totelflow">
         <!--        nav结束-->
 <!--        <p style="width:100%;height: 1px;background-color: #ccc"></p>-->
-        <div class="main container-fluid"  :styel="{minHeight:minHeight+'px'}">
+        <div class="main container-fluid" :style="{minHeight:minHeight+'px'}">
 
             <div class="row">
                 <div class="col-md-6 raill-left">
@@ -64,16 +64,17 @@
     export default {
         data() {
             return {
-                timer1:'',
-                timer2:'',
-                timer3:'',
-                dateList1:[],
-                dateList2:[],
-                dateList3:[],
+                wordeee:{worde:"123"},
+                xDate:null,
+                dateLists:[],
                 valueList1:[],
                 valueList2:[],
                 valueList3:[],
-                minHeight:''
+                minHeight:'',
+                timer1:'',
+                timer2:'',
+                max:'',
+
             }
         },
         created(){
@@ -85,16 +86,20 @@
             this.getdata2();
             this.getdata3();
             this.minHeight = document.documentElement.clientHeight - 230;
-            var this_ = this;
-            window.onresize = function () {
+            window.onresize = function (this_ = this) {
                 this_.minHeight = document.documentElement.clientHeight - 230
             }
-            // this.timer1 = setInterval(this.getdata1, 3000);
-            // this.timer2 = setInterval(this.getdata2, 3000);
-            // this.timer3 = setInterval(this.getdata3, 3000);
         },
         methods: {
-
+            caculMax(dateLists){
+                for(let i=1,max=0; i<dateLists.length; i++){
+                    if(dateLists[max]>=dateLists[i]){
+                        [dateLists[max], dateLists[i]] = [dateLists[i], dateLists[max]];
+                    }
+                    max = i;
+                }
+                return dateLists;
+            },
             drawLine(this_ = this){
                 let myChart = echarts.init(document.getElementById('chart_example'));
                 let option = {
@@ -128,8 +133,9 @@
                         {
                             type : 'category',
                             boundaryGap : false,
-                            data :this_.dateList1
-                        }
+                            data :this_.xDate,
+                        },
+
                     ],
                     yAxis : [
                         {
@@ -142,21 +148,21 @@
                             type:'line',
                             stack: '总量',
                             areaStyle: {},
-                            data:this_.valueList1
+                            data:this.valueList1
                         },
                         {
                             name:'光照强度',
                             type:'line',
                             stack: '总量',
                             areaStyle: {},
-                            data:this_.valueList2
+                            data:this.valueList2
                         },
                         {
                             name:'气压',
                             type:'line',
                             stack: '总量',
                             areaStyle: {},
-                            data:this_.valueList3
+                            data:this.valueList3
                         },
                     ]
                 };
@@ -165,49 +171,46 @@
                 //建议加上以下这一行代码，不加的效果图如下（当浏览器窗口缩小的时候）。超过了div的界限（红色边框）
                 window.addEventListener('resize',function() {myChart.resize()});
             },
-
             getdata1(this_ = this){
+                let timearr = [];
                 axios({
-                    // url: 'http://47.106.83.135:80/sponge/data/sensor?sensor_id=5',
-                    url: 'http://47.106.83.135:80/sponge/avg_data/sensor?sensor_id=5',
+                    url: 'http://47.106.83.135:8000/sponge/avg_data/sensor?sensor_id=5',
                     method: 'get',
                     type: 'json',
                     headers: this_.my_header
                 }).then(function (res) {
-                    console.log(res);
                     var data = res.data.data;
+                    console.log("data of getdata1", data);
                     var len = data.length;
-                    var timearr = [];
                     var ozonearr = [];
-                    // this_.xAxix_data =data[i].datetime;
                     for (var i = 0; i < len; i++) {
                         timearr.push(data[i].datetime);
                         ozonearr.push(data[i].value);
-                        // console.log(data[i].datetime)
                     }
-                    // console.log(flowarr);
-                    this_.dateList1= timearr;
                     this_.valueList1 = ozonearr;
-                    if (len !== 0) {
+                    this_.dateLists.push(timearr);
+                    if (len) {
                         // 初始化图表
-                        this_.drawLine()
+                        this_.drawLine();
+                        // console.log(this_.dateList1);
                     } else {
                         // 以下是暂无数据显示样式(样式根据本身需求进行调整)
                         var html = '<div><sapn style="font-size: 18px;font-weight: bold;">图表数据</sapn><span  style="position: absolute;top: 40%;margin-left: 10%;color:#868686; font-size: 20px;">暂无数据</span></div>'
                         document.getElementById('chart_example').innerHTML = html
                         document.getElementById('chart_example').removeAttribute('_echarts_instance_')
                     }
+                    console.log(this_.dateLists);
                 })
             },
             getdata2(this_ = this){
                 axios({
-                    // url: 'http://47.106.83.135:80/sponge/data/sensor?sensor_id=6',
-                    url: 'http://47.106.83.135:80/sponge/avg_data/sensor?sensor_id=6',
+                    // url: 'http://47.106.83.135:8000/sponge/data/sensor?sensor_id=6',
+                    url: 'http://47.106.83.135:8000/sponge/avg_data/sensor?sensor_id=6',
                     method: 'get',
                     type: 'json',
                     headers: this_.my_header
                 }).then(function (res) {
-                    console.log(res);
+                    // console.log(res.data.data);
                     var data = res.data.data;
                     var len = data.length;
                     var timearr = [];
@@ -218,12 +221,12 @@
                         lightarr.push(data[i].value);
                         // console.log(data[i].datetime)
                     }
-                    // console.log(flowarr);
-                    this_.dateList1= timearr;
                     this_.valueList2 = lightarr;
-                    if (len !== 0) {
+                    this_.dateLists.push(timearr);
+                    if (len) {
                         // 初始化图表
-                        this_.drawLine()
+                        this_.drawLine();
+                        // console.log(this_.dateList1);
                     } else {
                         // 以下是暂无数据显示样式(样式根据本身需求进行调整)
                         var html = '<div><sapn style="font-size: 18px;font-weight: bold;">图表数据</sapn><span  style="position: absolute;top: 40%;margin-left: 10%;color:#868686; font-size: 20px;">暂无数据</span></div>'
@@ -234,13 +237,13 @@
             },
             getdata3(this_ = this){
                 axios({
-                    // url: 'http://47.106.83.135:80/sponge/data/sensor?sensor_id=7',
-                    url: 'http://47.106.83.135:80/sponge/avg_data/sensor?sensor_id=7',
+                    // url: 'http://47.106.83.135:8000/sponge/data/sensor?sensor_id=7',
+                    url: 'http://47.106.83.135:8000/sponge/avg_data/sensor?sensor_id=7',
                     method: 'get',
                     type: 'json',
                     headers: this_.my_header
                 }).then(function (res) {
-                    console.log(res);
+                    // console.log(res.data.data);
                     var data = res.data.data;
                     var len = data.length;
                     var timearr = [];
@@ -252,11 +255,13 @@
                         // console.log(data[i].datetime)
                     }
                     // console.log(flowarr);
-                    this_.dateList1= timearr;
+                    // dateList.push(timearr);
                     this_.valueList3 = gasarr;
-                    if (len !== 0) {
+                    this_.dateLists.push(timearr);
+                    if (len) {
                         // 初始化图表
-                        this_.drawLine()
+                        this_.drawLine();
+                        // console.log(this_.dateList1);
                     } else {
                         // 以下是暂无数据显示样式(样式根据本身需求进行调整)
                         var html = '<div><sapn style="font-size: 18px;font-weight: bold;">图表数据</sapn><span  style="position: absolute;top: 40%;margin-left: 10%;color:#868686; font-size: 20px;">暂无数据</span></div>'
@@ -269,9 +274,6 @@
         },
         watch: {},
         beforeDestroy() {
-            clearInterval(this.timer1);
-            clearInterval(this.timer2);
-            clearInterval(this.timer3);
         }
     }
 </script>
@@ -282,7 +284,7 @@
     .main{
         max-width: 980px;
         margin: auto;
-        margin-top:50px;
+        margin-top:8%;
         /*height: auto;*/
     }
     .main .raillflow-title{

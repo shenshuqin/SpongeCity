@@ -48,7 +48,7 @@
             </nav>
         </div>
         <div class="main">
-            <img src="../../public/images/about.png">
+            <img src="http://hlimgserver.oss-cn-shanghai.aliyuncs.com/img/about.png">
         </div>
         <div class="section1">
             <div class="sec_title"><span>首页</span>><span>关于我们</span>><span>项目介绍</span></div>
