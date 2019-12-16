@@ -7,7 +7,7 @@ import Rainflow from './components/Module/Raillflow.vue'
 import Air from './components/Module/air.vue'
 import Soil from './components/Module/soil.vue'
 import Totleflow from './components/Module/totleflow.vue'
-import Wind from './components/Module/wind.vue'
+import chart from './components/Module/chart.vue'
 import PM from './components/Module/PM.vue'
 import Admin from './components/Admin/Admin.vue'
 import Map from './components/Admin/map.vue'
@@ -27,7 +27,7 @@ var router = new VueRouter({
     {path:'/air' , component:Air},
     {path:'/soil' , component:Soil},
     {path:'/totleflow' , component:Totleflow},
-    {path:'/wind' , component:Wind},
+    {path:'/chart' , component:chart},
     {path:'/pm' , component:PM},
     {path:'/admin' , component:Admin},
     {path:'/sensor' , component:Sensor},

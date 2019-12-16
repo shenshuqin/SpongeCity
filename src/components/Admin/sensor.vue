@@ -5,7 +5,7 @@
                 <p>基站一传感器列表</p>
             </el-header>
             <el-main class="clearfix">
-                <div class="section1">
+                <div class="section1" id="chart">
                 <router-link class="box-card" v-for="item in data" :key="item.id" :to="{path:'/sensordata',query:{ id:item.sid ,name:item.type}}">
                     <el-card class="" >
                         <div><span class="iconfont fonts">&#xe685;</span></div>
@@ -58,34 +58,34 @@
             window.onresize = function () {
                 this_.minHeight = document.documentElement.clientHeight - 230
             }
-            // this. getLocalTime(nS)
         },
         //作用域1
         methods: {
-
             //作用域1
             getdata(this_ = this) {//作用域1
                 //作用域2 this undefined
                 axios({
-                    // url: ' http://localhost:3001/rail',
-                    // url: "http://47.106.83.135:8000/sponge/sensors/list?nid=2",
                     url: `http://47.106.83.135:8000/sponge/sensors/list?nid=${this.sensorID}`,
                     method: 'get',
                     type: 'json',
                     headers: this.my_header
 
                 }).then(function (res) {
-                    console.log("nid" + res);
                     var new_data = res.data.data;
-                    for (var i = 0; i < new_data.length; i++) {
-                        ////??????
-                        // var update_time = new_data[i].update_time;
-                        new_data[i].update_time = timestampToTime(new_data[i].update_time)
-                    }
                     console.log(new_data);
-                    console.log(this_.data);
-                    this_.$set(this_, "data", new_data);//将this_.data的索引为0的元素设置成data 原型 Vue.$set(object, key/index, value/object)
-                    // console.log(this_.data);
+                    if(new_data.length == 0){
+                        console.log("暂无数据")
+                        var html = '<div><sapn style="font-size: 18px;font-weight: bold;">基站传感器数据</sapn><span  style="position: absolute;top: 40%;margin-left: 10%;color:#868686; font-size: 20px;">暂无数据</span></div>'
+                        document.getElementById('chart').innerHTML = html
+                        document.getElementById('chart').removeAttribute('_echarts_instance_')
+                    }else{
+                        console.log("有数据")
+                        for (var i = 0; i < new_data.length; i++) {
+                         new_data[i].update_time = timestampToTime(new_data[i].update_time)
+                        }
+                       this_.$set(this_, "data", new_data);//将this_.data的索引为0的元素设置成data 原型 Vue.$set(object, key/index, value/object)
+                    }
+                   
                 });
             },
         },

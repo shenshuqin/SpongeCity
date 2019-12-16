@@ -26,7 +26,7 @@
                 <div class="right col-md-6">
                     <p class="line"></p>
                     <p class="right_cot">构建低影响开发雨水系统，规划控制目标一般包括径流总量控制、径流峰值控制、径流污染控制、雨水资源化利用等。各地应结合水环境现状、水文地质条件等特点，合理选择其中一项或多项目标作为规划控制目标。鉴于径流污染控制目标、 雨水资源化利用目标大多可通过径流总量控制实现， 各地低影响开发雨水系统构建可选择径流总量控制作为首要的规划控制目标。</p>
-                    <button type="button" class="btn btn-info more">查看更多</button>
+                    <!-- <button type="button" class="btn btn-info more">查看更多</button> -->
                 </div>
 
             </div>
@@ -56,14 +56,14 @@
                     <div>
                         <div class="container-fluid sec3">
                             <div class="row sec3_main ">
-                                <div class="col-md-3">
+                                <div class="col-md-3 item">
                                     <div class="youshipart text-center">
                                         <div class="icon-wrapper">  <span class="iconfont fonts">&#xe610;</span>  </div>
                                         <h3>先进的硬件技术</h3>
                                         <div class="word">结合最先进的工艺和独家专利技术，研发出创造新型环保透水砖，为海绵城市建设添砖加瓦。</div>
                                     </div>
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-3 item">
                                     <div class="youshipart text-center">
                                         <div class="icon-wrapper"> <span class="iconfont fonts">&#xe612;</span> </div>
                                         <h3>可靠的实力</h3>
@@ -72,14 +72,14 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-3">
+                                <div class="col-md-3 item">
                                     <div class="youshipart text-center">
                                         <div class="icon-wrapper"> <span class="iconfont fonts">&#xe60b;</span> </div>
                                         <h3>一站式服务</h3>
                                         <div class="word">渗透海绵城市的各个环节，设计方案，产品生产，现场施工，技术咨询等，每一步都有专业技术团队管控，免去后顾之忧。</div>
                                     </div>
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-3 item">
                                     <div class="youshipart text-center">
                                         <div class="icon-wrapper"> <span class="iconfont fonts">&#xe7b4;</span></div>
                                         <h3>长远发展眼光</h3>
@@ -99,7 +99,6 @@
     </div>
 </template>
 <script>
-
     export  default {
         data(){
             return{
@@ -111,10 +110,17 @@
             this.$emit('footer', true);
         },
         mounted(){
-            // this.animate();
+            this.animate();
         },
         methods:{
-
+            animate(){
+                $(".item").hover(function(){
+                    $(this).addClass("animated swing");
+                },function() {
+                    // 鼠标移出时移出hover类
+                    $(this).removeClass('animated swing')
+                });
+            },
         }
     }
     </script>
@@ -131,10 +137,7 @@
         flex-direction: column;
     }
     .main{
-        /*display: flex;*/
         flex: 1;
-        height: auto;
-        /*overflow-y: auto;*/
     }
     .el-carousel__item h3 {
         color: #fff;
@@ -228,7 +231,7 @@
     .right_cot{
         width:72%;
         height:auto;
-        margin-top: 20px;
+        margin-top: 60px;
         font-size: 14px;
         font-family: "黑体";
         line-height: 30px;
@@ -315,6 +318,7 @@
         margin: 20px;
         background: #fff;
         min-height: 280px;
+        border-radius:8px;
         /*border:1px solid red;*/
     }
     .icon-wrapper {

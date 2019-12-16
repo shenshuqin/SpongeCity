@@ -1,56 +1,9 @@
 <template>
     <div class="home">
-        <div id="navbar-top">
-            <nav class="navbar navbar-default navbar-static navbar-fixed-top" role="navigation" data-spy="affix">
-                <div class="container">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                            <span class="sr-only">切换菜单</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand homeback" href="#">
-                            <!--                        <img class="logo" alt="Brand" src="../../public/images/logo.png">-->
-                            <!--                        <span href="#" class="">海绵城市监测系统</span>-->
-                        </a>
-                    </div>
-                    <div class="collapse navbar-collapse">
-                        <ul class="nav navbar-nav navbar-right">
-                            <li >
-                                <router-link class="" to="/home">
-                                    <span>首页</span>
-                                </router-link>
-                            </li>
-                            <li class="dropdown">
-                                <router-link class="" to="/about">
-                                    <span class="dropdown-toggle scrollTo">关于我们</span>
-                                </router-link>
-                            </li>
-                            <li class="dropdown">
-                                <router-link class="" to="/detect">
-                                    <span class="dropdown-toggle scrollTo">监测中心</span>
-                                </router-link>
-                            </li>
-                            <li>
-                                <router-link class="" to="/map">
-                                    <span  >基地展示</span>
-                                </router-link>
-                            </li>
-                            <li>
-                                <router-link class="" to="/admin">
-                                    <span  role="button" >后台管理</span>
-                                </router-link>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </div>
-        <div class="main">
+        <div class="main" >
             <img src="http://hlimgserver.oss-cn-shanghai.aliyuncs.com/img/about.png">
         </div>
-        <div class="section1">
+        <div class="section1 container-fluid" :style="{minHeight:minHeight+'px'}">
             <div class="sec_title"><span>首页</span>><span>关于我们</span>><span>项目介绍</span></div>
             <div class="sec_cont">
                 <p class="cont_title">项目简介</p>
@@ -65,10 +18,16 @@
         data(){
             return{
                 msg:getCookie("username"),
+                 minHeight:'',
             }
         },
         mounted(){
-
+            this.minHeight = document.documentElement.clientHeight - 380;
+            console.log( this.minHeight);
+            var this_ = this;
+            window.onresize = function () {
+                this_.minHeight = document.documentElement.clientHeight - 380
+            }
         },
         methods:{
 
@@ -98,14 +57,21 @@
         margin-top: 20px;
     }
     .cont_main{
-        width:75%;
+        width:70%;
         color: #666666;
         line-height: 30px;
-        margin:10px auto;
+        margin:50px auto;
         text-indent:25px;
+        /* border:1px solid red; */
+    }
+    .sec_cont{
+        /* display: flex;
+        align-items: center;
+        justify-content: center; */
     }
     .section1{
         width:100%;
-        height: 360px;
+        height:auto;
+        /* border:1px solid red; */
     }
 </style>
