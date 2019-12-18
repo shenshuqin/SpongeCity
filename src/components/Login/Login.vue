@@ -89,7 +89,8 @@
                         // console.log(res)
                         // console.log(_this.username);
                         // console.log(res.data.data[0].token);
-                        setCookie("token",res.data.data[0].token);
+                        setCookie("token",res.data.data[0].token); 
+                        // _this.$store.state.myHeader.Authorization += getCookie('token');
                         // setCookie("username",_this.username);
                         $(".msg").text("登录成功!");
                         _this.$router.push({path:'/home'})

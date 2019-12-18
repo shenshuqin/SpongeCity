@@ -9,21 +9,21 @@
                     <p class="raillflow-title">监测</p>
                     <div class="form-group">
                           <p for="sel1" style="font-size: 16px"><span class="iconfont rb">&#xe60b;</span>&nbsp;选择传感器类型:</p>
-                        <select class="form-control" id="sel0" v-model="sensorObj.sensorsSelected" @change="chooseValue">
+                        <select class="form-control" id="sel0" v-model="sensorObj.sensorsSelected" >
                             <option v-for="(item,index) in sensorObj.sensorList" :key="index" :value="item.id">{{item.type}}</option>
                         </select>
                         <p for="sel1" style="font-size: 16px"><span class="iconfont rg">&#xe6af;</span>&nbsp;选择时隔:</p>
-                        <select class="form-control" id="sel" v-model="timeInterval.intervalSelected" @change="chooseInterval">
+                        <select class="form-control" id="sel" v-model="timeInterval.intervalSelected" >
                             <option v-for="(item,index) in timeInterval.interval" :key="index" :value="item.id">{{item.type}}</option>
                         </select>
                         <p for="sel1" style="font-size: 16px"><span class=" rb iconfont">&#xe61f;</span>&nbsp;选择地点:</p>
-                        <select class="form-control select_address" id="sel1">
+                        <!-- <select class="form-control select_address" id="sel1"> -->
                             <!-- <option v-for="address in data" :key="index">{{address.address1}}</option>-->
-                            <option id="index0">鼎城区</option>
+                            <!-- <option id="index0">鼎城区</option>
                             <option id="index1">澧县</option>
                             <option id="index2">临澧</option>
-                        </select>
-                        <select class="form-control select_address" id="sel2">
+                        </select> -->
+                        <!-- <select class="form-control select_address" id="sel2">
                             <option id="index3">文理学院西校区</option>
                             <option>烟草厂</option>
                             <option>仙缘小区</option>
@@ -34,26 +34,25 @@
                             <option>白马湖</option>
                             <option>沙滩公园</option>
                             <option>柳叶湖</option>
-                        </select>
+                        </select> -->
                     </div>
                     <div class="form-inline times">
                         <p id="time" style="font-size: 16px"><span class=" rr iconfont">&#xe6e4;</span>&nbsp;选择时间段</p>
                         <!-- <input class="form-control" id="time_start" type="date" value="2019-09-24"/> -->
                          <el-date-picker id="time_start"
-                                v-model="value1"
+                                v-model="time_start"
                                 type="date"
-                                 @change="chooseDate"
                                 placeholder="选择日期">
                                 </el-date-picker>
                          <span>至</span>
                         <!-- <input class="form-control" id="time_end" type="date" value="2019-09-24"/> -->
                             <el-date-picker id="time_end"
-                                v-model="value2"
+                                v-model="time_end"
                                 type="date"
                                 placeholder="选择日期">
-                                </el-date-picker>
+                            </el-date-picker>
                     </div>
-                    <!-- <button type="button" @click="" class="btn btn-info sub_btn btn-block">提交</button> -->
+                    <button type="button" @click="getdata()" class="btn btn-info sub_btn btn-block">提交</button>
                 </div>
                 <div class="col-md-6 raill-right">
                     <div id="chart_example" style="width:560px;height:500px;">
@@ -103,8 +102,6 @@
                         }
                     }]
                     },
-                    value1: '',
-                    value2:'',
                 sensorObj:{
                     sensorList:[
                         {id:1, type:"空气温度"},
@@ -126,12 +123,14 @@
                 },
                 timeInterval:{
                     interval:[
-                        {id:0,type:'时'},
-                        {id:1,type:'天'},
-                        {id:2,type:'月'},
+                        {id:1,type:'时'},
+                        {id:2,type:'天'},
+                        {id:3,type:'月'},
                     ],
-                    intervalSelected:0
+                    intervalSelected:1
                 },
+                time_start: "",//1560873600
+                time_end: "",
             }
         },
         watch:{
@@ -147,9 +146,7 @@
             this.$emit('footer', true);
         },
         mounted(){
-            this.chooseValue();
-            this.chooseInterval();
-            this.chooseDate();
+            this.getdata();
             this.minHeight = document.documentElement.clientHeight - 230;
             var this_ = this;
             window.onresize = function () {
@@ -157,17 +154,7 @@
             }
         },
         methods: {
-            chooseDate(){
-                console.log(this.value1)
-            },
-            chooseInterval(){
-                let id = this.timeInterval.intervalSelected;
-                console.log(id)
-            },
-            chooseValue(){
-                let id = this.sensorObj.sensorsSelected;
-                this.getdata(id);
-            },
+            
             drawLine(this_=this){
                 let sensor = this_.sensorObj.sensorList[this_.sensorObj.sensorsSelected-1];
                 let myChart = echarts.init(document.getElementById('chart_example'),'light');
@@ -243,12 +230,18 @@
                     document.getElementById('chart_example').removeAttribute('_echarts_instance_')
                 }
             },
-            getdata(sensor, this_=this) {
+            getdata() {
+                let this_=this;
+                console.log(this.time_start);
+                this.start = Date.parse(this.time_start) || "1560873600000";
+                this.end = Date.parse(this.time_end) || Date.parse(new Date());//如果end参数为"" 则改为当前时间戳
+                let args = `sensor_id=${this.sensorObj.sensorsSelected}&start=${String(this.start).substr(0, 10)}&end=${String(this.end).substr(0, 10)}&interval=${this.timeInterval.intervalSelected}`;
+                this.$store.state.myHeader.Authorization = "Basic " + getCookie('token');
                 axios({
-                    url: "http://47.106.83.135:8000/sponge/avg_data/sensor?sensor_id=" + String(sensor),
+                    url: "http://47.106.83.135:8000/sponge/avg_data/sensor?" + args,
                     method: 'get',
                     type: 'json',
-                    headers: this_.my_header
+                    headers: this_.$store.state.myHeader
                 }).then(function (res) {
                     // console.log(res);
                     var data = res.data.data;

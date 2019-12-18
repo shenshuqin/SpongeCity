@@ -34,7 +34,7 @@ import 'element-ui/lib/theme-chalk/index.css';
 Vue.use(ElementUI);
 // 导入 app 组件
 import app from './App.vue'
-
+import store from './store'
 // 导入 自定义路由模块
 import router from './router.js'
 Vue.prototype.$md5 = md5;
@@ -42,5 +42,6 @@ var vm = new Vue({
     el: '#app',
     $,
     render: c => c(app), // render 会把 el 指定的容器中，所有的内容都清空覆盖，所以 不要 把 路由的 router-view 和 router-link 直接写到 el 所控制的元素中
-    router // 4. 将路由对象挂载到 vm 上
+    router, // 4. 将路由对象挂载到 vm 上
+    store,
 })
