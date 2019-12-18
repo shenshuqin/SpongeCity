@@ -16,7 +16,7 @@
                         <select class="form-control" id="sel" v-model="timeInterval.intervalSelected" >
                             <option v-for="(item,index) in timeInterval.interval" :key="index" :value="item.id">{{item.type}}</option>
                         </select>
-                        <p for="sel1" style="font-size: 16px"><span class=" rb iconfont">&#xe61f;</span>&nbsp;选择地点:</p>
+                        <!-- <p for="sel1" style="font-size: 16px"><span class=" rb iconfont">&#xe61f;</span>&nbsp;选择地点:</p> -->
                         <!-- <select class="form-control select_address" id="sel1"> -->
                             <!-- <option v-for="address in data" :key="index">{{address.address1}}</option>-->
                             <!-- <option id="index0">鼎城区</option>
