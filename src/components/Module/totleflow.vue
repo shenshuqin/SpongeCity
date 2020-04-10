@@ -45,11 +45,7 @@
                     <button type="button" @click="" class="btn btn-info sub_btn btn-block">提交</button>
                 </div>
                 <div class="col-md-6 raill-right">
-                    <!--               <div :class="className" :id="id" :style="{height:height,width:width}" ref="myEchart"></div>-->
-                    <!--                    <x-chart :id="id" :option="option"></x-chart>-->
-
                     <div id="chart_example" style="width:560px;height:500px;">
-
                     </div>
                 </div>
             </div>

@@ -1,4 +1,4 @@
-import VueRouter from 'vue-router'
+// import VueRouter from 'vue-router'
 
 // 导入 组件
 import HomeContainer from './components/Home/HomeContainer.vue'

@@ -7,7 +7,7 @@
             <img src="../../public/images/cloud02.png" alt="">
 
         </div>
-        <div class="title_sp">海绵城市监测系统</div>
+        <div class="title_sp">湖南文理学院登录系统</div>
         </div>
         <div class="login-wrap" action="">
             <img class="avatar" src="../../public/images/default.png">
@@ -34,7 +34,7 @@
     const Base64 = require('js-base64').Base64;
     import {setCookie,getCookie} from '../../public/js/cookie.js'
     import axios from 'axios'
-    //跨域请求???
+    //跨域请求
     axios.defaults.withCredentials = true;
     //export default 指定模块的默认输出，一个模块只能有一个默认输出
     export default{
@@ -89,7 +89,7 @@
                         // console.log(res)
                         // console.log(_this.username);
                         // console.log(res.data.data[0].token);
-                        setCookie("token",res.data.data[0].token); 
+                        setCookie("token",res.data.data[0].token);
                         // _this.$store.state.myHeader.Authorization += getCookie('token');
                         // setCookie("username",_this.username);
                         $(".msg").text("登录成功!");

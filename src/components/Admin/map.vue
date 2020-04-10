@@ -70,14 +70,16 @@
                 // console.log(this.coordinates[index].info_wind_show);
             },
             //作用域1
+            
             getdata(this_ = this){//作用域1
                 //作用域2 this undefined
+                this_.$store.state.myHeader.Authorization = "Basic " + getCookie('token');
                 axios({
                     // url: ' http://localhost:3001/rail',
                     url: 'http://47.106.83.135:8000/sponge/nodes/list',
                     method: 'get',
                     type: 'json',
-                    headers: this.my_header
+                    headers: this_.$store.state.myHeader
 
                 }).then(function (res) {
                     var new_data = res.data.data;
