@@ -170,7 +170,7 @@
                 let this_ = this;
                 axios({
                     // url: ' http://localhost:3001/rail',
-                    url: 'http://47.106.83.135:8000/sponge/nodes/get?nid='+this.formInline.user,
+                    url: 'http://121.199.42.23:8080/sponge/nodes/get?nid='+this.formInline.user,
                     method: 'get',
                     type: 'json',
                     // data:{name:this_. formInline.user},
@@ -192,7 +192,7 @@
                 axios({
                     // url: ' http://localhost:3001/rail',
                     // url: 'https://www.test.com',
-                    url: 'http://47.106.83.135:8000/sponge/nodes/list',
+                    url: 'http://121.199.42.23:8080/sponge/nodes/list',
                     method: 'get',
                     type: 'json',
                     headers: this.my_header
@@ -215,7 +215,7 @@
                       "secret_key":"abcdefghijklmnopqrstuvwxyz0123"
                 };
                 axios({
-                    url: 'http://47.106.83.135:8000/sponge/nodes/add',
+                    url: 'http://121.199.42.23:8080/sponge/nodes/add',
                     method: 'post',
                     type: 'json',
                     // data:{nid:this_.form.id,address:this_.form.address,location:this_.form.location,status:this_.form.status},
@@ -261,7 +261,7 @@
                 var this_ = this;
                 axios({
                     // url: ' http://localhost:3001/rail',
-                    url: 'http://47.106.83.135:8000/sponge/nodes/get?nid='+id,
+                    url: 'http://121.199.42.23:8080/sponge/nodes/get?nid='+id,
                     method: 'get',
                     type: 'json',
                     // data:{nid:id},
@@ -287,7 +287,7 @@
                 };
                 axios({
                     // url: ' http://localhost:3001/rail',
-                    url: 'http://47.106.83.135:8000/sponge/nodes/edit',
+                    url: 'http://121.199.42.23:8080/sponge/nodes/edit',
                     method: 'put',
                     type: 'json',
                     // data:{nid:this_.form2.id,address:this_.form2.address,location:this_.form2.location,status:this_.form2.status},

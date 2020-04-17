@@ -170,7 +170,7 @@
             getdata1(this_ = this){
                 let timearr = [];
                 axios({
-                    url: 'http://47.106.83.135:8000/sponge/avg_data/sensor?sensor_id=5',
+                    url: 'http://121.199.42.23:8080/sponge/avg_data/sensor?sensor_id=5',
                     method: 'get',
                     type: 'json',
                     headers: this_.my_header
@@ -200,8 +200,8 @@
             },
             getdata2(this_ = this){
                 axios({
-                    // url: 'http://47.106.83.135:8000/sponge/data/sensor?sensor_id=6',
-                    url: 'http://47.106.83.135:8000/sponge/avg_data/sensor?sensor_id=6',
+                    // url: 'http://121.199.42.23:8080/sponge/data/sensor?sensor_id=6',
+                    url: 'http://121.199.42.23:8080/sponge/avg_data/sensor?sensor_id=6',
                     method: 'get',
                     type: 'json',
                     headers: this_.my_header
@@ -233,8 +233,8 @@
             },
             getdata3(this_ = this){
                 axios({
-                    // url: 'http://47.106.83.135:8000/sponge/data/sensor?sensor_id=7',
-                    url: 'http://47.106.83.135:8000/sponge/avg_data/sensor?sensor_id=7',
+                    // url: 'http://121.199.42.23:8080/sponge/data/sensor?sensor_id=7',
+                    url: 'http://121.199.42.23:8080/sponge/avg_data/sensor?sensor_id=7',
                     method: 'get',
                     type: 'json',
                     headers: this_.my_header

@@ -130,7 +130,7 @@
             request_get(addr_rank, addr_id) {
                 axios({
                     // url: ' http://localhost:3001/rail',
-                    url: 'http://47.106.83.135:8000/sponge/data/sensor',
+                    url: 'http://121.199.42.23:8080/sponge/data/sensor',
                     method: 'get',
                     type: 'json',
                     headers: this.my_header
@@ -147,10 +147,10 @@
                 var address1 = $("#sel1 option:selected").text();
                 var address2 = $("#sel2 option:selected").text();
                 var address3 = $("#sel3 option:selected").text();
-                // var url=' http://47.106.83.135:8000/sponge/data/sensor?Interval='+interval+'&Address='+address1/address2/address3+'&start='+time_start+'&end='+time_end;
-                var url=`http://47.106.83.135:8000/sponge/data/sensor?Interval=${interval}&Address=${address1}/${address2}/${address3}&start=${time_start}&end=${time_end}`;
+                // var url=' http://121.199.42.23:8080/sponge/data/sensor?Interval='+interval+'&Address='+address1/address2/address3+'&start='+time_start+'&end='+time_end;
+                var url=`http://121.199.42.23:8080/sponge/data/sensor?Interval=${interval}&Address=${address1}/${address2}/${address3}&start=${time_start}&end=${time_end}`;
                 axios({
-                    url: 'http://47.106.83.135:8000/sponge/data/sensor',
+                    url: 'http://121.199.42.23:8080/sponge/data/sensor',
                     method: 'get',
                     type: 'json',
                     headers: this.my_header
@@ -237,8 +237,8 @@
             },
             getdata_flow(this_ = this) {
                 axios({
-                    // url: 'http://47.106.83.135:8000/sponge/avg_data/sensor?sensor_id=9',
-                    url: 'http://47.106.83.135:8000/sponge/avg_data/sensor?sensor_id=9',
+                    // url: 'http://121.199.42.23:8080/sponge/avg_data/sensor?sensor_id=9',
+                    url: 'http://121.199.42.23:8080/sponge/avg_data/sensor?sensor_id=9',
                     method: 'get',
                     type: 'json',
                     headers: this_.my_header
@@ -272,8 +272,8 @@
             },
             getdata_rain(this_ = this) {
                 axios({
-                    // url: 'http://47.106.83.135:8000/sponge/avg_data/sensor?sensor_id=8',
-                    url: 'http://47.106.83.135:8000/sponge/avg_data/sensor?sensor_id=8',
+                    // url: 'http://121.199.42.23:8080/sponge/avg_data/sensor?sensor_id=8',
+                    url: 'http://121.199.42.23:8080/sponge/avg_data/sensor?sensor_id=8',
                     method: 'get',
                     type: 'json',
                     headers: this_.my_header

@@ -76,7 +76,7 @@
                 this_.$store.state.myHeader.Authorization = "Basic " + getCookie('token');
                 axios({
                     // url: ' http://localhost:3001/rail',
-                    url: 'http://47.106.83.135:8000/sponge/nodes/list',
+                    url: 'http://121.199.42.23:8080/sponge/nodes/list',
                     method: 'get',
                     type: 'json',
                     headers: this_.$store.state.myHeader

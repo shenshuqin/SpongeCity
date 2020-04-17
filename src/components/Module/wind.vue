@@ -185,8 +185,8 @@
             },
             getdata_speed(this_ = this) {
                 axios({
-                    url: 'http://47.106.83.135:8000/sponge/avg_data/sensor?sensor_id=10',
-                    // url: 'http://47.106.83.135:8000/sponge/data/sensor?sensor_id=10',
+                    url: 'http://121.199.42.23:8080/sponge/avg_data/sensor?sensor_id=10',
+                    // url: 'http://121.199.42.23:8080/sponge/data/sensor?sensor_id=10',
                     method: 'get',
                     type: 'json',
                     headers: this_.my_header
@@ -218,8 +218,8 @@
             },
             getdata_direction(this_ = this) {
                 axios({
-                    // url: 'http://47.106.83.135:8000/sponge/data/sensor?sensor_id=11',
-                    url: 'http://47.106.83.135:8000/sponge/avg_data/sensor?sensor_id=11',
+                    // url: 'http://121.199.42.23:8080/sponge/data/sensor?sensor_id=11',
+                    url: 'http://121.199.42.23:8080/sponge/avg_data/sensor?sensor_id=11',
                     method: 'get',
                     type: 'json',
                     headers: this_.my_header

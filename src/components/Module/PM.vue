@@ -189,8 +189,8 @@
             },
             getdata_pm2(this_ = this) {
                 axios({
-                    // url: 'http://47.106.83.135:8000/sponge/data/sensor?sensor_id=12',
-                    url: 'http://47.106.83.135:8000/sponge/avg_data/sensor?sensor_id=12',
+                    // url: 'http://121.199.42.23:8080/sponge/data/sensor?sensor_id=12',
+                    url: 'http://121.199.42.23:8080/sponge/avg_data/sensor?sensor_id=12',
                     method: 'get',
                     type: 'json',
                     headers: this_.my_header
@@ -222,8 +222,8 @@
             },
             getdata_pm1(this_ = this) {
                 axios({
-                    // url: 'http://47.106.83.135:8000/sponge/data/sensor?sensor_id=13',
-                    url: 'http://47.106.83.135:8000/sponge/avg_data/sensor?sensor_id=13',
+                    // url: 'http://121.199.42.23:8080/sponge/data/sensor?sensor_id=13',
+                    url: 'http://121.199.42.23:8080/sponge/avg_data/sensor?sensor_id=13',
                     method: 'get',
                     type: 'json',
                     headers: this_.my_header
@@ -255,8 +255,8 @@
             },
             getdata_pm10(this_ = this) {
                 axios({
-                    // url: 'http://47.106.83.135:8000/sponge/data/sensor?sensor_id=14',
-                    url: 'http://47.106.83.135:8000/sponge/avg_data/sensor?sensor_id=14',
+                    // url: 'http://121.199.42.23:8080/sponge/data/sensor?sensor_id=14',
+                    url: 'http://121.199.42.23:8080/sponge/avg_data/sensor?sensor_id=14',
                     method: 'get',
                     type: 'json',
                     headers: this_.my_header

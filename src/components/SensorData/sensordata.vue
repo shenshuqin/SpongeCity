@@ -70,15 +70,15 @@
             var newsID=this.$route.query.id;
             this_.type= this.$route.query.name;
 
-            // this_.$http.get('http://47.106.83.135:800000/sponge/detail_data/sensor?sensor_id='+newsID).then((response) => {
+            // this_.$http.get('http://121.199.42.23:8000/sponge/detail_data/sensor?sensor_id='+newsID).then((response) => {
             //     // console.log(response);
             //     console.log(newsID)
             // }).catch(function(error) {
             //     console.log(error);
             // });
             axios({
-                // url: 'http://47.106.83.135:800000/sponge/avg_data/sensor?sensor_id=8',
-                url:`http://47.106.83.135:8000/sponge/detail_data/sensor?sensor_id=${newsID}`,
+                // url: 'http://121.199.42.23:8000/sponge/avg_data/sensor?sensor_id=8',
+                url:`http://121.199.42.23:8080/sponge/detail_data/sensor?sensor_id=${newsID}`,
                 method: 'get',
                 type: 'json',
                 headers: this_.my_header
@@ -110,8 +110,8 @@
         methods:{
             // getdata(this_ = this) {
             //     axios({
-            //         // url: 'http://47.106.83.135:8000/sponge/avg_data/sensor?sensor_id=8',
-            //         url: 'http://47.106.83.135:8000/sponge/avg_data/sensor?sensor_id=2',
+            //         // url: 'http://121.199.42.23:8080/sponge/avg_data/sensor?sensor_id=8',
+            //         url: 'http://121.199.42.23:8080/sponge/avg_data/sensor?sensor_id=2',
             //         method: 'get',
             //         type: 'json',
             //         headers: this_.my_header

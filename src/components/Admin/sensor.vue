@@ -65,7 +65,7 @@
             getdata(this_ = this) {//作用域1
                 //作用域2 this undefined
                 axios({
-                    url: `http://47.106.83.135:8000/sponge/sensors/list?nid=${this.sensorID}`,
+                    url: `http://121.199.42.23:8080/sponge/sensors/list?nid=${this.sensorID}`,
                     method: 'get',
                     type: 'json',
                     headers: this.my_header

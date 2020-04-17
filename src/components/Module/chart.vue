@@ -177,7 +177,7 @@
             },
             getdata(sensor=10, this_=this) {
                 axios({
-                    url: "http://47.106.83.135:8000/sponge/avg_data/sensor?sensor_id=" + String(sensor),
+                    url: "http://121.199.42.23:8080/sponge/avg_data/sensor?sensor_id=" + String(sensor),
                     method: 'get',
                     type: 'json',
                     headers: this_.my_header

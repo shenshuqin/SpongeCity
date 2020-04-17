@@ -19,6 +19,7 @@ import Test from './components/About/test.vue'
 
 //  创建路由对象
 var router = new VueRouter({
+  // mode: 'history',
   routes: [
     { path: '/', redirect: '/login' },
     {path:'/login' , component:Login},

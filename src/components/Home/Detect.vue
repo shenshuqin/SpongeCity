@@ -238,7 +238,7 @@
                 let args = `sensor_id=${this.sensorObj.sensorsSelected}&start=${String(this.start).substr(0, 10)}&end=${String(this.end).substr(0, 10)}&interval=${this.timeInterval.intervalSelected}`;
                 this.$store.state.myHeader.Authorization = "Basic " + getCookie('token');
                 axios({
-                    url: "http://47.106.83.135:8000/sponge/avg_data/sensor?" + args,
+                    url: "http://121.199.42.23:8080/sponge/avg_data/sensor?" + args,
                     method: 'get',
                     type: 'json',
                     headers: this_.$store.state.myHeader

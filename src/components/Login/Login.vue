@@ -74,7 +74,7 @@
                     "password":md5Pswd
                 };
                 axios({
-                    url: 'http://47.106.83.135:8000/sponge/user/login',
+                    url: 'http://121.199.42.23:8080/sponge/user/login',
                     method:'post',
                     dataType: 'json',
                     //发送格式为json
