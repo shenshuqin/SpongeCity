@@ -65,6 +65,7 @@
 </template>
 <script>
     import axios from 'axios'
+     import Api from '../../api/api'
     import echarts from 'echarts'
     import {getCookie} from '../../public/js/cookie.js';
     export default {
@@ -236,14 +237,7 @@
                 this.start = Date.parse(this.time_start) || "1560873600000";
                 this.end = Date.parse(this.time_end) || Date.parse(new Date());//如果end参数为"" 则改为当前时间戳
                 let args = `sensor_id=${this.sensorObj.sensorsSelected}&start=${String(this.start).substr(0, 10)}&end=${String(this.end).substr(0, 10)}&interval=${this.timeInterval.intervalSelected}`;
-                this.$store.state.myHeader.Authorization = "Basic " + getCookie('token');
-                axios({
-                    url: "http://121.199.42.23:8080/sponge/avg_data/sensor?" + args,
-                    method: 'get',
-                    type: 'json',
-                    headers: this_.$store.state.myHeader
-                }).then(function (res) {
-                    // console.log(res);
+               Api.sensorData(args).then(res=>{
                     var data = res.data.data;
                     var len = data.length;
                     var timearr = [];
@@ -254,6 +248,9 @@
                     }
                     this_.dataObj.date = timearr;
                     this_.dataObj.value = valueArr;
+                })
+                .catch(err=>{
+
                 })
             },
         },

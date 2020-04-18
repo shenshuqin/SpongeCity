@@ -85,6 +85,7 @@
 </template>
 <script>
     import {getCookie} from '../../public/js/cookie.js';
+    import Api from '../../api/api'
     import axios from 'axios';
     import Qs from 'qs';
     export  default {
@@ -158,124 +159,129 @@
         },
         //作用域1
         methods:{
-
-            // searchEnterFun(e){
-            //    var keyCode = window.event ?e.keyCode:e.which;
-            //    if(keyCode == 13){
-            //        this.clear();
-            //    }
-            // },
-
             onSubmit() {
                 let this_ = this;
-                axios({
-                    // url: ' http://localhost:3001/rail',
-                    url: 'http://121.199.42.23:8080/sponge/nodes/get?nid='+this.formInline.user,
-                    method: 'get',
-                    type: 'json',
-                    // data:{name:this_. formInline.user},
-                    headers: this.my_header
+                // axios({
+                //     url: 'http://121.199.42.23:8080/sponge/nodes/get?nid='+this.formInline.user,
+                //     method: 'get',
+                //     type: 'json',
+                //     headers: this.my_header
 
-                }).then(function (res) {
+                // }).then(function (res) {
+                //     var news_data = [];
+                //       news_data.push(res.data.data);
+                //     console.log(news_data);
+                //     this_.$set(this_, "data", news_data);//将this_.data的索引为0的元素设置成data 原型 Vue.$set(object, key/index, value/object)
+                //     console.log(this_.data.length);
+                //     // this_.getdata()
+                //     // window.location.reload();
+                // });
+                Api.submit(this.formInline.user).then(res=>{
+                if(res.status === 200){
                     var news_data = [];
-                      news_data.push(res.data.data);
+                    news_data.push(res.data.data);
                     console.log(news_data);
                     this_.$set(this_, "data", news_data);//将this_.data的索引为0的元素设置成data 原型 Vue.$set(object, key/index, value/object)
-                    console.log(this_.data.length);
-                    // this_.getdata()
-                    // window.location.reload();
-                });
+                    // console.log(this_.data.length);
+                }
+                }).catch(err=>{
+                    console.log(err);
+                })
             },
             //作用域1
             getdata(this_ = this){//作用域1
                 //作用域2 this undefined
-                axios({
-                    // url: ' http://localhost:3001/rail',
-                    // url: 'https://www.test.com',
-                    url: 'http://121.199.42.23:8080/sponge/nodes/list',
-                    method: 'get',
-                    type: 'json',
-                    headers: this.my_header
+                // axios({
+                //     url: 'http://121.199.42.23:8080/sponge/nodes/list',
+                //     method: 'get',
+                //     type: 'json',
+                //     headers: this.my_header
 
-                }).then(function (res) {
-                    // console.log(res)
+                // }).then(function (res) {
+                //     // console.log(res)
+                //     var new_data = res.data.data;
+                //     console.log(new_data)
+                //     this_.$set(this_, "data", new_data);//将this_.data的索引为0的元素设置成data 原型 Vue.$set(object, key/index, value/object)
+                //     console.log(this_.data.length)
+                // });
+                Api.getdata().then(res=>{
+                if(res.status === 200){
                     var new_data = res.data.data;
-                    console.log(new_data)
+                    // console.log(new_data)
                     this_.$set(this_, "data", new_data);//将this_.data的索引为0的元素设置成data 原型 Vue.$set(object, key/index, value/object)
-                    console.log(this_.data.length)
-                });
+                    // console.log(this_.data.length)
+                }
+                }).catch(err=>{
+                    console.log(err);
+                })
             },
             add(this_ = this){
-                // console.log("000");
                   let  data={
                     "nid":this_.form.id,
                     "address":this_.form.address,
                     "location":this_.form.location,
-                     "status":this_.form.status,
-                      "secret_key":"abcdefghijklmnopqrstuvwxyz0123"
+                    "status":this_.form.status,
+                    "secret_key":"abcdefghijklmnopqrstuvwxyz0123"
                 };
-                axios({
-                    url: 'http://121.199.42.23:8080/sponge/nodes/add',
-                    method: 'post',
-                    type: 'json',
-                    // data:{nid:this_.form.id,address:this_.form.address,location:this_.form.location,status:this_.form.status},
-                   // data:Qs.stringify(data),
-                    data:data,
-                    headers: this.my_header
+                // axios({
+                //     url: 'http://121.199.42.23:8080/sponge/nodes/add',
+                //     method: 'post',
+                //     type: 'json',
+                //     data:data,
+                //     headers: this.my_header
 
-                }).then(function (res) {
-                    console.log("添加成功")
-                // 调用成功重新刷新页面
-                //     var res = res.body;
-                //     if(res.code == 200){
-                //         this_.getdata();
-                //     }
-                    window.location.reload();
-                });
-            },
-            remove(nid){
-                // var this_= this;
-                // this.$http.post('/list',{
-                //     params: {
-                //         nid: nid
-                //     }
-                // }).then(res => {
-                //     console.log(res)
-                //     this_.data = res.data.data;
+                // }).then(function (res) {
+                //     window.location.reload();
                 // });
-                axios({
-                    // url: ' http://localhost:3001/rail',
-                    url: '/list',
-                    method: 'post',
-                    type: 'json',
-                    data:{nid:nid},
-                    headers: this.my_header
+               Api.add(data).then(res=>{
+                if(res.status === 200){
+                   window.location.reload();
+                }
+                }).catch(err=>{
+                    console.log(err);
+                })
+            },
+            remove(nid){ ///未开发
+                // axios({
+                //     url: '/list',
+                //     method: 'post',
+                //     type: 'json',
+                //     data:{nid:nid},
+                //     headers: this.my_header
 
-                }).then(function (res) {
-                    // console.log(res)
-                    window.location.reload();
-                });
+                // }).then(function (res) {
+                //     window.location.reload();
+                // });
             },
             select(id){
-                console.log("0000")
                 var this_ = this;
-                axios({
-                    // url: ' http://localhost:3001/rail',
-                    url: 'http://121.199.42.23:8080/sponge/nodes/get?nid='+id,
-                    method: 'get',
-                    type: 'json',
-                    // data:{nid:id},
-                    headers: this.my_header
+                // axios({
+                //     url: 'http://121.199.42.23:8080/sponge/nodes/get?nid='+id,
+                //     method: 'get',
+                //     type: 'json',
+                //     headers: this.my_header
 
-                }).then(function (res) {
-                    console.log(res);
+                // }).then(function (res) {
+                //     console.log(res);
+                //     var data = res.data.data;
+                //     this_.form2.name = data.nid;
+                //     this_.form2.id = data.nid;
+                //     this_.form2.address = data.name;
+                //     this_.form2.location = data.location;
+                //     this_.form2.status = data.status;
+                // });
+                Api.select(id).then(res=>{
+                  if(res.status === 200){
                     var data = res.data.data;
                     this_.form2.name = data.nid;
                     this_.form2.id = data.nid;
                     this_.form2.address = data.name;
                     this_.form2.location = data.location;
                     this_.form2.status = data.status;
-                });
+                }
+                }).catch(err=>{
+                    console.log(err);
+                })
             },
             modefy(this_ = this){
                 let data={
@@ -285,18 +291,24 @@
                     "status":this_.form2.status,
                     "secret_key":"abcdefghijklmnopqrstuvwxyz0123"
                 };
-                axios({
-                    // url: ' http://localhost:3001/rail',
-                    url: 'http://121.199.42.23:8080/sponge/nodes/edit',
-                    method: 'put',
-                    type: 'json',
-                    // data:{nid:this_.form2.id,address:this_.form2.address,location:this_.form2.location,status:this_.form2.status},
-                    data:data,
-                    headers: this.my_header
+                // axios({
+                //     url: 'http://121.199.42.23:8080/sponge/nodes/edit',
+                //     method: 'put',
+                //     type: 'json',
+                //     // data:{nid:this_.form2.id,address:this_.form2.address,location:this_.form2.location,status:this_.form2.status},
+                //     data:data,
+                //     headers: this.my_header
 
-                }).then(function (res) {
+                // }).then(function (res) {
+                //     window.location.reload();
+                // });
+                 Api.modify(data).then(res=>{
+                  if(res.status === 200){
                     window.location.reload();
-                });
+                }
+                }).catch(err=>{
+                    console.log(err);
+                })
             },
         }
     }

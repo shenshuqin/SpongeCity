@@ -33,6 +33,7 @@
 <script>
     const Base64 = require('js-base64').Base64;
     import {setCookie,getCookie} from '../../public/js/cookie.js'
+    import Api from '../../api/api'
     import axios from 'axios'
     //跨域请求
     axios.defaults.withCredentials = true;
@@ -66,32 +67,41 @@
 
         },
         methods: {
-            login() {
+            login(){
                 var  _this=this;
                 var md5Pswd = this.$md5(this.password).toLocaleUpperCase(); // 将密码进行MD5加密
                 var data={
                     "username":this.username,
                     "password":md5Pswd
                 };
-                axios({
-                    url: 'http://121.199.42.23:8080/sponge/user/login',
-                    method:'post',
-                    dataType: 'json',
-                    //发送格式为json
-                    data:data,
-                    headers:
-                       {
-                         'Content-Type': 'application/json'
-                       }
-                }).then(res => {
-                    // console.log("00");
+                // axios({
+                //     url: 'http://121.199.42.23:8080/sponge/user/login',
+                //     method:'post',
+                //     dataType: 'json',
+                //     //发送格式为json
+                //     data:data,
+                //     headers:
+                //        {
+                //          'Content-Type': 'application/json'
+                //        }
+                // }).then(res => {
+                //     if(res.data.status === 1){
+                //         setCookie("token",res.data.data[0].token);
+                //         $(".msg").text("登录成功!");
+                //         _this.$router.push({path:'/home'})
+                //         this.setUserInfo();
+                //     }else{
+                //         console.log("失败");
+                //         $("#dmsg").css("display","block").addClass("shake animated");
+                //         $(".msg").text("用户名或密码错误!")
+                //     }
+
+                // }).catch(err => {
+                //     console.log(err);
+                // });
+                Api.login(data).then(res=>{
                     if(res.data.status === 1){
-                        // console.log(res)
-                        // console.log(_this.username);
-                        // console.log(res.data.data[0].token);
                         setCookie("token",res.data.data[0].token);
-                        // _this.$store.state.myHeader.Authorization += getCookie('token');
-                        // setCookie("username",_this.username);
                         $(".msg").text("登录成功!");
                         _this.$router.push({path:'/home'})
                         this.setUserInfo();
@@ -101,9 +111,9 @@
                         $(".msg").text("用户名或密码错误!")
                     }
 
-                }).catch(err => {
-                    console.log(err);
-                });
+                }).catch(err=>{
+
+                })
             },
             //存储用户信息
             setUserInfo: function() {

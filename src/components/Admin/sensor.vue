@@ -27,6 +27,7 @@
 <script>
     import axios from 'axios'
     import echarts from 'echarts'
+    import Api from '../../api/api'
     import {getCookie} from '../../public/js/cookie.js';
     import {timestampToTime} from '../../public/js/time.js';
     export  default {
@@ -64,13 +65,7 @@
             //作用域1
             getdata(this_ = this) {//作用域1
                 //作用域2 this undefined
-                axios({
-                    url: `http://121.199.42.23:8080/sponge/sensors/list?nid=${this.sensorID}`,
-                    method: 'get',
-                    type: 'json',
-                    headers: this.my_header
-
-                }).then(function (res) {
+                Api.sensorData(this.sensorID).then(res=>{
                     var new_data = res.data.data;
                     console.log(new_data);
                     if(new_data.length == 0){
@@ -85,8 +80,10 @@
                         }
                        this_.$set(this_, "data", new_data);//将this_.data的索引为0的元素设置成data 原型 Vue.$set(object, key/index, value/object)
                     }
-                   
-                });
+                })
+                .catch(err=>{
+
+                })
             },
         },
         beforeDestroy() {

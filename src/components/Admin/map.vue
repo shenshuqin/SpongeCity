@@ -35,6 +35,7 @@
 </template>
 <script>
     import {getCookie} from '../../public/js/cookie.js';
+    import Api from '../../api/api'
     import axios from 'axios';
     export default {
         data () {
@@ -72,29 +73,22 @@
             //作用域1
             
             getdata(this_ = this){//作用域1
-                //作用域2 this undefined
-                this_.$store.state.myHeader.Authorization = "Basic " + getCookie('token');
-                axios({
-                    // url: ' http://localhost:3001/rail',
-                    url: 'http://121.199.42.23:8080/sponge/nodes/list',
-                    method: 'get',
-                    type: 'json',
-                    headers: this_.$store.state.myHeader
-
-                }).then(function (res) {
+                Api.nodesData().then(res=>{
+                 if(res.status === 200){
                     var new_data = res.data.data;
                     this_.$set(this_, "data", new_data);//将this_.data的索引为0的元素设置成data 原型 Vue.$set(object, key/index, value/object)
-                    console.log(this_.data);
                     this_.data.forEach((dt, index)=>{
-                        var location = dt.location;
-                        var nidname = dt.nid;
-                        var lnglat = location.split(',');
-                        var coordinate={lng: null, lat:null, info_wind_show:false,nidname:null};
-                        [coordinate.lng, coordinate.lat,coordinate.nidname] = [Number(lnglat[0]), Number(lnglat[1]),nidname];
-                        this_.coordinates.push(coordinate);
-                    });
-                    console.log( this_.coordinates)
-                });
+                    var location = dt.location;
+                    var nidname = dt.nid;
+                    var lnglat = location.split(',');
+                    var coordinate={lng: null, lat:null, info_wind_show:false,nidname:null};
+                    [coordinate.lng, coordinate.lat,coordinate.nidname] = [Number(lnglat[0]), Number(lnglat[1]),nidname];
+                    this_.coordinates.push(coordinate);
+                  })
+                 }
+                }).catch(err=>{
+                    console.log(err);
+                })
             },
             jump(index){
                 let this_ = this;
@@ -115,11 +109,6 @@
     #navbar-top{
         width:100%;
         height:60px;
-    }
-    .home{
-        /*width:100%;*/
-        /*height: 500px;*/
-        /*position:relative;*/
     }
     .el-container{
         width:100%;

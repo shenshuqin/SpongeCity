@@ -22,12 +22,12 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/js/bootstrap.js'
 import md5 from 'js-md5';
 import './public/css/app.css'
-// 导入 MUI 的样式表， 和 Bootstrap 用法没有差别
-// import './lib/mui/css/mui.min.css'
+//  和 Bootstrap 用法没有差别
 import './lib/font/iconfont.css'
-import './lib/animate/animate.min.css'
-// import './lib/hightchart/highcharts.js'
-import './lib/animate/animate.min.css'
+//导入animate
+// import './lib/animate/animate.min.css'
+import animated from 'animate.css' // npm install animate.css --save安装，再引入
+Vue.use(animated)
 //导入element ui
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';

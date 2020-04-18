@@ -37,20 +37,17 @@
     "webpack-dev-server": "^2.9.3"
   },
   "dependencies": {
+    "animate.css": "^3.7.2",
     "axios": "^0.19.0",
     "bootstrap": "^3.3.7",
     "build": "^0.1.4",
     "echarts": "^4.2.1",
     "element-ui": "^2.12.0",
-    "highcharts": "^7.1.2",
     "jquery": "^3.4.1",
     "js-base64": "^2.5.1",
     "js-md5": "^0.7.3",
     "mockjs": "^1.1.0",
     "vue": "^2.5.2",
-    "vue-baidu-map": "^0.21.22",
-    "vue-resource": "^1.5.1",
-    "vue-router": "^3.0.1",
-    "vuex": "^3.1.1"
+    "vue-baidu-map": "^0.21.22"
   }
 }

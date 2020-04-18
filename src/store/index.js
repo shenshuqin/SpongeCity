@@ -7,10 +7,10 @@ Vue.use(Vuex);
 const store = new Vuex.Store({
     state:{
         count:1,
-        myHeader: {
-            'Content-Type': 'application/json',
-            'Authorization': ""
-        }
+        // myHeader: {
+        //     'Content-Type': 'application/json',
+        //     'Authorization': ""
+        // }
     },
     getters:{
         getStateCount:function(state){

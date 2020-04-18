@@ -50,6 +50,7 @@
 </template>
 <script>
     import axios from 'axios'
+    import Api from '../../api/api'
     import {getCookie} from '../../public/js/cookie.js';
     export  default {
         data(){
@@ -69,21 +70,29 @@
             this.$emit('footer', true);
             var newsID=this.$route.query.id;
             this_.type= this.$route.query.name;
+            // axios({
+            //     // url: 'http://121.199.42.23:8000/sponge/avg_data/sensor?sensor_id=8',
+            //     url:`http://121.199.42.23:8080/sponge/detail_data/sensor?sensor_id=${newsID}`,
+            //     method: 'get',
+            //     type: 'json',
+            //     headers: this_.my_header
+            // }).then(function (res) {
+            //     var data = res.data.data;
+            //     var len = data.length;
+            //     var timearr = [];
+            //     var dataarr = [];
+            //     console.log(data)
+            //     // this_.xAxix_data =data[i].datetime;
+            //     for (var i = 0; i < len; i++) {
+            //         timearr.push(data[i].datetime);
+            //         dataarr.push(data[i].value);
+            //     }
+            //     this_.tableData = data;
 
-            // this_.$http.get('http://121.199.42.23:8000/sponge/detail_data/sensor?sensor_id='+newsID).then((response) => {
-            //     // console.log(response);
-            //     console.log(newsID)
-            // }).catch(function(error) {
-            //     console.log(error);
-            // });
-            axios({
-                // url: 'http://121.199.42.23:8000/sponge/avg_data/sensor?sensor_id=8',
-                url:`http://121.199.42.23:8080/sponge/detail_data/sensor?sensor_id=${newsID}`,
-                method: 'get',
-                type: 'json',
-                headers: this_.my_header
-            }).then(function (res) {
-                var data = res.data.data;
+
+            // })
+            Api.getsensorData(id).then(res=>{
+                 var data = res.data.data;
                 var len = data.length;
                 var timearr = [];
                 var dataarr = [];
@@ -94,8 +103,6 @@
                     dataarr.push(data[i].value);
                 }
                 this_.tableData = data;
-
-
             })
         },
         mounted(){
