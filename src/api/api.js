@@ -77,7 +77,7 @@ export default {
         });
         return req;
     },
-    //sensor
+    //senior
     sensorData(sensorId){
         const req = request({
             url:url+'sponge/sensors/list?nid='+sensorId,
@@ -87,7 +87,7 @@ export default {
         });
         return req;
     },
-    //detect
+     //detect
     detectData(args){
         const req = request({
             url:url+'sponge/avg_data/sensor?'+args,

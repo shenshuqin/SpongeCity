@@ -91,12 +91,12 @@
 
 
             // })
-            Api.getsensorData(id).then(res=>{
+            Api.getsensorData(newsID).then(res=>{
                  var data = res.data.data;
                 var len = data.length;
                 var timearr = [];
                 var dataarr = [];
-                console.log(data)
+                console.log(data,"id")
                 // this_.xAxix_data =data[i].datetime;
                 for (var i = 0; i < len; i++) {
                     timearr.push(data[i].datetime);

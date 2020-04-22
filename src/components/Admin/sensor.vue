@@ -65,6 +65,7 @@
             //作用域1
             getdata(this_ = this) {//作用域1
                 //作用域2 this undefined
+                // console.log(this.sensorID)
                 Api.sensorData(this.sensorID).then(res=>{
                     var new_data = res.data.data;
                     console.log(new_data);

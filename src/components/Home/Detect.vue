@@ -237,10 +237,11 @@
                 this.start = Date.parse(this.time_start) || "1560873600000";
                 this.end = Date.parse(this.time_end) || Date.parse(new Date());//如果end参数为"" 则改为当前时间戳
                 let args = `sensor_id=${this.sensorObj.sensorsSelected}&start=${String(this.start).substr(0, 10)}&end=${String(this.end).substr(0, 10)}&interval=${this.timeInterval.intervalSelected}`;
-               Api.sensorData(args).then(res=>{
+               Api.detectData(args).then(res=>{
+                   console.log(res,"数据")
                     var data = res.data.data;
                     var len = data.length;
-                    var timearr = [];
+                    var timearr = []
                     var valueArr = [];
                     for (var i = 0; i < len; i++) {
                         timearr.push(data[i].datetime);
