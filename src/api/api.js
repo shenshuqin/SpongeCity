@@ -80,7 +80,7 @@ export default {
     //sensor
     sensorData(sensorId) {
         const req = request({
-            url: url + 'sponge/sensors/list?nid=1',
+            url: url + 'sponge/sensors/list?nid=1&',
             method: 'get',
             dataType: "json",
             headers: headers,
