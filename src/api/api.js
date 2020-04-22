@@ -1,7 +1,7 @@
 import request from '../utils/request'
-import {getCookie} from '../public/js/cookie.js';
+import { getCookie } from '../public/js/cookie.js';
 
-const url = 'http://121.199.42.23:8080/';
+const url = 'http://121.199.42.23:80/';
 const headers = {
     'Content-Type': 'application/json',
     'Authorization': "Basic " + getCookie('token'),
@@ -9,101 +9,101 @@ const headers = {
 
 export default {
     //login
-    login(data){
+    login(data) {
         const req = request({
-            url:url+'sponge/user/login',
-            method:'post',
+            url: url + 'sponge/user/login',
+            method: 'post',
             dataType: "json",
-            data:data,
-            headers:headers,
+            data: data,
+            headers: headers,
         });
         return req;
     },
     //admin submit
-    submit(id){
+    submit(id) {
         const req = request({
-            url:url+'sponge/nodes/get?nid='+id,
-            method:'get',
+            url: url + 'sponge/nodes/get?nid=' + id,
+            method: 'get',
             dataType: "json",
-            headers:headers,
+            headers: headers,
         });
         return req;
     },
-    getdata(){
+    getdata() {
         const req = request({
-            url:url+'sponge/nodes/list',
-            method:'get',
+            url: url + 'sponge/nodes/list',
+            method: 'get',
             dataType: "json",
-            headers:headers,
+            headers: headers,
         });
         return req;
     },
-    add(data){
+    add(data) {
         const req = request({
-            url:url+'sponge/nodes/list',
-            method:'post',
+            url: url + 'sponge/nodes/list',
+            method: 'post',
             dataType: "json",
-            data:data,
-            headers:headers,
+            data: data,
+            headers: headers,
         });
         return req;
     },
-    select(id){
+    select(id) {
         const req = request({
-            url:url+'sponge/nodes/get?nid='+id,
-            method:'get',
+            url: url + 'sponge/nodes/get?nid='+ id,
+            method: 'get',
             dataType: "json",
-            headers:headers,
+            headers: headers,
         });
         return req;
     },
-    modefy(data){
+    modefy(data) {
         const req = request({
-            url:url+'sponge/nodes/edit',
-            method:'put',
+            url: url + 'sponge/nodes/edit',
+            method: 'put',
             dataType: "json",
-            data:data,
-            headers:headers,
+            data: data,
+            headers: headers,
         });
         return req;
     },
     //map
-    nodesData(){
+    nodesData() {
         const req = request({
-            url:url+'sponge/nodes/list',
-            method:'get',
+            url: url + 'sponge/nodes/list',
+            method: 'get',
             dataType: "json",
-            headers:headers,
+            headers: headers,
         });
         return req;
     },
     //senior
     sensorData(sensorId){
         const req = request({
-            url:url+'sponge/sensors/list?nid='+sensorId,
-            method:'get',
+            url: url + 'sponge/sensors/list?nid='+sensorId,
+            method: 'get',
             dataType: "json",
-            headers:headers,
+            headers: headers,
         });
         return req;
     },
      //detect
     detectData(args){
         const req = request({
-            url:url+'sponge/avg_data/sensor?'+args,
-            method:'get',
+            url: url + 'sponge/avg_data/sensor?' + args,
+            method: 'get',
             dataType: "json",
-            headers:headers,
+            headers: headers,
         });
         return req;
     },
     //sensordata
-    getsensorData(id){
+    getsensorData(id) {
         const req = request({
-            url:url+'sponge/detail_data/sensor?sensor_id='+id,
-            method:'get',
+            url: url + 'sponge/detail_data/sensor?sensor_id=' + id,
+            method: 'get',
             dataType: "json",
-            headers:headers,
+            headers: headers,
         });
         return req;
     },
