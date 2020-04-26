@@ -1,7 +1,9 @@
 import request from '../utils/request'
 import { getCookie } from '../public/js/cookie.js';
 
-const url = 'http://121.199.42.23:80/';
+// const url = 'http://121.199.42.23:80/';
+// const SPONGE_API_ADDR = '121.199.42.23'
+const url = 'http://SPONGE_API_ADDR:80'
 const headers = {
     'Content-Type': 'application/json',
     'Authorization': "Basic " + getCookie('token'),
