@@ -1,0 +1,1519 @@
+npm WARN deprecated wrench@1.3.9: wrench.js is deprecated! You should check out fs-extra (https://github.com/jprichardson/node-fs-extra) for any operations you were using wrench for. Thanks for all the usage over the years.
+npm WARN deprecated core-js@2.6.11: core-js@<3 is no longer maintained and not recommended for usage due to the number of issues. Please, upgrade your dependencies to the actual version of core-js@3.
+npm WARN deprecated browserslist@1.7.7: Browserslist 2 could fail on reading Browserslist >3.0 config used in other tools.
+npm WARN deprecated request@2.81.0: request has been deprecated, see https://github.com/request/request/issues/3142
+npm WARN deprecated hawk@3.1.3: This module moved to @hapi/hawk. Please make sure to switch over as this distribution is no longer supported and may contain bugs and critical security issues.
+npm WARN deprecated cryptiles@2.0.5: This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial).
+npm WARN deprecated boom@2.10.1: This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial).
+npm WARN deprecated hoek@2.16.3: This version has been deprecated in accordance with the hapi support policy (hapi.im/support). Please upgrade to the latest version to get the best features, bug fixes, and security patches. If you are unable to upgrade at this time, paid support is available for older versions (hapi.im/commercial).
+npm WARN deprecated sntp@1.0.9: This module moved to @hapi/sntp. Please make sure to switch over as this distribution is no longer supported and may contain bugs and critical security issues.
+npm WARN deprecated request@2.88.2: request has been deprecated, see https://github.com/request/request/issues/3142
+npm WARN deprecated chokidar@2.1.8: Chokidar 2 will break on node v14+. Upgrade to chokidar 3 with 15x less dependencies.
+npm WARN deprecated resolve-url@0.2.1: https://github.com/lydell/resolve-url#deprecated
+npm WARN deprecated urix@0.1.0: Please see https://github.com/lydell/urix#deprecated
+npm WARN prefer global node-gyp@3.8.0 should be installed with -g
+
+> node-sass@4.13.1 install /home/hujin/sponge/sponge_front/node_modules/node-sass
+> node scripts/install.js
+
+Downloading binary from https://github.com/sass/node-sass/releases/download/v4.13.1/linux-x64-48_binding.node
+Cannot download "https://github.com/sass/node-sass/releases/download/v4.13.1/linux-x64-48_binding.node": 
+
+getaddrinfo ENOTFOUND github-production-release-asset-2e65be.s3.amazonaws.com github-production-release-asset-2e65be.s3.amazonaws.com:443
+
+Hint: If github.com is not accessible in your location
+      try setting a proxy via HTTP_PROXY, e.g. 
+
+      export HTTP_PROXY=http://example.com:1234
+
+or configure npm proxy via
+
+      npm config set proxy http://example.com:8080
+
+> core-js@2.6.11 postinstall /home/hujin/sponge/sponge_front/node_modules/core-js
+> node -e "try{require('./postinstall')}catch(e){}"
+
+
+> uglifyjs-webpack-plugin@0.4.6 postinstall /home/hujin/sponge/sponge_front/node_modules/webpack/node_modules/uglifyjs-webpack-plugin
+> node lib/post_install.js
+
+
+> node-sass@4.13.1 postinstall /home/hujin/sponge/sponge_front/node_modules/node-sass
+> node scripts/build.js
+
+Building: /usr/bin/node /home/hujin/sponge/sponge_front/node_modules/node-gyp/bin/node-gyp.js rebuild --verbose --libsass_ext= --libsass_cflags= --libsass_ldflags= --libsass_library=
+gyp info it worked if it ends with ok
+gyp verb cli [ '/usr/bin/node',
+gyp verb cli   '/home/hujin/sponge/sponge_front/node_modules/node-gyp/bin/node-gyp.js',
+gyp verb cli   'rebuild',
+gyp verb cli   '--verbose',
+gyp verb cli   '--libsass_ext=',
+gyp verb cli   '--libsass_cflags=',
+gyp verb cli   '--libsass_ldflags=',
+gyp verb cli   '--libsass_library=' ]
+gyp info using node-gyp@3.8.0
+gyp info using node@6.17.1 | linux | x64
+gyp verb command rebuild []
+gyp verb command clean []
+gyp verb clean removing "build" directory
+gyp verb command configure []
+gyp verb download using dist-url https://npm.taobao.org/dist
+gyp verb check python checking for Python executable "python2" in the PATH
+gyp verb `which` succeeded python2 /usr/bin/python2
+gyp verb check python version `/usr/bin/python2 -c "import sys; print "2.7.5
+gyp verb check python version .%s.%s" % sys.version_info[:3];"` returned: %j
+gyp verb get node dir no --target version specified, falling back to host node version: 6.17.1
+gyp verb command install [ '6.17.1' ]
+gyp verb download using dist-url https://npm.taobao.org/dist
+gyp verb install input version string "6.17.1"
+gyp verb install installing version: 6.17.1
+gyp verb install --ensure was passed, so won't reinstall if already installed
+gyp verb install version not already installed, continuing with install 6.17.1
+gyp verb ensuring nodedir is created /root/.node-gyp/6.17.1
+gyp verb created nodedir /root/.node-gyp
+gyp http GET https://npm.taobao.org/dist/v6.17.1/node-v6.17.1-headers.tar.gz
+gyp http 200 https://npm.taobao.org/dist/v6.17.1/node-v6.17.1-headers.tar.gz
+gyp verb extracted file from tarball include/node/android-ifaddrs.h
+gyp verb extracted file from tarball include/node/ares.h
+gyp verb extracted file from tarball include/node/ares_build.h
+gyp verb extracted file from tarball include/node/ares_rules.h
+gyp verb extracted file from tarball include/node/ares_version.h
+gyp verb extracted file from tarball include/node/common.gypi
+gyp verb extracted file from tarball include/node/config.gypi
+gyp verb extracted file from tarball include/node/nameser.h
+gyp verb extracted file from tarball include/node/node.h
+gyp verb extracted file from tarball include/node/node_api.h
+gyp verb extracted file from tarball include/node/node_api_types.h
+gyp verb extracted file from tarball include/node/node_buffer.h
+gyp verb extracted file from tarball include/node/node_object_wrap.h
+gyp verb extracted file from tarball include/node/node_version.h
+gyp verb extracted file from tarball include/node/pthread-barrier.h
+gyp verb extracted file from tarball include/node/stdint-msvc2008.h
+gyp verb extracted file from tarball include/node/tree.h
+gyp verb extracted file from tarball include/node/uv-aix.h
+gyp verb extracted file from tarball include/node/uv-bsd.h
+gyp verb extracted file from tarball include/node/uv-darwin.h
+gyp verb extracted file from tarball include/node/uv-errno.h
+gyp verb extracted file from tarball include/node/uv-linux.h
+gyp verb extracted file from tarball include/node/uv-os390.h
+gyp verb extracted file from tarball include/node/uv-posix.h
+gyp verb extracted file from tarball include/node/uv-sunos.h
+gyp verb extracted file from tarball include/node/uv-threadpool.h
+gyp verb extracted file from tarball include/node/uv-unix.h
+gyp verb extracted file from tarball include/node/uv-version.h
+gyp verb extracted file from tarball include/node/uv-win.h
+gyp verb extracted file from tarball include/node/uv.h
+gyp verb extracted file from tarball include/node/v8-debug.h
+gyp verb extracted file from tarball include/node/v8-experimental.h
+gyp verb extracted file from tarball include/node/v8-platform.h
+gyp verb extracted file from tarball include/node/v8-profiler.h
+gyp verb extracted file from tarball include/node/v8-testing.h
+gyp verb extracted file from tarball include/node/v8-util.h
+gyp verb extracted file from tarball include/node/v8-version.h
+gyp verb extracted file from tarball include/node/v8.h
+gyp verb extracted file from tarball include/node/v8config.h
+gyp verb extracted file from tarball include/node/zconf.h
+gyp verb extracted file from tarball include/node/zlib.h
+gyp verb extracted file from tarball include/node/openssl/aes.h
+gyp verb extracted file from tarball include/node/openssl/asn1.h
+gyp verb content checksum node-v6.17.1-headers.tar.gz e7e4e22c782fe25540a0a74f64e8aadffb45fc1d93ed66de8afd8fb94896fd72
+gyp verb extracted file from tarball include/node/openssl/asn1_mac.h
+gyp verb extracted file from tarball include/node/openssl/asn1t.h
+gyp verb extracted file from tarball include/node/openssl/bio.h
+gyp verb extracted file from tarball include/node/openssl/blowfish.h
+gyp verb extracted file from tarball include/node/openssl/bn.h
+gyp verb extracted file from tarball include/node/openssl/buffer.h
+gyp verb extracted file from tarball include/node/openssl/camellia.h
+gyp verb extracted file from tarball include/node/openssl/cast.h
+gyp verb extracted file from tarball include/node/openssl/cmac.h
+gyp verb extracted file from tarball include/node/openssl/cms.h
+gyp verb extracted file from tarball include/node/openssl/comp.h
+gyp verb extracted file from tarball include/node/openssl/conf.h
+gyp verb extracted file from tarball include/node/openssl/conf_api.h
+gyp verb extracted file from tarball include/node/openssl/crypto.h
+gyp verb extracted file from tarball include/node/openssl/des.h
+gyp verb extracted file from tarball include/node/openssl/des_old.h
+gyp verb extracted file from tarball include/node/openssl/dh.h
+gyp verb extracted file from tarball include/node/openssl/dsa.h
+gyp verb extracted file from tarball include/node/openssl/dso.h
+gyp verb extracted file from tarball include/node/openssl/dtls1.h
+gyp verb extracted file from tarball include/node/openssl/e_os2.h
+gyp verb extracted file from tarball include/node/openssl/ebcdic.h
+gyp verb extracted file from tarball include/node/openssl/ec.h
+gyp verb extracted file from tarball include/node/openssl/ecdh.h
+gyp verb extracted file from tarball include/node/openssl/ecdsa.h
+gyp verb extracted file from tarball include/node/openssl/engine.h
+gyp verb extracted file from tarball include/node/openssl/err.h
+gyp verb extracted file from tarball include/node/openssl/evp.h
+gyp verb extracted file from tarball include/node/openssl/hmac.h
+gyp verb extracted file from tarball include/node/openssl/idea.h
+gyp verb extracted file from tarball include/node/openssl/krb5_asn.h
+gyp verb extracted file from tarball include/node/openssl/kssl.h
+gyp verb extracted file from tarball include/node/openssl/lhash.h
+gyp verb extracted file from tarball include/node/openssl/md4.h
+gyp verb extracted file from tarball include/node/openssl/md5.h
+gyp verb extracted file from tarball include/node/openssl/mdc2.h
+gyp verb extracted file from tarball include/node/openssl/modes.h
+gyp verb extracted file from tarball include/node/openssl/obj_mac.h
+gyp verb extracted file from tarball include/node/openssl/objects.h
+gyp verb extracted file from tarball include/node/openssl/ocsp.h
+gyp verb extracted file from tarball include/node/openssl/opensslconf.h
+gyp verb extracted file from tarball include/node/openssl/opensslv.h
+gyp verb extracted file from tarball include/node/openssl/ossl_typ.h
+gyp verb extracted file from tarball include/node/openssl/pem.h
+gyp verb extracted file from tarball include/node/openssl/pem2.h
+gyp verb extracted file from tarball include/node/openssl/pkcs12.h
+gyp verb extracted file from tarball include/node/openssl/pkcs7.h
+gyp verb extracted file from tarball include/node/openssl/pqueue.h
+gyp verb extracted file from tarball include/node/openssl/rand.h
+gyp verb extracted file from tarball include/node/openssl/rc2.h
+gyp verb extracted file from tarball include/node/openssl/rc4.h
+gyp verb extracted file from tarball include/node/openssl/ripemd.h
+gyp verb extracted file from tarball include/node/openssl/rsa.h
+gyp verb extracted file from tarball include/node/openssl/safestack.h
+gyp verb extracted file from tarball include/node/openssl/seed.h
+gyp verb extracted file from tarball include/node/openssl/sha.h
+gyp verb extracted file from tarball include/node/openssl/srp.h
+gyp verb extracted file from tarball include/node/openssl/srtp.h
+gyp verb extracted file from tarball include/node/openssl/ssl.h
+gyp verb extracted file from tarball include/node/openssl/ssl2.h
+gyp verb extracted file from tarball include/node/openssl/ssl23.h
+gyp verb extracted file from tarball include/node/openssl/ssl3.h
+gyp verb extracted file from tarball include/node/openssl/stack.h
+gyp verb extracted file from tarball include/node/openssl/symhacks.h
+gyp verb extracted file from tarball include/node/openssl/tls1.h
+gyp verb extracted file from tarball include/node/openssl/ts.h
+gyp verb extracted file from tarball include/node/openssl/txt_db.h
+gyp verb extracted file from tarball include/node/openssl/ui.h
+gyp verb extracted file from tarball include/node/openssl/ui_compat.h
+gyp verb extracted file from tarball include/node/openssl/whrlpool.h
+gyp verb extracted file from tarball include/node/openssl/x509.h
+gyp verb extracted file from tarball include/node/openssl/x509_vfy.h
+gyp verb extracted file from tarball include/node/openssl/x509v3.h
+gyp verb extracted file from tarball include/node/openssl/archs/VC-WIN64A/opensslconf.h
+gyp verb extracted file from tarball include/node/openssl/archs/VC-WIN32/opensslconf.h
+gyp verb extracted file from tarball include/node/openssl/archs/solaris64-x86_64-gcc/opensslconf.h
+gyp verb extracted file from tarball include/node/openssl/archs/solaris-x86-gcc/opensslconf.h
+gyp verb extracted file from tarball include/node/openssl/archs/linux64-s390x/opensslconf.h
+gyp verb extracted file from tarball include/node/openssl/archs/linux32-s390x/opensslconf.h
+gyp verb extracted file from tarball include/node/openssl/archs/linux-x86_64/opensslconf.h
+gyp verb extracted file from tarball include/node/openssl/archs/linux-x32/opensslconf.h
+gyp verb extracted file from tarball include/node/openssl/archs/linux-ppc64/opensslconf.h
+gyp verb extracted file from tarball include/node/openssl/archs/linux-ppc/opensslconf.h
+gyp verb extracted file from tarball include/node/openssl/archs/linux-elf/opensslconf.h
+gyp verb extracted file from tarball include/node/openssl/archs/linux-armv4/opensslconf.h
+gyp verb extracted file from tarball include/node/openssl/archs/linux-aarch64/opensslconf.h
+gyp verb extracted file from tarball include/node/openssl/archs/darwin64-x86_64-cc/opensslconf.h
+gyp verb extracted file from tarball include/node/openssl/archs/darwin-i386-cc/opensslconf.h
+gyp verb extracted file from tarball include/node/openssl/archs/BSD-x86_64/opensslconf.h
+gyp verb extracted file from tarball include/node/openssl/archs/BSD-x86/opensslconf.h
+gyp verb extracted file from tarball include/node/openssl/archs/aix64-gcc/opensslconf.h
+gyp verb extracted file from tarball include/node/openssl/archs/aix-gcc/opensslconf.h
+gyp verb extracted file from tarball include/node/libplatform/libplatform.h
+gyp verb tarball done parsing tarball
+gyp verb check download content checksum, need to download `SHASUMS256.txt`... 
+gyp verb checksum url https://npm.taobao.org/dist/v6.17.1/SHASUMS256.txt
+gyp http GET https://npm.taobao.org/dist/v6.17.1/SHASUMS256.txt
+gyp http 200 https://npm.taobao.org/dist/v6.17.1/SHASUMS256.txt
+gyp verb checksum data {"node-v6.17.1-aix-ppc64.tar.gz":"8e01f15308312487d7f2f0f86185e768f0ee61bcc8f2d52e8dbe9b6cab241539","node-v6.17.1-darwin-x64.tar.gz":"8033e07a5da759af00db7364c2344f11eeff73b51647d39926bfa36f2131b990","node-v6.17.1-darwin-x64.tar.xz":"7ced1cbebf4dbe4ba267f21777264b9a1b6adf577b185dd7f04dce1fcbbd4789","node-v6.17.1-headers.tar.gz":"e7e4e22c782fe25540a0a74f64e8aadffb45fc1d93ed66de8afd8fb94896fd72","node-v6.17.1-headers.tar.xz":"396981dd46ca7602ed8f9c71b6ba10614dc5af554e0aeccc73304c3c3ed1a793","node-v6.17.1-linux-arm64.tar.gz":"50b2d01026afc361925836ed4fa7ddd948d3102f1c2872a078fbce5ec7cceb8b","node-v6.17.1-linux-arm64.tar.xz":"9c7fdb4208fe0d63ac4280d0894a076d11873d49b79648c448f059443c666fbe","node-v6.17.1-linux-armv6l.tar.gz":"dfc9b0e47bb471aaf90496019e5bf01efe79fb2d94958f948410b664fb57f536","node-v6.17.1-linux-armv6l.tar.xz":"541ae894fa7001c31e8a7992ef2abbba2defc1cf13b6e58894f5fe7341e26247","node-v6.17.1-linux-armv7l.tar.gz":"7919c565532ccabe57e13d2d4eecdc43ae81abda187be9a87dc14dc81281fa05","node-v6.17.1-linux-armv7l.tar.xz":"4a659adfa3191c0f1246eef5386af9105fc2774997aad4809db53dbf3623e3da","node-v6.17.1-linux-ppc64le.tar.gz":"0c1d63258b80ce20aa2739a2b510c8f630912409a410080d064941a8f8bd1856","node-v6.17.1-linux-ppc64le.tar.xz":"0e1a31cff61d84f14a69e035be6cfd3bf044ed8371124ed14ab8b1b83d949438","node-v6.17.1-linux-ppc64.tar.gz":"f340efb57bb6d9a3468d14a412384bd52832d5300292f992737565f0d1509dfc","node-v6.17.1-linux-ppc64.tar.xz":"d2668a48bac1f855420c2a621a5ce9ecccce345a2495d437d451bf20fd80a8f7","node-v6.17.1-linux-s390x.tar.gz":"6e84f14ac2a0273ce009f51698813375e1633465d1df14dd80e88c0901347869","node-v6.17.1-linux-s390x.tar.xz":"0eb09f079c44350bac3a586a413848689a27ae3d3076161a826ccd928fc368ba","node-v6.17.1-linux-x64.tar.gz":"6b2b0613f56e1630edcfc8e7800f87d5538cef09fce6a08f1cc35983181d96b2","node-v6.17.1-linux-x64.tar.xz":"0f88dacefc4be4709e0a9f9fe685efdfe1582a724d8f42614179c2f604c36165","node-v6.17.1-linux-x86.tar.gz":"f506e24f741a14a64f3d6b660a0faecac1001fef98509382ef231e716efc49a1","node-v6.17.1-linux-x86.tar.xz":"45bdc0ae20c8d2a4a140f5cb6c0bc7b9812ccf19c95d72bc89a40bb3403c5954","node-v6.17.1.pkg":"372ddb024919f0ee9293b222adcb284c5ad56e914b8f844f4d4bd236f42f39d0","node-v6.17.1-sunos-x64.tar.gz":"f74d887f7b2164201f39ac99c623e30e23a646f4bb6096e5c174d7e95b51dc93","node-v6.17.1-sunos-x64.tar.xz":"01c5bace398229a61bae32e98156d7b6d9a9d966074f232d03dbe3bb34fe1344","node-v6.17.1-sunos-x86.tar.gz":"6ea4704e64a6228da533453a424ff095e67b196bb85614a999c66cab3689b26d","node-v6.17.1-sunos-x86.tar.xz":"b6658ffc366c467ca8412b76171684b93e66297db0ce15f8c7123a5df1e9bd49","node-v6.17.1.tar.gz":"6fa487c5c6770cc7ca0567c0e532d6bcdf0f5d1aebdceb169ecfb66984459dea","node-v6.17.1.tar.xz":"6f6dc9624656a008513b7608bfc105dd92ceea5d7b4516edeca7e6b19d2edd94","node-v6.17.1-win-x64.7z":"76fd386179ebae42e1f9278c0df332e3fd7e74913154b4b10ff18e4200aea499","node-v6.17.1-win-x64.zip":"85a7110c2e2cdaa76c5cad4512395eb13034fffd2c6aea3eca7e61797959dad7","node-v6.17.1-win-x86.7z":"dd61684aee2dcc9805454b19e85cec9ef7a7462a53c202bb6c8c7ac08e5bdd59","node-v6.17.1-win-x86.zip":"3705f26c83c261a480115cc2165ad680adb94d99dfc2f4a3d9c4d72b0a8e1ef8","node-v6.17.1-x64.msi":"e3a3816d7184eb90162b0fc7b0f2b7f6f2ba5c11c4c6d8dc1bd8b7da40a7c514","node-v6.17.1-x86.msi":"db11f92d99e1b2289bf62f6cb8e9173fea680c0371d74de0f61802519dc07613","win-x64/node.exe":"6639e047318e21dc1c5077325d8be24a9ca7465e40f4d9fc568859516352f047","win-x64/node.lib":"906ce519680be90b67e75f12af9630f3ded4972b880337077996e2d80a7be984","win-x64/node_pdb.7z":"412267948bfc0f05a99af525f1339e4c1c72eadc697eaaf6eb828d1b2b09c5e9","win-x64/node_pdb.zip":"a5fd65519f48d9a0d0a2d477f276557e1858902f442fc35164c76b5348aa5868","win-x86/node.exe":"8fcacb69695883e610f6e6385779d382db141e5cf7c474e1c6106e0521940471","win-x86/node.lib":"9c8d1eda4f4c0d233f9c9fae730ede7f41d0ab7aa2b5646acc05d9d6709e32d1","win-x86/node_pdb.7z":"753d7b5841f15b6acd1319376023caef644f02161d84baf7189cf97e116b25b8","win-x86/node_pdb.zip":"43bbb5a3f27bbe4e2a8e1909070074c9521cc75061b05ec5aec37d5cc3a53ef1"}
+gyp verb download contents checksum {"node-v6.17.1-headers.tar.gz":"e7e4e22c782fe25540a0a74f64e8aadffb45fc1d93ed66de8afd8fb94896fd72"}
+gyp verb validating download checksum for node-v6.17.1-headers.tar.gz (e7e4e22c782fe25540a0a74f64e8aadffb45fc1d93ed66de8afd8fb94896fd72 == e7e4e22c782fe25540a0a74f64e8aadffb45fc1d93ed66de8afd8fb94896fd72)
+gyp verb get node dir target node version installed: 6.17.1
+gyp verb build dir attempting to create "build" dir: /home/hujin/sponge/sponge_front/node_modules/node-sass/build
+gyp verb build dir "build" dir needed to be created? /home/hujin/sponge/sponge_front/node_modules/node-sass/build
+gyp verb build/config.gypi creating config file
+gyp verb build/config.gypi writing out config file: /home/hujin/sponge/sponge_front/node_modules/node-sass/build/config.gypi
+gyp verb config.gypi checking for gypi file: /home/hujin/sponge/sponge_front/node_modules/node-sass/config.gypi
+gyp verb common.gypi checking for gypi file: /home/hujin/sponge/sponge_front/node_modules/node-sass/common.gypi
+gyp verb gyp gyp format was not specified; forcing "make"
+gyp info spawn /usr/bin/python2
+gyp info spawn args [ '/home/hujin/sponge/sponge_front/node_modules/node-gyp/gyp/gyp_main.py',
+gyp info spawn args   'binding.gyp',
+gyp info spawn args   '-f',
+gyp info spawn args   'make',
+gyp info spawn args   '-I',
+gyp info spawn args   '/home/hujin/sponge/sponge_front/node_modules/node-sass/build/config.gypi',
+gyp info spawn args   '-I',
+gyp info spawn args   '/home/hujin/sponge/sponge_front/node_modules/node-gyp/addon.gypi',
+gyp info spawn args   '-I',
+gyp info spawn args   '/root/.node-gyp/6.17.1/include/node/common.gypi',
+gyp info spawn args   '-Dlibrary=shared_library',
+gyp info spawn args   '-Dvisibility=default',
+gyp info spawn args   '-Dnode_root_dir=/root/.node-gyp/6.17.1',
+gyp info spawn args   '-Dnode_gyp_dir=/home/hujin/sponge/sponge_front/node_modules/node-gyp',
+gyp info spawn args   '-Dnode_lib_file=/root/.node-gyp/6.17.1/<(target_arch)/node.lib',
+gyp info spawn args   '-Dmodule_root_dir=/home/hujin/sponge/sponge_front/node_modules/node-sass',
+gyp info spawn args   '-Dnode_engine=v8',
+gyp info spawn args   '--depth=.',
+gyp info spawn args   '--no-parallel',
+gyp info spawn args   '--generator-output',
+gyp info spawn args   'build',
+gyp info spawn args   '-Goutput_dir=.' ]
+gyp verb command build []
+gyp verb download using dist-url https://npm.taobao.org/dist
+gyp verb build type Release
+gyp verb architecture x64
+gyp verb node dev dir /root/.node-gyp/6.17.1
+gyp verb `which` succeeded for `make` /usr/bin/make
+gyp info spawn make
+gyp info spawn args [ 'V=1', 'BUILDTYPE=Release', '-C', 'build' ]
+make: 进入目录“/home/hujin/sponge/sponge_front/node_modules/node-sass/build”
+  g++ '-DNODE_GYP_MODULE_NAME=libsass' '-DUSING_UV_SHARED=1' '-DUSING_V8_SHARED=1' '-DV8_DEPRECATION_WARNINGS=1' '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-DLIBSASS_VERSION="3.5.4"' -I/root/.node-gyp/6.17.1/include/node -I/root/.node-gyp/6.17.1/src -I/root/.node-gyp/6.17.1/deps/openssl/config -I/root/.node-gyp/6.17.1/deps/openssl/openssl/include -I/root/.node-gyp/6.17.1/deps/uv/include -I/root/.node-gyp/6.17.1/deps/zlib -I/root/.node-gyp/6.17.1/deps/v8/include -I../src/libsass/include  -fPIC -pthread -Wall -Wextra -Wno-unused-parameter -m64 -O3 -fno-omit-frame-pointer -std=gnu++0x -std=c++0x -fexceptions -frtti -MMD -MF ./Release/.deps/Release/obj.target/libsass/src/libsass/src/ast.o.d.raw   -c -o Release/obj.target/libsass/src/libsass/src/ast.o ../src/libsass/src/ast.cpp
+  g++ '-DNODE_GYP_MODULE_NAME=libsass' '-DUSING_UV_SHARED=1' '-DUSING_V8_SHARED=1' '-DV8_DEPRECATION_WARNINGS=1' '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-DLIBSASS_VERSION="3.5.4"' -I/root/.node-gyp/6.17.1/include/node -I/root/.node-gyp/6.17.1/src -I/root/.node-gyp/6.17.1/deps/openssl/config -I/root/.node-gyp/6.17.1/deps/openssl/openssl/include -I/root/.node-gyp/6.17.1/deps/uv/include -I/root/.node-gyp/6.17.1/deps/zlib -I/root/.node-gyp/6.17.1/deps/v8/include -I../src/libsass/include  -fPIC -pthread -Wall -Wextra -Wno-unused-parameter -m64 -O3 -fno-omit-frame-pointer -std=gnu++0x -std=c++0x -fexceptions -frtti -MMD -MF ./Release/.deps/Release/obj.target/libsass/src/libsass/src/ast_fwd_decl.o.d.raw   -c -o Release/obj.target/libsass/src/libsass/src/ast_fwd_decl.o ../src/libsass/src/ast_fwd_decl.cpp
+  g++ '-DNODE_GYP_MODULE_NAME=libsass' '-DUSING_UV_SHARED=1' '-DUSING_V8_SHARED=1' '-DV8_DEPRECATION_WARNINGS=1' '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-DLIBSASS_VERSION="3.5.4"' -I/root/.node-gyp/6.17.1/include/node -I/root/.node-gyp/6.17.1/src -I/root/.node-gyp/6.17.1/deps/openssl/config -I/root/.node-gyp/6.17.1/deps/openssl/openssl/include -I/root/.node-gyp/6.17.1/deps/uv/include -I/root/.node-gyp/6.17.1/deps/zlib -I/root/.node-gyp/6.17.1/deps/v8/include -I../src/libsass/include  -fPIC -pthread -Wall -Wextra -Wno-unused-parameter -m64 -O3 -fno-omit-frame-pointer -std=gnu++0x -std=c++0x -fexceptions -frtti -MMD -MF ./Release/.deps/Release/obj.target/libsass/src/libsass/src/backtrace.o.d.raw   -c -o Release/obj.target/libsass/src/libsass/src/backtrace.o ../src/libsass/src/backtrace.cpp
+  g++ '-DNODE_GYP_MODULE_NAME=libsass' '-DUSING_UV_SHARED=1' '-DUSING_V8_SHARED=1' '-DV8_DEPRECATION_WARNINGS=1' '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-DLIBSASS_VERSION="3.5.4"' -I/root/.node-gyp/6.17.1/include/node -I/root/.node-gyp/6.17.1/src -I/root/.node-gyp/6.17.1/deps/openssl/config -I/root/.node-gyp/6.17.1/deps/openssl/openssl/include -I/root/.node-gyp/6.17.1/deps/uv/include -I/root/.node-gyp/6.17.1/deps/zlib -I/root/.node-gyp/6.17.1/deps/v8/include -I../src/libsass/include  -fPIC -pthread -Wall -Wextra -Wno-unused-parameter -m64 -O3 -fno-omit-frame-pointer -std=gnu++0x -std=c++0x -fexceptions -frtti -MMD -MF ./Release/.deps/Release/obj.target/libsass/src/libsass/src/base64vlq.o.d.raw   -c -o Release/obj.target/libsass/src/libsass/src/base64vlq.o ../src/libsass/src/base64vlq.cpp
+  g++ '-DNODE_GYP_MODULE_NAME=libsass' '-DUSING_UV_SHARED=1' '-DUSING_V8_SHARED=1' '-DV8_DEPRECATION_WARNINGS=1' '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-DLIBSASS_VERSION="3.5.4"' -I/root/.node-gyp/6.17.1/include/node -I/root/.node-gyp/6.17.1/src -I/root/.node-gyp/6.17.1/deps/openssl/config -I/root/.node-gyp/6.17.1/deps/openssl/openssl/include -I/root/.node-gyp/6.17.1/deps/uv/include -I/root/.node-gyp/6.17.1/deps/zlib -I/root/.node-gyp/6.17.1/deps/v8/include -I../src/libsass/include  -fPIC -pthread -Wall -Wextra -Wno-unused-parameter -m64 -O3 -fno-omit-frame-pointer -std=gnu++0x -std=c++0x -fexceptions -frtti -MMD -MF ./Release/.deps/Release/obj.target/libsass/src/libsass/src/bind.o.d.raw   -c -o Release/obj.target/libsass/src/libsass/src/bind.o ../src/libsass/src/bind.cpp
+  cc '-DNODE_GYP_MODULE_NAME=libsass' '-DUSING_UV_SHARED=1' '-DUSING_V8_SHARED=1' '-DV8_DEPRECATION_WARNINGS=1' '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-DLIBSASS_VERSION="3.5.4"' -I/root/.node-gyp/6.17.1/include/node -I/root/.node-gyp/6.17.1/src -I/root/.node-gyp/6.17.1/deps/openssl/config -I/root/.node-gyp/6.17.1/deps/openssl/openssl/include -I/root/.node-gyp/6.17.1/deps/uv/include -I/root/.node-gyp/6.17.1/deps/zlib -I/root/.node-gyp/6.17.1/deps/v8/include -I../src/libsass/include  -fPIC -pthread -Wall -Wextra -Wno-unused-parameter -m64 -O3 -fno-omit-frame-pointer  -MMD -MF ./Release/.deps/Release/obj.target/libsass/src/libsass/src/cencode.o.d.raw   -c -o Release/obj.target/libsass/src/libsass/src/cencode.o ../src/libsass/src/cencode.c
+  g++ '-DNODE_GYP_MODULE_NAME=libsass' '-DUSING_UV_SHARED=1' '-DUSING_V8_SHARED=1' '-DV8_DEPRECATION_WARNINGS=1' '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-DLIBSASS_VERSION="3.5.4"' -I/root/.node-gyp/6.17.1/include/node -I/root/.node-gyp/6.17.1/src -I/root/.node-gyp/6.17.1/deps/openssl/config -I/root/.node-gyp/6.17.1/deps/openssl/openssl/include -I/root/.node-gyp/6.17.1/deps/uv/include -I/root/.node-gyp/6.17.1/deps/zlib -I/root/.node-gyp/6.17.1/deps/v8/include -I../src/libsass/include  -fPIC -pthread -Wall -Wextra -Wno-unused-parameter -m64 -O3 -fno-omit-frame-pointer -std=gnu++0x -std=c++0x -fexceptions -frtti -MMD -MF ./Release/.deps/Release/obj.target/libsass/src/libsass/src/check_nesting.o.d.raw   -c -o Release/obj.target/libsass/src/libsass/src/check_nesting.o ../src/libsass/src/check_nesting.cpp
+  g++ '-DNODE_GYP_MODULE_NAME=libsass' '-DUSING_UV_SHARED=1' '-DUSING_V8_SHARED=1' '-DV8_DEPRECATION_WARNINGS=1' '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-DLIBSASS_VERSION="3.5.4"' -I/root/.node-gyp/6.17.1/include/node -I/root/.node-gyp/6.17.1/src -I/root/.node-gyp/6.17.1/deps/openssl/config -I/root/.node-gyp/6.17.1/deps/openssl/openssl/include -I/root/.node-gyp/6.17.1/deps/uv/include -I/root/.node-gyp/6.17.1/deps/zlib -I/root/.node-gyp/6.17.1/deps/v8/include -I../src/libsass/include  -fPIC -pthread -Wall -Wextra -Wno-unused-parameter -m64 -O3 -fno-omit-frame-pointer -std=gnu++0x -std=c++0x -fexceptions -frtti -MMD -MF ./Release/.deps/Release/obj.target/libsass/src/libsass/src/color_maps.o.d.raw   -c -o Release/obj.target/libsass/src/libsass/src/color_maps.o ../src/libsass/src/color_maps.cpp
+  g++ '-DNODE_GYP_MODULE_NAME=libsass' '-DUSING_UV_SHARED=1' '-DUSING_V8_SHARED=1' '-DV8_DEPRECATION_WARNINGS=1' '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-DLIBSASS_VERSION="3.5.4"' -I/root/.node-gyp/6.17.1/include/node -I/root/.node-gyp/6.17.1/src -I/root/.node-gyp/6.17.1/deps/openssl/config -I/root/.node-gyp/6.17.1/deps/openssl/openssl/include -I/root/.node-gyp/6.17.1/deps/uv/include -I/root/.node-gyp/6.17.1/deps/zlib -I/root/.node-gyp/6.17.1/deps/v8/include -I../src/libsass/include  -fPIC -pthread -Wall -Wextra -Wno-unused-parameter -m64 -O3 -fno-omit-frame-pointer -std=gnu++0x -std=c++0x -fexceptions -frtti -MMD -MF ./Release/.deps/Release/obj.target/libsass/src/libsass/src/constants.o.d.raw   -c -o Release/obj.target/libsass/src/libsass/src/constants.o ../src/libsass/src/constants.cpp
+  g++ '-DNODE_GYP_MODULE_NAME=libsass' '-DUSING_UV_SHARED=1' '-DUSING_V8_SHARED=1' '-DV8_DEPRECATION_WARNINGS=1' '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-DLIBSASS_VERSION="3.5.4"' -I/root/.node-gyp/6.17.1/include/node -I/root/.node-gyp/6.17.1/src -I/root/.node-gyp/6.17.1/deps/openssl/config -I/root/.node-gyp/6.17.1/deps/openssl/openssl/include -I/root/.node-gyp/6.17.1/deps/uv/include -I/root/.node-gyp/6.17.1/deps/zlib -I/root/.node-gyp/6.17.1/deps/v8/include -I../src/libsass/include  -fPIC -pthread -Wall -Wextra -Wno-unused-parameter -m64 -O3 -fno-omit-frame-pointer -std=gnu++0x -std=c++0x -fexceptions -frtti -MMD -MF ./Release/.deps/Release/obj.target/libsass/src/libsass/src/context.o.d.raw   -c -o Release/obj.target/libsass/src/libsass/src/context.o ../src/libsass/src/context.cpp
+  g++ '-DNODE_GYP_MODULE_NAME=libsass' '-DUSING_UV_SHARED=1' '-DUSING_V8_SHARED=1' '-DV8_DEPRECATION_WARNINGS=1' '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-DLIBSASS_VERSION="3.5.4"' -I/root/.node-gyp/6.17.1/include/node -I/root/.node-gyp/6.17.1/src -I/root/.node-gyp/6.17.1/deps/openssl/config -I/root/.node-gyp/6.17.1/deps/openssl/openssl/include -I/root/.node-gyp/6.17.1/deps/uv/include -I/root/.node-gyp/6.17.1/deps/zlib -I/root/.node-gyp/6.17.1/deps/v8/include -I../src/libsass/include  -fPIC -pthread -Wall -Wextra -Wno-unused-parameter -m64 -O3 -fno-omit-frame-pointer -std=gnu++0x -std=c++0x -fexceptions -frtti -MMD -MF ./Release/.deps/Release/obj.target/libsass/src/libsass/src/cssize.o.d.raw   -c -o Release/obj.target/libsass/src/libsass/src/cssize.o ../src/libsass/src/cssize.cpp
+  g++ '-DNODE_GYP_MODULE_NAME=libsass' '-DUSING_UV_SHARED=1' '-DUSING_V8_SHARED=1' '-DV8_DEPRECATION_WARNINGS=1' '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-DLIBSASS_VERSION="3.5.4"' -I/root/.node-gyp/6.17.1/include/node -I/root/.node-gyp/6.17.1/src -I/root/.node-gyp/6.17.1/deps/openssl/config -I/root/.node-gyp/6.17.1/deps/openssl/openssl/include -I/root/.node-gyp/6.17.1/deps/uv/include -I/root/.node-gyp/6.17.1/deps/zlib -I/root/.node-gyp/6.17.1/deps/v8/include -I../src/libsass/include  -fPIC -pthread -Wall -Wextra -Wno-unused-parameter -m64 -O3 -fno-omit-frame-pointer -std=gnu++0x -std=c++0x -fexceptions -frtti -MMD -MF ./Release/.deps/Release/obj.target/libsass/src/libsass/src/emitter.o.d.raw   -c -o Release/obj.target/libsass/src/libsass/src/emitter.o ../src/libsass/src/emitter.cpp
+  g++ '-DNODE_GYP_MODULE_NAME=libsass' '-DUSING_UV_SHARED=1' '-DUSING_V8_SHARED=1' '-DV8_DEPRECATION_WARNINGS=1' '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-DLIBSASS_VERSION="3.5.4"' -I/root/.node-gyp/6.17.1/include/node -I/root/.node-gyp/6.17.1/src -I/root/.node-gyp/6.17.1/deps/openssl/config -I/root/.node-gyp/6.17.1/deps/openssl/openssl/include -I/root/.node-gyp/6.17.1/deps/uv/include -I/root/.node-gyp/6.17.1/deps/zlib -I/root/.node-gyp/6.17.1/deps/v8/include -I../src/libsass/include  -fPIC -pthread -Wall -Wextra -Wno-unused-parameter -m64 -O3 -fno-omit-frame-pointer -std=gnu++0x -std=c++0x -fexceptions -frtti -MMD -MF ./Release/.deps/Release/obj.target/libsass/src/libsass/src/environment.o.d.raw   -c -o Release/obj.target/libsass/src/libsass/src/environment.o ../src/libsass/src/environment.cpp
+  g++ '-DNODE_GYP_MODULE_NAME=libsass' '-DUSING_UV_SHARED=1' '-DUSING_V8_SHARED=1' '-DV8_DEPRECATION_WARNINGS=1' '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-DLIBSASS_VERSION="3.5.4"' -I/root/.node-gyp/6.17.1/include/node -I/root/.node-gyp/6.17.1/src -I/root/.node-gyp/6.17.1/deps/openssl/config -I/root/.node-gyp/6.17.1/deps/openssl/openssl/include -I/root/.node-gyp/6.17.1/deps/uv/include -I/root/.node-gyp/6.17.1/deps/zlib -I/root/.node-gyp/6.17.1/deps/v8/include -I../src/libsass/include  -fPIC -pthread -Wall -Wextra -Wno-unused-parameter -m64 -O3 -fno-omit-frame-pointer -std=gnu++0x -std=c++0x -fexceptions -frtti -MMD -MF ./Release/.deps/Release/obj.target/libsass/src/libsass/src/error_handling.o.d.raw   -c -o Release/obj.target/libsass/src/libsass/src/error_handling.o ../src/libsass/src/error_handling.cpp
+  g++ '-DNODE_GYP_MODULE_NAME=libsass' '-DUSING_UV_SHARED=1' '-DUSING_V8_SHARED=1' '-DV8_DEPRECATION_WARNINGS=1' '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-DLIBSASS_VERSION="3.5.4"' -I/root/.node-gyp/6.17.1/include/node -I/root/.node-gyp/6.17.1/src -I/root/.node-gyp/6.17.1/deps/openssl/config -I/root/.node-gyp/6.17.1/deps/openssl/openssl/include -I/root/.node-gyp/6.17.1/deps/uv/include -I/root/.node-gyp/6.17.1/deps/zlib -I/root/.node-gyp/6.17.1/deps/v8/include -I../src/libsass/include  -fPIC -pthread -Wall -Wextra -Wno-unused-parameter -m64 -O3 -fno-omit-frame-pointer -std=gnu++0x -std=c++0x -fexceptions -frtti -MMD -MF ./Release/.deps/Release/obj.target/libsass/src/libsass/src/eval.o.d.raw   -c -o Release/obj.target/libsass/src/libsass/src/eval.o ../src/libsass/src/eval.cpp
+  g++ '-DNODE_GYP_MODULE_NAME=libsass' '-DUSING_UV_SHARED=1' '-DUSING_V8_SHARED=1' '-DV8_DEPRECATION_WARNINGS=1' '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-DLIBSASS_VERSION="3.5.4"' -I/root/.node-gyp/6.17.1/include/node -I/root/.node-gyp/6.17.1/src -I/root/.node-gyp/6.17.1/deps/openssl/config -I/root/.node-gyp/6.17.1/deps/openssl/openssl/include -I/root/.node-gyp/6.17.1/deps/uv/include -I/root/.node-gyp/6.17.1/deps/zlib -I/root/.node-gyp/6.17.1/deps/v8/include -I../src/libsass/include  -fPIC -pthread -Wall -Wextra -Wno-unused-parameter -m64 -O3 -fno-omit-frame-pointer -std=gnu++0x -std=c++0x -fexceptions -frtti -MMD -MF ./Release/.deps/Release/obj.target/libsass/src/libsass/src/expand.o.d.raw   -c -o Release/obj.target/libsass/src/libsass/src/expand.o ../src/libsass/src/expand.cpp
+  g++ '-DNODE_GYP_MODULE_NAME=libsass' '-DUSING_UV_SHARED=1' '-DUSING_V8_SHARED=1' '-DV8_DEPRECATION_WARNINGS=1' '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-DLIBSASS_VERSION="3.5.4"' -I/root/.node-gyp/6.17.1/include/node -I/root/.node-gyp/6.17.1/src -I/root/.node-gyp/6.17.1/deps/openssl/config -I/root/.node-gyp/6.17.1/deps/openssl/openssl/include -I/root/.node-gyp/6.17.1/deps/uv/include -I/root/.node-gyp/6.17.1/deps/zlib -I/root/.node-gyp/6.17.1/deps/v8/include -I../src/libsass/include  -fPIC -pthread -Wall -Wextra -Wno-unused-parameter -m64 -O3 -fno-omit-frame-pointer -std=gnu++0x -std=c++0x -fexceptions -frtti -MMD -MF ./Release/.deps/Release/obj.target/libsass/src/libsass/src/extend.o.d.raw   -c -o Release/obj.target/libsass/src/libsass/src/extend.o ../src/libsass/src/extend.cpp
+  g++ '-DNODE_GYP_MODULE_NAME=libsass' '-DUSING_UV_SHARED=1' '-DUSING_V8_SHARED=1' '-DV8_DEPRECATION_WARNINGS=1' '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-DLIBSASS_VERSION="3.5.4"' -I/root/.node-gyp/6.17.1/include/node -I/root/.node-gyp/6.17.1/src -I/root/.node-gyp/6.17.1/deps/openssl/config -I/root/.node-gyp/6.17.1/deps/openssl/openssl/include -I/root/.node-gyp/6.17.1/deps/uv/include -I/root/.node-gyp/6.17.1/deps/zlib -I/root/.node-gyp/6.17.1/deps/v8/include -I../src/libsass/include  -fPIC -pthread -Wall -Wextra -Wno-unused-parameter -m64 -O3 -fno-omit-frame-pointer -std=gnu++0x -std=c++0x -fexceptions -frtti -MMD -MF ./Release/.deps/Release/obj.target/libsass/src/libsass/src/file.o.d.raw   -c -o Release/obj.target/libsass/src/libsass/src/file.o ../src/libsass/src/file.cpp
+  g++ '-DNODE_GYP_MODULE_NAME=libsass' '-DUSING_UV_SHARED=1' '-DUSING_V8_SHARED=1' '-DV8_DEPRECATION_WARNINGS=1' '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-DLIBSASS_VERSION="3.5.4"' -I/root/.node-gyp/6.17.1/include/node -I/root/.node-gyp/6.17.1/src -I/root/.node-gyp/6.17.1/deps/openssl/config -I/root/.node-gyp/6.17.1/deps/openssl/openssl/include -I/root/.node-gyp/6.17.1/deps/uv/include -I/root/.node-gyp/6.17.1/deps/zlib -I/root/.node-gyp/6.17.1/deps/v8/include -I../src/libsass/include  -fPIC -pthread -Wall -Wextra -Wno-unused-parameter -m64 -O3 -fno-omit-frame-pointer -std=gnu++0x -std=c++0x -fexceptions -frtti -MMD -MF ./Release/.deps/Release/obj.target/libsass/src/libsass/src/functions.o.d.raw   -c -o Release/obj.target/libsass/src/libsass/src/functions.o ../src/libsass/src/functions.cpp
+  g++ '-DNODE_GYP_MODULE_NAME=libsass' '-DUSING_UV_SHARED=1' '-DUSING_V8_SHARED=1' '-DV8_DEPRECATION_WARNINGS=1' '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-DLIBSASS_VERSION="3.5.4"' -I/root/.node-gyp/6.17.1/include/node -I/root/.node-gyp/6.17.1/src -I/root/.node-gyp/6.17.1/deps/openssl/config -I/root/.node-gyp/6.17.1/deps/openssl/openssl/include -I/root/.node-gyp/6.17.1/deps/uv/include -I/root/.node-gyp/6.17.1/deps/zlib -I/root/.node-gyp/6.17.1/deps/v8/include -I../src/libsass/include  -fPIC -pthread -Wall -Wextra -Wno-unused-parameter -m64 -O3 -fno-omit-frame-pointer -std=gnu++0x -std=c++0x -fexceptions -frtti -MMD -MF ./Release/.deps/Release/obj.target/libsass/src/libsass/src/inspect.o.d.raw   -c -o Release/obj.target/libsass/src/libsass/src/inspect.o ../src/libsass/src/inspect.cpp
+  g++ '-DNODE_GYP_MODULE_NAME=libsass' '-DUSING_UV_SHARED=1' '-DUSING_V8_SHARED=1' '-DV8_DEPRECATION_WARNINGS=1' '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-DLIBSASS_VERSION="3.5.4"' -I/root/.node-gyp/6.17.1/include/node -I/root/.node-gyp/6.17.1/src -I/root/.node-gyp/6.17.1/deps/openssl/config -I/root/.node-gyp/6.17.1/deps/openssl/openssl/include -I/root/.node-gyp/6.17.1/deps/uv/include -I/root/.node-gyp/6.17.1/deps/zlib -I/root/.node-gyp/6.17.1/deps/v8/include -I../src/libsass/include  -fPIC -pthread -Wall -Wextra -Wno-unused-parameter -m64 -O3 -fno-omit-frame-pointer -std=gnu++0x -std=c++0x -fexceptions -frtti -MMD -MF ./Release/.deps/Release/obj.target/libsass/src/libsass/src/json.o.d.raw   -c -o Release/obj.target/libsass/src/libsass/src/json.o ../src/libsass/src/json.cpp
+  g++ '-DNODE_GYP_MODULE_NAME=libsass' '-DUSING_UV_SHARED=1' '-DUSING_V8_SHARED=1' '-DV8_DEPRECATION_WARNINGS=1' '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-DLIBSASS_VERSION="3.5.4"' -I/root/.node-gyp/6.17.1/include/node -I/root/.node-gyp/6.17.1/src -I/root/.node-gyp/6.17.1/deps/openssl/config -I/root/.node-gyp/6.17.1/deps/openssl/openssl/include -I/root/.node-gyp/6.17.1/deps/uv/include -I/root/.node-gyp/6.17.1/deps/zlib -I/root/.node-gyp/6.17.1/deps/v8/include -I../src/libsass/include  -fPIC -pthread -Wall -Wextra -Wno-unused-parameter -m64 -O3 -fno-omit-frame-pointer -std=gnu++0x -std=c++0x -fexceptions -frtti -MMD -MF ./Release/.deps/Release/obj.target/libsass/src/libsass/src/lexer.o.d.raw   -c -o Release/obj.target/libsass/src/libsass/src/lexer.o ../src/libsass/src/lexer.cpp
+  g++ '-DNODE_GYP_MODULE_NAME=libsass' '-DUSING_UV_SHARED=1' '-DUSING_V8_SHARED=1' '-DV8_DEPRECATION_WARNINGS=1' '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-DLIBSASS_VERSION="3.5.4"' -I/root/.node-gyp/6.17.1/include/node -I/root/.node-gyp/6.17.1/src -I/root/.node-gyp/6.17.1/deps/openssl/config -I/root/.node-gyp/6.17.1/deps/openssl/openssl/include -I/root/.node-gyp/6.17.1/deps/uv/include -I/root/.node-gyp/6.17.1/deps/zlib -I/root/.node-gyp/6.17.1/deps/v8/include -I../src/libsass/include  -fPIC -pthread -Wall -Wextra -Wno-unused-parameter -m64 -O3 -fno-omit-frame-pointer -std=gnu++0x -std=c++0x -fexceptions -frtti -MMD -MF ./Release/.deps/Release/obj.target/libsass/src/libsass/src/listize.o.d.raw   -c -o Release/obj.target/libsass/src/libsass/src/listize.o ../src/libsass/src/listize.cpp
+  g++ '-DNODE_GYP_MODULE_NAME=libsass' '-DUSING_UV_SHARED=1' '-DUSING_V8_SHARED=1' '-DV8_DEPRECATION_WARNINGS=1' '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-DLIBSASS_VERSION="3.5.4"' -I/root/.node-gyp/6.17.1/include/node -I/root/.node-gyp/6.17.1/src -I/root/.node-gyp/6.17.1/deps/openssl/config -I/root/.node-gyp/6.17.1/deps/openssl/openssl/include -I/root/.node-gyp/6.17.1/deps/uv/include -I/root/.node-gyp/6.17.1/deps/zlib -I/root/.node-gyp/6.17.1/deps/v8/include -I../src/libsass/include  -fPIC -pthread -Wall -Wextra -Wno-unused-parameter -m64 -O3 -fno-omit-frame-pointer -std=gnu++0x -std=c++0x -fexceptions -frtti -MMD -MF ./Release/.deps/Release/obj.target/libsass/src/libsass/src/memory/SharedPtr.o.d.raw   -c -o Release/obj.target/libsass/src/libsass/src/memory/SharedPtr.o ../src/libsass/src/memory/SharedPtr.cpp
+  g++ '-DNODE_GYP_MODULE_NAME=libsass' '-DUSING_UV_SHARED=1' '-DUSING_V8_SHARED=1' '-DV8_DEPRECATION_WARNINGS=1' '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-DLIBSASS_VERSION="3.5.4"' -I/root/.node-gyp/6.17.1/include/node -I/root/.node-gyp/6.17.1/src -I/root/.node-gyp/6.17.1/deps/openssl/config -I/root/.node-gyp/6.17.1/deps/openssl/openssl/include -I/root/.node-gyp/6.17.1/deps/uv/include -I/root/.node-gyp/6.17.1/deps/zlib -I/root/.node-gyp/6.17.1/deps/v8/include -I../src/libsass/include  -fPIC -pthread -Wall -Wextra -Wno-unused-parameter -m64 -O3 -fno-omit-frame-pointer -std=gnu++0x -std=c++0x -fexceptions -frtti -MMD -MF ./Release/.deps/Release/obj.target/libsass/src/libsass/src/node.o.d.raw   -c -o Release/obj.target/libsass/src/libsass/src/node.o ../src/libsass/src/node.cpp
+  g++ '-DNODE_GYP_MODULE_NAME=libsass' '-DUSING_UV_SHARED=1' '-DUSING_V8_SHARED=1' '-DV8_DEPRECATION_WARNINGS=1' '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-DLIBSASS_VERSION="3.5.4"' -I/root/.node-gyp/6.17.1/include/node -I/root/.node-gyp/6.17.1/src -I/root/.node-gyp/6.17.1/deps/openssl/config -I/root/.node-gyp/6.17.1/deps/openssl/openssl/include -I/root/.node-gyp/6.17.1/deps/uv/include -I/root/.node-gyp/6.17.1/deps/zlib -I/root/.node-gyp/6.17.1/deps/v8/include -I../src/libsass/include  -fPIC -pthread -Wall -Wextra -Wno-unused-parameter -m64 -O3 -fno-omit-frame-pointer -std=gnu++0x -std=c++0x -fexceptions -frtti -MMD -MF ./Release/.deps/Release/obj.target/libsass/src/libsass/src/operators.o.d.raw   -c -o Release/obj.target/libsass/src/libsass/src/operators.o ../src/libsass/src/operators.cpp
+  g++ '-DNODE_GYP_MODULE_NAME=libsass' '-DUSING_UV_SHARED=1' '-DUSING_V8_SHARED=1' '-DV8_DEPRECATION_WARNINGS=1' '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-DLIBSASS_VERSION="3.5.4"' -I/root/.node-gyp/6.17.1/include/node -I/root/.node-gyp/6.17.1/src -I/root/.node-gyp/6.17.1/deps/openssl/config -I/root/.node-gyp/6.17.1/deps/openssl/openssl/include -I/root/.node-gyp/6.17.1/deps/uv/include -I/root/.node-gyp/6.17.1/deps/zlib -I/root/.node-gyp/6.17.1/deps/v8/include -I../src/libsass/include  -fPIC -pthread -Wall -Wextra -Wno-unused-parameter -m64 -O3 -fno-omit-frame-pointer -std=gnu++0x -std=c++0x -fexceptions -frtti -MMD -MF ./Release/.deps/Release/obj.target/libsass/src/libsass/src/output.o.d.raw   -c -o Release/obj.target/libsass/src/libsass/src/output.o ../src/libsass/src/output.cpp
+  g++ '-DNODE_GYP_MODULE_NAME=libsass' '-DUSING_UV_SHARED=1' '-DUSING_V8_SHARED=1' '-DV8_DEPRECATION_WARNINGS=1' '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-DLIBSASS_VERSION="3.5.4"' -I/root/.node-gyp/6.17.1/include/node -I/root/.node-gyp/6.17.1/src -I/root/.node-gyp/6.17.1/deps/openssl/config -I/root/.node-gyp/6.17.1/deps/openssl/openssl/include -I/root/.node-gyp/6.17.1/deps/uv/include -I/root/.node-gyp/6.17.1/deps/zlib -I/root/.node-gyp/6.17.1/deps/v8/include -I../src/libsass/include  -fPIC -pthread -Wall -Wextra -Wno-unused-parameter -m64 -O3 -fno-omit-frame-pointer -std=gnu++0x -std=c++0x -fexceptions -frtti -MMD -MF ./Release/.deps/Release/obj.target/libsass/src/libsass/src/parser.o.d.raw   -c -o Release/obj.target/libsass/src/libsass/src/parser.o ../src/libsass/src/parser.cpp
+  g++ '-DNODE_GYP_MODULE_NAME=libsass' '-DUSING_UV_SHARED=1' '-DUSING_V8_SHARED=1' '-DV8_DEPRECATION_WARNINGS=1' '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-DLIBSASS_VERSION="3.5.4"' -I/root/.node-gyp/6.17.1/include/node -I/root/.node-gyp/6.17.1/src -I/root/.node-gyp/6.17.1/deps/openssl/config -I/root/.node-gyp/6.17.1/deps/openssl/openssl/include -I/root/.node-gyp/6.17.1/deps/uv/include -I/root/.node-gyp/6.17.1/deps/zlib -I/root/.node-gyp/6.17.1/deps/v8/include -I../src/libsass/include  -fPIC -pthread -Wall -Wextra -Wno-unused-parameter -m64 -O3 -fno-omit-frame-pointer -std=gnu++0x -std=c++0x -fexceptions -frtti -MMD -MF ./Release/.deps/Release/obj.target/libsass/src/libsass/src/plugins.o.d.raw   -c -o Release/obj.target/libsass/src/libsass/src/plugins.o ../src/libsass/src/plugins.cpp
+  g++ '-DNODE_GYP_MODULE_NAME=libsass' '-DUSING_UV_SHARED=1' '-DUSING_V8_SHARED=1' '-DV8_DEPRECATION_WARNINGS=1' '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-DLIBSASS_VERSION="3.5.4"' -I/root/.node-gyp/6.17.1/include/node -I/root/.node-gyp/6.17.1/src -I/root/.node-gyp/6.17.1/deps/openssl/config -I/root/.node-gyp/6.17.1/deps/openssl/openssl/include -I/root/.node-gyp/6.17.1/deps/uv/include -I/root/.node-gyp/6.17.1/deps/zlib -I/root/.node-gyp/6.17.1/deps/v8/include -I../src/libsass/include  -fPIC -pthread -Wall -Wextra -Wno-unused-parameter -m64 -O3 -fno-omit-frame-pointer -std=gnu++0x -std=c++0x -fexceptions -frtti -MMD -MF ./Release/.deps/Release/obj.target/libsass/src/libsass/src/position.o.d.raw   -c -o Release/obj.target/libsass/src/libsass/src/position.o ../src/libsass/src/position.cpp
+  g++ '-DNODE_GYP_MODULE_NAME=libsass' '-DUSING_UV_SHARED=1' '-DUSING_V8_SHARED=1' '-DV8_DEPRECATION_WARNINGS=1' '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-DLIBSASS_VERSION="3.5.4"' -I/root/.node-gyp/6.17.1/include/node -I/root/.node-gyp/6.17.1/src -I/root/.node-gyp/6.17.1/deps/openssl/config -I/root/.node-gyp/6.17.1/deps/openssl/openssl/include -I/root/.node-gyp/6.17.1/deps/uv/include -I/root/.node-gyp/6.17.1/deps/zlib -I/root/.node-gyp/6.17.1/deps/v8/include -I../src/libsass/include  -fPIC -pthread -Wall -Wextra -Wno-unused-parameter -m64 -O3 -fno-omit-frame-pointer -std=gnu++0x -std=c++0x -fexceptions -frtti -MMD -MF ./Release/.deps/Release/obj.target/libsass/src/libsass/src/prelexer.o.d.raw   -c -o Release/obj.target/libsass/src/libsass/src/prelexer.o ../src/libsass/src/prelexer.cpp
+  g++ '-DNODE_GYP_MODULE_NAME=libsass' '-DUSING_UV_SHARED=1' '-DUSING_V8_SHARED=1' '-DV8_DEPRECATION_WARNINGS=1' '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-DLIBSASS_VERSION="3.5.4"' -I/root/.node-gyp/6.17.1/include/node -I/root/.node-gyp/6.17.1/src -I/root/.node-gyp/6.17.1/deps/openssl/config -I/root/.node-gyp/6.17.1/deps/openssl/openssl/include -I/root/.node-gyp/6.17.1/deps/uv/include -I/root/.node-gyp/6.17.1/deps/zlib -I/root/.node-gyp/6.17.1/deps/v8/include -I../src/libsass/include  -fPIC -pthread -Wall -Wextra -Wno-unused-parameter -m64 -O3 -fno-omit-frame-pointer -std=gnu++0x -std=c++0x -fexceptions -frtti -MMD -MF ./Release/.deps/Release/obj.target/libsass/src/libsass/src/remove_placeholders.o.d.raw   -c -o Release/obj.target/libsass/src/libsass/src/remove_placeholders.o ../src/libsass/src/remove_placeholders.cpp
+  g++ '-DNODE_GYP_MODULE_NAME=libsass' '-DUSING_UV_SHARED=1' '-DUSING_V8_SHARED=1' '-DV8_DEPRECATION_WARNINGS=1' '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-DLIBSASS_VERSION="3.5.4"' -I/root/.node-gyp/6.17.1/include/node -I/root/.node-gyp/6.17.1/src -I/root/.node-gyp/6.17.1/deps/openssl/config -I/root/.node-gyp/6.17.1/deps/openssl/openssl/include -I/root/.node-gyp/6.17.1/deps/uv/include -I/root/.node-gyp/6.17.1/deps/zlib -I/root/.node-gyp/6.17.1/deps/v8/include -I../src/libsass/include  -fPIC -pthread -Wall -Wextra -Wno-unused-parameter -m64 -O3 -fno-omit-frame-pointer -std=gnu++0x -std=c++0x -fexceptions -frtti -MMD -MF ./Release/.deps/Release/obj.target/libsass/src/libsass/src/sass.o.d.raw   -c -o Release/obj.target/libsass/src/libsass/src/sass.o ../src/libsass/src/sass.cpp
+  g++ '-DNODE_GYP_MODULE_NAME=libsass' '-DUSING_UV_SHARED=1' '-DUSING_V8_SHARED=1' '-DV8_DEPRECATION_WARNINGS=1' '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-DLIBSASS_VERSION="3.5.4"' -I/root/.node-gyp/6.17.1/include/node -I/root/.node-gyp/6.17.1/src -I/root/.node-gyp/6.17.1/deps/openssl/config -I/root/.node-gyp/6.17.1/deps/openssl/openssl/include -I/root/.node-gyp/6.17.1/deps/uv/include -I/root/.node-gyp/6.17.1/deps/zlib -I/root/.node-gyp/6.17.1/deps/v8/include -I../src/libsass/include  -fPIC -pthread -Wall -Wextra -Wno-unused-parameter -m64 -O3 -fno-omit-frame-pointer -std=gnu++0x -std=c++0x -fexceptions -frtti -MMD -MF ./Release/.deps/Release/obj.target/libsass/src/libsass/src/sass2scss.o.d.raw   -c -o Release/obj.target/libsass/src/libsass/src/sass2scss.o ../src/libsass/src/sass2scss.cpp
+  g++ '-DNODE_GYP_MODULE_NAME=libsass' '-DUSING_UV_SHARED=1' '-DUSING_V8_SHARED=1' '-DV8_DEPRECATION_WARNINGS=1' '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-DLIBSASS_VERSION="3.5.4"' -I/root/.node-gyp/6.17.1/include/node -I/root/.node-gyp/6.17.1/src -I/root/.node-gyp/6.17.1/deps/openssl/config -I/root/.node-gyp/6.17.1/deps/openssl/openssl/include -I/root/.node-gyp/6.17.1/deps/uv/include -I/root/.node-gyp/6.17.1/deps/zlib -I/root/.node-gyp/6.17.1/deps/v8/include -I../src/libsass/include  -fPIC -pthread -Wall -Wextra -Wno-unused-parameter -m64 -O3 -fno-omit-frame-pointer -std=gnu++0x -std=c++0x -fexceptions -frtti -MMD -MF ./Release/.deps/Release/obj.target/libsass/src/libsass/src/sass_context.o.d.raw   -c -o Release/obj.target/libsass/src/libsass/src/sass_context.o ../src/libsass/src/sass_context.cpp
+  g++ '-DNODE_GYP_MODULE_NAME=libsass' '-DUSING_UV_SHARED=1' '-DUSING_V8_SHARED=1' '-DV8_DEPRECATION_WARNINGS=1' '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-DLIBSASS_VERSION="3.5.4"' -I/root/.node-gyp/6.17.1/include/node -I/root/.node-gyp/6.17.1/src -I/root/.node-gyp/6.17.1/deps/openssl/config -I/root/.node-gyp/6.17.1/deps/openssl/openssl/include -I/root/.node-gyp/6.17.1/deps/uv/include -I/root/.node-gyp/6.17.1/deps/zlib -I/root/.node-gyp/6.17.1/deps/v8/include -I../src/libsass/include  -fPIC -pthread -Wall -Wextra -Wno-unused-parameter -m64 -O3 -fno-omit-frame-pointer -std=gnu++0x -std=c++0x -fexceptions -frtti -MMD -MF ./Release/.deps/Release/obj.target/libsass/src/libsass/src/sass_functions.o.d.raw   -c -o Release/obj.target/libsass/src/libsass/src/sass_functions.o ../src/libsass/src/sass_functions.cpp
+  g++ '-DNODE_GYP_MODULE_NAME=libsass' '-DUSING_UV_SHARED=1' '-DUSING_V8_SHARED=1' '-DV8_DEPRECATION_WARNINGS=1' '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-DLIBSASS_VERSION="3.5.4"' -I/root/.node-gyp/6.17.1/include/node -I/root/.node-gyp/6.17.1/src -I/root/.node-gyp/6.17.1/deps/openssl/config -I/root/.node-gyp/6.17.1/deps/openssl/openssl/include -I/root/.node-gyp/6.17.1/deps/uv/include -I/root/.node-gyp/6.17.1/deps/zlib -I/root/.node-gyp/6.17.1/deps/v8/include -I../src/libsass/include  -fPIC -pthread -Wall -Wextra -Wno-unused-parameter -m64 -O3 -fno-omit-frame-pointer -std=gnu++0x -std=c++0x -fexceptions -frtti -MMD -MF ./Release/.deps/Release/obj.target/libsass/src/libsass/src/sass_util.o.d.raw   -c -o Release/obj.target/libsass/src/libsass/src/sass_util.o ../src/libsass/src/sass_util.cpp
+  g++ '-DNODE_GYP_MODULE_NAME=libsass' '-DUSING_UV_SHARED=1' '-DUSING_V8_SHARED=1' '-DV8_DEPRECATION_WARNINGS=1' '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-DLIBSASS_VERSION="3.5.4"' -I/root/.node-gyp/6.17.1/include/node -I/root/.node-gyp/6.17.1/src -I/root/.node-gyp/6.17.1/deps/openssl/config -I/root/.node-gyp/6.17.1/deps/openssl/openssl/include -I/root/.node-gyp/6.17.1/deps/uv/include -I/root/.node-gyp/6.17.1/deps/zlib -I/root/.node-gyp/6.17.1/deps/v8/include -I../src/libsass/include  -fPIC -pthread -Wall -Wextra -Wno-unused-parameter -m64 -O3 -fno-omit-frame-pointer -std=gnu++0x -std=c++0x -fexceptions -frtti -MMD -MF ./Release/.deps/Release/obj.target/libsass/src/libsass/src/sass_values.o.d.raw   -c -o Release/obj.target/libsass/src/libsass/src/sass_values.o ../src/libsass/src/sass_values.cpp
+  g++ '-DNODE_GYP_MODULE_NAME=libsass' '-DUSING_UV_SHARED=1' '-DUSING_V8_SHARED=1' '-DV8_DEPRECATION_WARNINGS=1' '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-DLIBSASS_VERSION="3.5.4"' -I/root/.node-gyp/6.17.1/include/node -I/root/.node-gyp/6.17.1/src -I/root/.node-gyp/6.17.1/deps/openssl/config -I/root/.node-gyp/6.17.1/deps/openssl/openssl/include -I/root/.node-gyp/6.17.1/deps/uv/include -I/root/.node-gyp/6.17.1/deps/zlib -I/root/.node-gyp/6.17.1/deps/v8/include -I../src/libsass/include  -fPIC -pthread -Wall -Wextra -Wno-unused-parameter -m64 -O3 -fno-omit-frame-pointer -std=gnu++0x -std=c++0x -fexceptions -frtti -MMD -MF ./Release/.deps/Release/obj.target/libsass/src/libsass/src/source_map.o.d.raw   -c -o Release/obj.target/libsass/src/libsass/src/source_map.o ../src/libsass/src/source_map.cpp
+  g++ '-DNODE_GYP_MODULE_NAME=libsass' '-DUSING_UV_SHARED=1' '-DUSING_V8_SHARED=1' '-DV8_DEPRECATION_WARNINGS=1' '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-DLIBSASS_VERSION="3.5.4"' -I/root/.node-gyp/6.17.1/include/node -I/root/.node-gyp/6.17.1/src -I/root/.node-gyp/6.17.1/deps/openssl/config -I/root/.node-gyp/6.17.1/deps/openssl/openssl/include -I/root/.node-gyp/6.17.1/deps/uv/include -I/root/.node-gyp/6.17.1/deps/zlib -I/root/.node-gyp/6.17.1/deps/v8/include -I../src/libsass/include  -fPIC -pthread -Wall -Wextra -Wno-unused-parameter -m64 -O3 -fno-omit-frame-pointer -std=gnu++0x -std=c++0x -fexceptions -frtti -MMD -MF ./Release/.deps/Release/obj.target/libsass/src/libsass/src/subset_map.o.d.raw   -c -o Release/obj.target/libsass/src/libsass/src/subset_map.o ../src/libsass/src/subset_map.cpp
+  g++ '-DNODE_GYP_MODULE_NAME=libsass' '-DUSING_UV_SHARED=1' '-DUSING_V8_SHARED=1' '-DV8_DEPRECATION_WARNINGS=1' '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-DLIBSASS_VERSION="3.5.4"' -I/root/.node-gyp/6.17.1/include/node -I/root/.node-gyp/6.17.1/src -I/root/.node-gyp/6.17.1/deps/openssl/config -I/root/.node-gyp/6.17.1/deps/openssl/openssl/include -I/root/.node-gyp/6.17.1/deps/uv/include -I/root/.node-gyp/6.17.1/deps/zlib -I/root/.node-gyp/6.17.1/deps/v8/include -I../src/libsass/include  -fPIC -pthread -Wall -Wextra -Wno-unused-parameter -m64 -O3 -fno-omit-frame-pointer -std=gnu++0x -std=c++0x -fexceptions -frtti -MMD -MF ./Release/.deps/Release/obj.target/libsass/src/libsass/src/to_c.o.d.raw   -c -o Release/obj.target/libsass/src/libsass/src/to_c.o ../src/libsass/src/to_c.cpp
+  g++ '-DNODE_GYP_MODULE_NAME=libsass' '-DUSING_UV_SHARED=1' '-DUSING_V8_SHARED=1' '-DV8_DEPRECATION_WARNINGS=1' '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-DLIBSASS_VERSION="3.5.4"' -I/root/.node-gyp/6.17.1/include/node -I/root/.node-gyp/6.17.1/src -I/root/.node-gyp/6.17.1/deps/openssl/config -I/root/.node-gyp/6.17.1/deps/openssl/openssl/include -I/root/.node-gyp/6.17.1/deps/uv/include -I/root/.node-gyp/6.17.1/deps/zlib -I/root/.node-gyp/6.17.1/deps/v8/include -I../src/libsass/include  -fPIC -pthread -Wall -Wextra -Wno-unused-parameter -m64 -O3 -fno-omit-frame-pointer -std=gnu++0x -std=c++0x -fexceptions -frtti -MMD -MF ./Release/.deps/Release/obj.target/libsass/src/libsass/src/to_value.o.d.raw   -c -o Release/obj.target/libsass/src/libsass/src/to_value.o ../src/libsass/src/to_value.cpp
+  g++ '-DNODE_GYP_MODULE_NAME=libsass' '-DUSING_UV_SHARED=1' '-DUSING_V8_SHARED=1' '-DV8_DEPRECATION_WARNINGS=1' '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-DLIBSASS_VERSION="3.5.4"' -I/root/.node-gyp/6.17.1/include/node -I/root/.node-gyp/6.17.1/src -I/root/.node-gyp/6.17.1/deps/openssl/config -I/root/.node-gyp/6.17.1/deps/openssl/openssl/include -I/root/.node-gyp/6.17.1/deps/uv/include -I/root/.node-gyp/6.17.1/deps/zlib -I/root/.node-gyp/6.17.1/deps/v8/include -I../src/libsass/include  -fPIC -pthread -Wall -Wextra -Wno-unused-parameter -m64 -O3 -fno-omit-frame-pointer -std=gnu++0x -std=c++0x -fexceptions -frtti -MMD -MF ./Release/.deps/Release/obj.target/libsass/src/libsass/src/units.o.d.raw   -c -o Release/obj.target/libsass/src/libsass/src/units.o ../src/libsass/src/units.cpp
+  g++ '-DNODE_GYP_MODULE_NAME=libsass' '-DUSING_UV_SHARED=1' '-DUSING_V8_SHARED=1' '-DV8_DEPRECATION_WARNINGS=1' '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-DLIBSASS_VERSION="3.5.4"' -I/root/.node-gyp/6.17.1/include/node -I/root/.node-gyp/6.17.1/src -I/root/.node-gyp/6.17.1/deps/openssl/config -I/root/.node-gyp/6.17.1/deps/openssl/openssl/include -I/root/.node-gyp/6.17.1/deps/uv/include -I/root/.node-gyp/6.17.1/deps/zlib -I/root/.node-gyp/6.17.1/deps/v8/include -I../src/libsass/include  -fPIC -pthread -Wall -Wextra -Wno-unused-parameter -m64 -O3 -fno-omit-frame-pointer -std=gnu++0x -std=c++0x -fexceptions -frtti -MMD -MF ./Release/.deps/Release/obj.target/libsass/src/libsass/src/utf8_string.o.d.raw   -c -o Release/obj.target/libsass/src/libsass/src/utf8_string.o ../src/libsass/src/utf8_string.cpp
+  g++ '-DNODE_GYP_MODULE_NAME=libsass' '-DUSING_UV_SHARED=1' '-DUSING_V8_SHARED=1' '-DV8_DEPRECATION_WARNINGS=1' '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-DLIBSASS_VERSION="3.5.4"' -I/root/.node-gyp/6.17.1/include/node -I/root/.node-gyp/6.17.1/src -I/root/.node-gyp/6.17.1/deps/openssl/config -I/root/.node-gyp/6.17.1/deps/openssl/openssl/include -I/root/.node-gyp/6.17.1/deps/uv/include -I/root/.node-gyp/6.17.1/deps/zlib -I/root/.node-gyp/6.17.1/deps/v8/include -I../src/libsass/include  -fPIC -pthread -Wall -Wextra -Wno-unused-parameter -m64 -O3 -fno-omit-frame-pointer -std=gnu++0x -std=c++0x -fexceptions -frtti -MMD -MF ./Release/.deps/Release/obj.target/libsass/src/libsass/src/util.o.d.raw   -c -o Release/obj.target/libsass/src/libsass/src/util.o ../src/libsass/src/util.cpp
+  g++ '-DNODE_GYP_MODULE_NAME=libsass' '-DUSING_UV_SHARED=1' '-DUSING_V8_SHARED=1' '-DV8_DEPRECATION_WARNINGS=1' '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-DLIBSASS_VERSION="3.5.4"' -I/root/.node-gyp/6.17.1/include/node -I/root/.node-gyp/6.17.1/src -I/root/.node-gyp/6.17.1/deps/openssl/config -I/root/.node-gyp/6.17.1/deps/openssl/openssl/include -I/root/.node-gyp/6.17.1/deps/uv/include -I/root/.node-gyp/6.17.1/deps/zlib -I/root/.node-gyp/6.17.1/deps/v8/include -I../src/libsass/include  -fPIC -pthread -Wall -Wextra -Wno-unused-parameter -m64 -O3 -fno-omit-frame-pointer -std=gnu++0x -std=c++0x -fexceptions -frtti -MMD -MF ./Release/.deps/Release/obj.target/libsass/src/libsass/src/values.o.d.raw   -c -o Release/obj.target/libsass/src/libsass/src/values.o ../src/libsass/src/values.cpp
+  rm -f Release/obj.target/src/sass.a && ar crs Release/obj.target/src/sass.a Release/obj.target/libsass/src/libsass/src/ast.o Release/obj.target/libsass/src/libsass/src/ast_fwd_decl.o Release/obj.target/libsass/src/libsass/src/backtrace.o Release/obj.target/libsass/src/libsass/src/base64vlq.o Release/obj.target/libsass/src/libsass/src/bind.o Release/obj.target/libsass/src/libsass/src/cencode.o Release/obj.target/libsass/src/libsass/src/check_nesting.o Release/obj.target/libsass/src/libsass/src/color_maps.o Release/obj.target/libsass/src/libsass/src/constants.o Release/obj.target/libsass/src/libsass/src/context.o Release/obj.target/libsass/src/libsass/src/cssize.o Release/obj.target/libsass/src/libsass/src/emitter.o Release/obj.target/libsass/src/libsass/src/environment.o Release/obj.target/libsass/src/libsass/src/error_handling.o Release/obj.target/libsass/src/libsass/src/eval.o Release/obj.target/libsass/src/libsass/src/expand.o Release/obj.target/libsass/src/libsass/src/extend.o Release/obj.target/libsass/src/libsass/src/file.o Release/obj.target/libsass/src/libsass/src/functions.o Release/obj.target/libsass/src/libsass/src/inspect.o Release/obj.target/libsass/src/libsass/src/json.o Release/obj.target/libsass/src/libsass/src/lexer.o Release/obj.target/libsass/src/libsass/src/listize.o Release/obj.target/libsass/src/libsass/src/memory/SharedPtr.o Release/obj.target/libsass/src/libsass/src/node.o Release/obj.target/libsass/src/libsass/src/operators.o Release/obj.target/libsass/src/libsass/src/output.o Release/obj.target/libsass/src/libsass/src/parser.o Release/obj.target/libsass/src/libsass/src/plugins.o Release/obj.target/libsass/src/libsass/src/position.o Release/obj.target/libsass/src/libsass/src/prelexer.o Release/obj.target/libsass/src/libsass/src/remove_placeholders.o Release/obj.target/libsass/src/libsass/src/sass.o Release/obj.target/libsass/src/libsass/src/sass2scss.o Release/obj.target/libsass/src/libsass/src/sass_context.o Release/obj.target/libsass/src/libsass/src/sass_functions.o Release/obj.target/libsass/src/libsass/src/sass_util.o Release/obj.target/libsass/src/libsass/src/sass_values.o Release/obj.target/libsass/src/libsass/src/source_map.o Release/obj.target/libsass/src/libsass/src/subset_map.o Release/obj.target/libsass/src/libsass/src/to_c.o Release/obj.target/libsass/src/libsass/src/to_value.o Release/obj.target/libsass/src/libsass/src/units.o Release/obj.target/libsass/src/libsass/src/utf8_string.o Release/obj.target/libsass/src/libsass/src/util.o Release/obj.target/libsass/src/libsass/src/values.o
+  rm -rf "Release/sass.a" && cp -af "Release/obj.target/src/sass.a" "Release/sass.a"
+  g++ '-DNODE_GYP_MODULE_NAME=binding' '-DUSING_UV_SHARED=1' '-DUSING_V8_SHARED=1' '-DV8_DEPRECATION_WARNINGS=1' '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-DBUILDING_NODE_EXTENSION' -I/root/.node-gyp/6.17.1/include/node -I/root/.node-gyp/6.17.1/src -I/root/.node-gyp/6.17.1/deps/openssl/config -I/root/.node-gyp/6.17.1/deps/openssl/openssl/include -I/root/.node-gyp/6.17.1/deps/uv/include -I/root/.node-gyp/6.17.1/deps/zlib -I/root/.node-gyp/6.17.1/deps/v8/include -I../../nan -I../src/libsass/include  -fPIC -pthread -Wall -Wextra -Wno-unused-parameter -m64 -O3 -fno-omit-frame-pointer -fno-rtti -fno-exceptions -std=gnu++0x -std=c++0x -MMD -MF ./Release/.deps/Release/obj.target/binding/src/binding.o.d.raw   -c -o Release/obj.target/binding/src/binding.o ../src/binding.cpp
+  g++ '-DNODE_GYP_MODULE_NAME=binding' '-DUSING_UV_SHARED=1' '-DUSING_V8_SHARED=1' '-DV8_DEPRECATION_WARNINGS=1' '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-DBUILDING_NODE_EXTENSION' -I/root/.node-gyp/6.17.1/include/node -I/root/.node-gyp/6.17.1/src -I/root/.node-gyp/6.17.1/deps/openssl/config -I/root/.node-gyp/6.17.1/deps/openssl/openssl/include -I/root/.node-gyp/6.17.1/deps/uv/include -I/root/.node-gyp/6.17.1/deps/zlib -I/root/.node-gyp/6.17.1/deps/v8/include -I../../nan -I../src/libsass/include  -fPIC -pthread -Wall -Wextra -Wno-unused-parameter -m64 -O3 -fno-omit-frame-pointer -fno-rtti -fno-exceptions -std=gnu++0x -std=c++0x -MMD -MF ./Release/.deps/Release/obj.target/binding/src/create_string.o.d.raw   -c -o Release/obj.target/binding/src/create_string.o ../src/create_string.cpp
+  g++ '-DNODE_GYP_MODULE_NAME=binding' '-DUSING_UV_SHARED=1' '-DUSING_V8_SHARED=1' '-DV8_DEPRECATION_WARNINGS=1' '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-DBUILDING_NODE_EXTENSION' -I/root/.node-gyp/6.17.1/include/node -I/root/.node-gyp/6.17.1/src -I/root/.node-gyp/6.17.1/deps/openssl/config -I/root/.node-gyp/6.17.1/deps/openssl/openssl/include -I/root/.node-gyp/6.17.1/deps/uv/include -I/root/.node-gyp/6.17.1/deps/zlib -I/root/.node-gyp/6.17.1/deps/v8/include -I../../nan -I../src/libsass/include  -fPIC -pthread -Wall -Wextra -Wno-unused-parameter -m64 -O3 -fno-omit-frame-pointer -fno-rtti -fno-exceptions -std=gnu++0x -std=c++0x -MMD -MF ./Release/.deps/Release/obj.target/binding/src/custom_function_bridge.o.d.raw   -c -o Release/obj.target/binding/src/custom_function_bridge.o ../src/custom_function_bridge.cpp
+  g++ '-DNODE_GYP_MODULE_NAME=binding' '-DUSING_UV_SHARED=1' '-DUSING_V8_SHARED=1' '-DV8_DEPRECATION_WARNINGS=1' '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-DBUILDING_NODE_EXTENSION' -I/root/.node-gyp/6.17.1/include/node -I/root/.node-gyp/6.17.1/src -I/root/.node-gyp/6.17.1/deps/openssl/config -I/root/.node-gyp/6.17.1/deps/openssl/openssl/include -I/root/.node-gyp/6.17.1/deps/uv/include -I/root/.node-gyp/6.17.1/deps/zlib -I/root/.node-gyp/6.17.1/deps/v8/include -I../../nan -I../src/libsass/include  -fPIC -pthread -Wall -Wextra -Wno-unused-parameter -m64 -O3 -fno-omit-frame-pointer -fno-rtti -fno-exceptions -std=gnu++0x -std=c++0x -MMD -MF ./Release/.deps/Release/obj.target/binding/src/custom_importer_bridge.o.d.raw   -c -o Release/obj.target/binding/src/custom_importer_bridge.o ../src/custom_importer_bridge.cpp
+  g++ '-DNODE_GYP_MODULE_NAME=binding' '-DUSING_UV_SHARED=1' '-DUSING_V8_SHARED=1' '-DV8_DEPRECATION_WARNINGS=1' '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-DBUILDING_NODE_EXTENSION' -I/root/.node-gyp/6.17.1/include/node -I/root/.node-gyp/6.17.1/src -I/root/.node-gyp/6.17.1/deps/openssl/config -I/root/.node-gyp/6.17.1/deps/openssl/openssl/include -I/root/.node-gyp/6.17.1/deps/uv/include -I/root/.node-gyp/6.17.1/deps/zlib -I/root/.node-gyp/6.17.1/deps/v8/include -I../../nan -I../src/libsass/include  -fPIC -pthread -Wall -Wextra -Wno-unused-parameter -m64 -O3 -fno-omit-frame-pointer -fno-rtti -fno-exceptions -std=gnu++0x -std=c++0x -MMD -MF ./Release/.deps/Release/obj.target/binding/src/sass_context_wrapper.o.d.raw   -c -o Release/obj.target/binding/src/sass_context_wrapper.o ../src/sass_context_wrapper.cpp
+  g++ '-DNODE_GYP_MODULE_NAME=binding' '-DUSING_UV_SHARED=1' '-DUSING_V8_SHARED=1' '-DV8_DEPRECATION_WARNINGS=1' '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-DBUILDING_NODE_EXTENSION' -I/root/.node-gyp/6.17.1/include/node -I/root/.node-gyp/6.17.1/src -I/root/.node-gyp/6.17.1/deps/openssl/config -I/root/.node-gyp/6.17.1/deps/openssl/openssl/include -I/root/.node-gyp/6.17.1/deps/uv/include -I/root/.node-gyp/6.17.1/deps/zlib -I/root/.node-gyp/6.17.1/deps/v8/include -I../../nan -I../src/libsass/include  -fPIC -pthread -Wall -Wextra -Wno-unused-parameter -m64 -O3 -fno-omit-frame-pointer -fno-rtti -fno-exceptions -std=gnu++0x -std=c++0x -MMD -MF ./Release/.deps/Release/obj.target/binding/src/sass_types/boolean.o.d.raw   -c -o Release/obj.target/binding/src/sass_types/boolean.o ../src/sass_types/boolean.cpp
+  g++ '-DNODE_GYP_MODULE_NAME=binding' '-DUSING_UV_SHARED=1' '-DUSING_V8_SHARED=1' '-DV8_DEPRECATION_WARNINGS=1' '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-DBUILDING_NODE_EXTENSION' -I/root/.node-gyp/6.17.1/include/node -I/root/.node-gyp/6.17.1/src -I/root/.node-gyp/6.17.1/deps/openssl/config -I/root/.node-gyp/6.17.1/deps/openssl/openssl/include -I/root/.node-gyp/6.17.1/deps/uv/include -I/root/.node-gyp/6.17.1/deps/zlib -I/root/.node-gyp/6.17.1/deps/v8/include -I../../nan -I../src/libsass/include  -fPIC -pthread -Wall -Wextra -Wno-unused-parameter -m64 -O3 -fno-omit-frame-pointer -fno-rtti -fno-exceptions -std=gnu++0x -std=c++0x -MMD -MF ./Release/.deps/Release/obj.target/binding/src/sass_types/color.o.d.raw   -c -o Release/obj.target/binding/src/sass_types/color.o ../src/sass_types/color.cpp
+  g++ '-DNODE_GYP_MODULE_NAME=binding' '-DUSING_UV_SHARED=1' '-DUSING_V8_SHARED=1' '-DV8_DEPRECATION_WARNINGS=1' '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-DBUILDING_NODE_EXTENSION' -I/root/.node-gyp/6.17.1/include/node -I/root/.node-gyp/6.17.1/src -I/root/.node-gyp/6.17.1/deps/openssl/config -I/root/.node-gyp/6.17.1/deps/openssl/openssl/include -I/root/.node-gyp/6.17.1/deps/uv/include -I/root/.node-gyp/6.17.1/deps/zlib -I/root/.node-gyp/6.17.1/deps/v8/include -I../../nan -I../src/libsass/include  -fPIC -pthread -Wall -Wextra -Wno-unused-parameter -m64 -O3 -fno-omit-frame-pointer -fno-rtti -fno-exceptions -std=gnu++0x -std=c++0x -MMD -MF ./Release/.deps/Release/obj.target/binding/src/sass_types/error.o.d.raw   -c -o Release/obj.target/binding/src/sass_types/error.o ../src/sass_types/error.cpp
+  g++ '-DNODE_GYP_MODULE_NAME=binding' '-DUSING_UV_SHARED=1' '-DUSING_V8_SHARED=1' '-DV8_DEPRECATION_WARNINGS=1' '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-DBUILDING_NODE_EXTENSION' -I/root/.node-gyp/6.17.1/include/node -I/root/.node-gyp/6.17.1/src -I/root/.node-gyp/6.17.1/deps/openssl/config -I/root/.node-gyp/6.17.1/deps/openssl/openssl/include -I/root/.node-gyp/6.17.1/deps/uv/include -I/root/.node-gyp/6.17.1/deps/zlib -I/root/.node-gyp/6.17.1/deps/v8/include -I../../nan -I../src/libsass/include  -fPIC -pthread -Wall -Wextra -Wno-unused-parameter -m64 -O3 -fno-omit-frame-pointer -fno-rtti -fno-exceptions -std=gnu++0x -std=c++0x -MMD -MF ./Release/.deps/Release/obj.target/binding/src/sass_types/factory.o.d.raw   -c -o Release/obj.target/binding/src/sass_types/factory.o ../src/sass_types/factory.cpp
+  g++ '-DNODE_GYP_MODULE_NAME=binding' '-DUSING_UV_SHARED=1' '-DUSING_V8_SHARED=1' '-DV8_DEPRECATION_WARNINGS=1' '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-DBUILDING_NODE_EXTENSION' -I/root/.node-gyp/6.17.1/include/node -I/root/.node-gyp/6.17.1/src -I/root/.node-gyp/6.17.1/deps/openssl/config -I/root/.node-gyp/6.17.1/deps/openssl/openssl/include -I/root/.node-gyp/6.17.1/deps/uv/include -I/root/.node-gyp/6.17.1/deps/zlib -I/root/.node-gyp/6.17.1/deps/v8/include -I../../nan -I../src/libsass/include  -fPIC -pthread -Wall -Wextra -Wno-unused-parameter -m64 -O3 -fno-omit-frame-pointer -fno-rtti -fno-exceptions -std=gnu++0x -std=c++0x -MMD -MF ./Release/.deps/Release/obj.target/binding/src/sass_types/list.o.d.raw   -c -o Release/obj.target/binding/src/sass_types/list.o ../src/sass_types/list.cpp
+  g++ '-DNODE_GYP_MODULE_NAME=binding' '-DUSING_UV_SHARED=1' '-DUSING_V8_SHARED=1' '-DV8_DEPRECATION_WARNINGS=1' '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-DBUILDING_NODE_EXTENSION' -I/root/.node-gyp/6.17.1/include/node -I/root/.node-gyp/6.17.1/src -I/root/.node-gyp/6.17.1/deps/openssl/config -I/root/.node-gyp/6.17.1/deps/openssl/openssl/include -I/root/.node-gyp/6.17.1/deps/uv/include -I/root/.node-gyp/6.17.1/deps/zlib -I/root/.node-gyp/6.17.1/deps/v8/include -I../../nan -I../src/libsass/include  -fPIC -pthread -Wall -Wextra -Wno-unused-parameter -m64 -O3 -fno-omit-frame-pointer -fno-rtti -fno-exceptions -std=gnu++0x -std=c++0x -MMD -MF ./Release/.deps/Release/obj.target/binding/src/sass_types/map.o.d.raw   -c -o Release/obj.target/binding/src/sass_types/map.o ../src/sass_types/map.cpp
+  g++ '-DNODE_GYP_MODULE_NAME=binding' '-DUSING_UV_SHARED=1' '-DUSING_V8_SHARED=1' '-DV8_DEPRECATION_WARNINGS=1' '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-DBUILDING_NODE_EXTENSION' -I/root/.node-gyp/6.17.1/include/node -I/root/.node-gyp/6.17.1/src -I/root/.node-gyp/6.17.1/deps/openssl/config -I/root/.node-gyp/6.17.1/deps/openssl/openssl/include -I/root/.node-gyp/6.17.1/deps/uv/include -I/root/.node-gyp/6.17.1/deps/zlib -I/root/.node-gyp/6.17.1/deps/v8/include -I../../nan -I../src/libsass/include  -fPIC -pthread -Wall -Wextra -Wno-unused-parameter -m64 -O3 -fno-omit-frame-pointer -fno-rtti -fno-exceptions -std=gnu++0x -std=c++0x -MMD -MF ./Release/.deps/Release/obj.target/binding/src/sass_types/null.o.d.raw   -c -o Release/obj.target/binding/src/sass_types/null.o ../src/sass_types/null.cpp
+  g++ '-DNODE_GYP_MODULE_NAME=binding' '-DUSING_UV_SHARED=1' '-DUSING_V8_SHARED=1' '-DV8_DEPRECATION_WARNINGS=1' '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-DBUILDING_NODE_EXTENSION' -I/root/.node-gyp/6.17.1/include/node -I/root/.node-gyp/6.17.1/src -I/root/.node-gyp/6.17.1/deps/openssl/config -I/root/.node-gyp/6.17.1/deps/openssl/openssl/include -I/root/.node-gyp/6.17.1/deps/uv/include -I/root/.node-gyp/6.17.1/deps/zlib -I/root/.node-gyp/6.17.1/deps/v8/include -I../../nan -I../src/libsass/include  -fPIC -pthread -Wall -Wextra -Wno-unused-parameter -m64 -O3 -fno-omit-frame-pointer -fno-rtti -fno-exceptions -std=gnu++0x -std=c++0x -MMD -MF ./Release/.deps/Release/obj.target/binding/src/sass_types/number.o.d.raw   -c -o Release/obj.target/binding/src/sass_types/number.o ../src/sass_types/number.cpp
+  g++ '-DNODE_GYP_MODULE_NAME=binding' '-DUSING_UV_SHARED=1' '-DUSING_V8_SHARED=1' '-DV8_DEPRECATION_WARNINGS=1' '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-DBUILDING_NODE_EXTENSION' -I/root/.node-gyp/6.17.1/include/node -I/root/.node-gyp/6.17.1/src -I/root/.node-gyp/6.17.1/deps/openssl/config -I/root/.node-gyp/6.17.1/deps/openssl/openssl/include -I/root/.node-gyp/6.17.1/deps/uv/include -I/root/.node-gyp/6.17.1/deps/zlib -I/root/.node-gyp/6.17.1/deps/v8/include -I../../nan -I../src/libsass/include  -fPIC -pthread -Wall -Wextra -Wno-unused-parameter -m64 -O3 -fno-omit-frame-pointer -fno-rtti -fno-exceptions -std=gnu++0x -std=c++0x -MMD -MF ./Release/.deps/Release/obj.target/binding/src/sass_types/string.o.d.raw   -c -o Release/obj.target/binding/src/sass_types/string.o ../src/sass_types/string.cpp
+  g++ -shared -pthread -rdynamic -m64  -Wl,-soname=binding.node -o Release/obj.target/binding.node -Wl,--start-group Release/obj.target/binding/src/binding.o Release/obj.target/binding/src/create_string.o Release/obj.target/binding/src/custom_function_bridge.o Release/obj.target/binding/src/custom_importer_bridge.o Release/obj.target/binding/src/sass_context_wrapper.o Release/obj.target/binding/src/sass_types/boolean.o Release/obj.target/binding/src/sass_types/color.o Release/obj.target/binding/src/sass_types/error.o Release/obj.target/binding/src/sass_types/factory.o Release/obj.target/binding/src/sass_types/list.o Release/obj.target/binding/src/sass_types/map.o Release/obj.target/binding/src/sass_types/null.o Release/obj.target/binding/src/sass_types/number.o Release/obj.target/binding/src/sass_types/string.o Release/obj.target/src/sass.a -Wl,--end-group 
+  rm -rf "Release/binding.node" && cp -af "Release/obj.target/binding.node" "Release/binding.node"
+make: 离开目录“/home/hujin/sponge/sponge_front/node_modules/node-sass/build”
+gyp info ok 
+Installed to /home/hujin/sponge/sponge_front/node_modules/node-sass/vendor/linux-x64-48/binding.node
+01.webpack-study@1.0.0 /home/hujin/sponge/sponge_front
+├── animate.css@3.7.2 
+├─┬ axios@0.19.2 
+│ └── follow-redirects@1.5.10 
+├─┬ babel-core@6.26.3 
+│ ├─┬ babel-code-frame@6.26.0 
+│ │ ├── esutils@2.0.3 
+│ │ └── js-tokens@3.0.2 
+│ ├─┬ babel-generator@6.26.1 
+│ │ ├─┬ detect-indent@4.0.0 
+│ │ │ └─┬ repeating@2.0.1 
+│ │ │   └── is-finite@1.1.0 
+│ │ ├── jsesc@1.3.0 
+│ │ └── trim-right@1.0.1 
+│ ├── babel-helpers@6.24.1 
+│ ├── babel-messages@6.23.0 
+│ ├─┬ babel-register@6.26.0 
+│ │ ├── core-js@2.6.11 
+│ │ ├─┬ home-or-tmp@2.0.0 
+│ │ │ ├── os-homedir@1.0.2 
+│ │ │ └── os-tmpdir@1.0.2 
+│ │ └── source-map-support@0.4.18 
+│ ├─┬ babel-runtime@6.26.0 
+│ │ └── regenerator-runtime@0.11.1 
+│ ├── babel-template@6.26.0 
+│ ├─┬ babel-traverse@6.26.0 
+│ │ ├── debug@2.6.9 
+│ │ └── globals@9.18.0 
+│ ├─┬ babel-types@6.26.0 
+│ │ └── to-fast-properties@1.0.3 
+│ ├── babylon@6.18.0 
+│ ├─┬ convert-source-map@1.7.0 
+│ │ └── safe-buffer@5.1.2 
+│ ├─┬ debug@2.6.9 
+│ │ └── ms@2.0.0 
+│ ├── json5@0.5.1 
+│ ├── lodash@4.17.15 
+│ ├─┬ minimatch@3.0.4 
+│ │ └─┬ brace-expansion@1.1.11 
+│ │   ├── balanced-match@1.0.0 
+│ │   └── concat-map@0.0.1 
+│ ├── path-is-absolute@1.0.1 
+│ ├── private@0.1.8 
+│ ├── slash@1.0.0 
+│ └── source-map@0.5.7 
+├─┬ babel-loader@7.1.5 
+│ ├─┬ find-cache-dir@1.0.0 
+│ │ ├── commondir@1.0.1 
+│ │ ├── make-dir@1.3.0 
+│ │ └─┬ pkg-dir@2.0.0 
+│ │   └─┬ find-up@2.1.0 
+│ │     └─┬ locate-path@2.0.0 
+│ │       ├─┬ p-locate@2.0.0 
+│ │       │ └─┬ p-limit@1.3.0 
+│ │       │   └── p-try@1.0.0 
+│ │       └── path-exists@3.0.0 
+│ ├─┬ loader-utils@1.4.0 
+│ │ ├── big.js@5.2.2 
+│ │ ├── emojis-list@3.0.0 
+│ │ └── json5@1.0.1 
+│ └─┬ mkdirp@0.5.5 
+│   └── minimist@1.2.5 
+├── babel-plugin-component@0.10.1 
+├── babel-plugin-transform-runtime@6.23.0 
+├─┬ babel-preset-env@1.7.0 
+│ ├── babel-plugin-check-es2015-constants@6.22.0 
+│ ├── babel-plugin-syntax-trailing-function-commas@6.22.0 
+│ ├─┬ babel-plugin-transform-async-to-generator@6.24.1 
+│ │ ├── babel-helper-remap-async-to-generator@6.24.1 
+│ │ └── babel-plugin-syntax-async-functions@6.13.0 
+│ ├── babel-plugin-transform-es2015-arrow-functions@6.22.0 
+│ ├── babel-plugin-transform-es2015-block-scoped-functions@6.22.0 
+│ ├── babel-plugin-transform-es2015-block-scoping@6.26.0 
+│ ├─┬ babel-plugin-transform-es2015-classes@6.24.1 
+│ │ ├── babel-helper-define-map@6.26.0 
+│ │ ├── babel-helper-function-name@6.24.1 
+│ │ ├── babel-helper-optimise-call-expression@6.24.1 
+│ │ └── babel-helper-replace-supers@6.24.1 
+│ ├── babel-plugin-transform-es2015-computed-properties@6.24.1 
+│ ├── babel-plugin-transform-es2015-destructuring@6.23.0 
+│ ├── babel-plugin-transform-es2015-duplicate-keys@6.24.1 
+│ ├── babel-plugin-transform-es2015-for-of@6.23.0 
+│ ├── babel-plugin-transform-es2015-function-name@6.24.1 
+│ ├── babel-plugin-transform-es2015-literals@6.22.0 
+│ ├── babel-plugin-transform-es2015-modules-amd@6.24.1 
+│ ├─┬ babel-plugin-transform-es2015-modules-commonjs@6.26.2 
+│ │ └── babel-plugin-transform-strict-mode@6.24.1 
+│ ├─┬ babel-plugin-transform-es2015-modules-systemjs@6.24.1 
+│ │ └── babel-helper-hoist-variables@6.24.1 
+│ ├── babel-plugin-transform-es2015-modules-umd@6.24.1 
+│ ├── babel-plugin-transform-es2015-object-super@6.24.1 
+│ ├─┬ babel-plugin-transform-es2015-parameters@6.24.1 
+│ │ ├── babel-helper-call-delegate@6.24.1 
+│ │ └── babel-helper-get-function-arity@6.24.1 
+│ ├── babel-plugin-transform-es2015-shorthand-properties@6.24.1 
+│ ├── babel-plugin-transform-es2015-spread@6.22.0 
+│ ├─┬ babel-plugin-transform-es2015-sticky-regex@6.24.1 
+│ │ └── babel-helper-regex@6.26.0 
+│ ├── babel-plugin-transform-es2015-template-literals@6.22.0 
+│ ├── babel-plugin-transform-es2015-typeof-symbol@6.23.0 
+│ ├─┬ babel-plugin-transform-es2015-unicode-regex@6.24.1 
+│ │ └─┬ regexpu-core@2.0.0 
+│ │   ├── regenerate@1.4.0 
+│ │   ├── regjsgen@0.2.0 
+│ │   └─┬ regjsparser@0.1.5 
+│ │     └── jsesc@0.5.0 
+│ ├─┬ babel-plugin-transform-exponentiation-operator@6.24.1 
+│ │ ├─┬ babel-helper-builder-binary-assignment-operator-visitor@6.24.1 
+│ │ │ └── babel-helper-explode-assignable-expression@6.24.1 
+│ │ └── babel-plugin-syntax-exponentiation-operator@6.13.0 
+│ ├─┬ babel-plugin-transform-regenerator@6.26.0 
+│ │ └── regenerator-transform@0.10.1 
+│ ├─┬ browserslist@3.2.8 
+│ │ ├── caniuse-lite@1.0.30001045 
+│ │ └── electron-to-chromium@1.3.414 
+│ ├─┬ invariant@2.2.4 
+│ │ └── loose-envify@1.4.0 
+│ └── semver@5.7.1 
+├─┬ babel-preset-stage-0@6.24.1 
+│ ├─┬ babel-plugin-transform-do-expressions@6.22.0 
+│ │ └── babel-plugin-syntax-do-expressions@6.13.0 
+│ ├─┬ babel-plugin-transform-function-bind@6.22.0 
+│ │ └── babel-plugin-syntax-function-bind@6.13.0 
+│ └─┬ babel-preset-stage-1@6.24.1 
+│   ├─┬ babel-plugin-transform-class-constructor-call@6.24.1 
+│   │ └── babel-plugin-syntax-class-constructor-call@6.18.0 
+│   ├─┬ babel-plugin-transform-export-extensions@6.22.0 
+│   │ └── babel-plugin-syntax-export-extensions@6.13.0 
+│   └─┬ babel-preset-stage-2@6.24.1 
+│     ├── babel-plugin-syntax-dynamic-import@6.18.0 
+│     ├─┬ babel-plugin-transform-class-properties@6.24.1 
+│     │ └── babel-plugin-syntax-class-properties@6.13.0 
+│     ├─┬ babel-plugin-transform-decorators@6.24.1 
+│     │ ├─┬ babel-helper-explode-class@6.24.1 
+│     │ │ └── babel-helper-bindify-decorators@6.24.1 
+│     │ └── babel-plugin-syntax-decorators@6.13.0 
+│     └─┬ babel-preset-stage-3@6.24.1 
+│       ├─┬ babel-plugin-transform-async-generator-functions@6.24.1 
+│       │ └── babel-plugin-syntax-async-generators@6.13.0 
+│       └─┬ babel-plugin-transform-object-rest-spread@6.26.0 
+│         └── babel-plugin-syntax-object-rest-spread@6.13.0 
+├── bootstrap@3.4.1 
+├─┬ build@0.1.4 
+│ ├── cssmin@0.3.2 
+│ ├── jsmin@1.0.1 
+│ ├─┬ jxLoader@0.1.1 
+│ │ └── js-yaml@0.3.7 
+│ ├── moo-server@1.3.0 
+│ ├── promised-io@0.3.5 
+│ ├── timespan@2.3.0 
+│ ├── uglify-js@1.3.5 
+│ ├─┬ walker@1.0.7 
+│ │ └─┬ makeerror@1.0.11 
+│ │   └── tmpl@1.0.4 
+│ ├─┬ winston@3.2.1 
+│ │ ├─┬ diagnostics@1.1.1 
+│ │ │ ├─┬ colorspace@1.1.2 
+│ │ │ │ ├─┬ color@3.0.0 
+│ │ │ │ │ └─┬ color-string@1.5.3 
+│ │ │ │ │   └─┬ simple-swizzle@0.2.2 
+│ │ │ │ │     └── is-arrayish@0.3.2 
+│ │ │ │ └── text-hex@1.0.0 
+│ │ │ ├─┬ enabled@1.0.2 
+│ │ │ │ └── env-variable@0.0.6 
+│ │ │ └─┬ kuler@1.0.1 
+│ │ │   └── colornames@1.1.1 
+│ │ ├── is-stream@1.1.0 
+│ │ ├─┬ logform@2.1.2 
+│ │ │ ├── colors@1.4.0 
+│ │ │ ├── fast-safe-stringify@2.0.7 
+│ │ │ ├── fecha@2.3.3 
+│ │ │ └── ms@2.1.2 
+│ │ ├── one-time@0.0.4 
+│ │ ├─┬ readable-stream@3.6.0 
+│ │ │ └── util-deprecate@1.0.2 
+│ │ ├── stack-trace@0.0.10 
+│ │ ├── triple-beam@1.3.0 
+│ │ └─┬ winston-transport@4.3.0 
+│ │   └─┬ readable-stream@2.3.7 
+│ │     ├── safe-buffer@5.1.2 
+│ │     └── string_decoder@1.1.1 
+│ └── wrench@1.3.9 
+├─┬ css-loader@0.28.11 
+│ ├─┬ css-selector-tokenizer@0.7.2 
+│ │ ├── cssesc@3.0.0 
+│ │ ├── fastparse@1.1.2 
+│ │ └─┬ regexpu-core@4.7.0 
+│ │   ├── regenerate-unicode-properties@8.2.0 
+│ │   ├── regjsgen@0.5.1 
+│ │   ├─┬ regjsparser@0.6.4 
+│ │   │ └── jsesc@0.5.0 
+│ │   ├─┬ unicode-match-property-ecmascript@1.0.4 
+│ │   │ ├── unicode-canonical-property-names-ecmascript@1.0.4 
+│ │   │ └── unicode-property-aliases-ecmascript@1.1.0 
+│ │   └── unicode-match-property-value-ecmascript@1.2.0 
+│ ├─┬ cssnano@3.10.0 
+│ │ ├─┬ autoprefixer@6.7.7 
+│ │ │ ├── browserslist@1.7.7 
+│ │ │ ├── caniuse-db@1.0.30001045 
+│ │ │ ├── normalize-range@0.1.2 
+│ │ │ └── num2fraction@1.2.2 
+│ │ ├── decamelize@1.2.0 
+│ │ ├── defined@1.0.0 
+│ │ ├─┬ has@1.0.3 
+│ │ │ └── function-bind@1.1.1 
+│ │ ├─┬ postcss-calc@5.3.1 
+│ │ │ ├── postcss-message-helpers@2.0.0 
+│ │ │ └─┬ reduce-css-calc@1.3.0 
+│ │ │   ├── balanced-match@0.4.2 
+│ │ │   ├── math-expression-evaluator@1.2.22 
+│ │ │   └── reduce-function-call@1.0.3 
+│ │ ├─┬ postcss-colormin@2.2.2 
+│ │ │ └─┬ colormin@1.1.2 
+│ │ │   ├─┬ color@0.11.4 
+│ │ │   │ ├── clone@1.0.4 
+│ │ │   │ └── color-string@0.3.0 
+│ │ │   └── css-color-names@0.0.4 
+│ │ ├── postcss-convert-values@2.6.1 
+│ │ ├── postcss-discard-comments@2.0.4 
+│ │ ├── postcss-discard-duplicates@2.1.0 
+│ │ ├── postcss-discard-empty@2.1.0 
+│ │ ├── postcss-discard-overridden@0.1.1 
+│ │ ├─┬ postcss-discard-unused@2.2.3 
+│ │ │ └── uniqs@2.0.0 
+│ │ ├── postcss-filter-plugins@2.0.3 
+│ │ ├── postcss-merge-idents@2.1.7 
+│ │ ├── postcss-merge-longhand@2.0.2 
+│ │ ├─┬ postcss-merge-rules@2.1.2 
+│ │ │ ├── browserslist@1.7.7 
+│ │ │ ├─┬ caniuse-api@1.6.1 
+│ │ │ │ ├── browserslist@1.7.7 
+│ │ │ │ ├── lodash.memoize@4.1.2 
+│ │ │ │ └── lodash.uniq@4.5.0 
+│ │ │ └── vendors@1.0.4 
+│ │ ├── postcss-minify-font-values@1.0.5 
+│ │ ├── postcss-minify-gradients@1.0.5 
+│ │ ├─┬ postcss-minify-params@1.2.2 
+│ │ │ └── alphanum-sort@1.0.2 
+│ │ ├── postcss-minify-selectors@2.1.1 
+│ │ ├── postcss-normalize-charset@1.1.1 
+│ │ ├─┬ postcss-normalize-url@3.0.8 
+│ │ │ ├── is-absolute-url@2.1.0 
+│ │ │ └─┬ normalize-url@1.9.1 
+│ │ │   ├── prepend-http@1.0.4 
+│ │ │   ├─┬ query-string@4.3.4 
+│ │ │   │ └── strict-uri-encode@1.1.0 
+│ │ │   └─┬ sort-keys@1.1.2 
+│ │ │     └── is-plain-obj@1.1.0 
+│ │ ├── postcss-ordered-values@2.2.3 
+│ │ ├── postcss-reduce-idents@2.4.0 
+│ │ ├── postcss-reduce-initial@1.0.1 
+│ │ ├── postcss-reduce-transforms@1.0.4 
+│ │ ├─┬ postcss-svgo@2.1.6 
+│ │ │ ├─┬ is-svg@2.1.0 
+│ │ │ │ └── html-comment-regex@1.1.2 
+│ │ │ └─┬ svgo@0.7.2 
+│ │ │   ├─┬ coa@1.0.4 
+│ │ │   │ └── q@1.5.1 
+│ │ │   ├── colors@1.1.2 
+│ │ │   ├─┬ csso@2.3.2 
+│ │ │   │ └── clap@1.2.3 
+│ │ │   ├─┬ js-yaml@3.7.0 
+│ │ │   │ └── esprima@2.7.3 
+│ │ │   ├── sax@1.2.4 
+│ │ │   └── whet.extend@0.9.9 
+│ │ ├── postcss-unique-selectors@2.0.2 
+│ │ └── postcss-zindex@2.2.0 
+│ ├─┬ icss-utils@2.1.0 
+│ │ └─┬ postcss@6.0.23 
+│ │   ├─┬ chalk@2.4.2 
+│ │   │ └── ansi-styles@3.2.1 
+│ │   ├── source-map@0.6.1 
+│ │   └─┬ supports-color@5.5.0 
+│ │     └── has-flag@3.0.0 
+│ ├── lodash.camelcase@4.3.0 
+│ ├── object-assign@4.1.1 
+│ ├─┬ postcss@5.2.18 
+│ │ └─┬ supports-color@3.2.3 
+│ │   └── has-flag@1.0.0 
+│ ├─┬ postcss-modules-extract-imports@1.2.1 
+│ │ └─┬ postcss@6.0.23 
+│ │   ├─┬ chalk@2.4.2 
+│ │   │ └── ansi-styles@3.2.1 
+│ │   ├── source-map@0.6.1 
+│ │   └─┬ supports-color@5.5.0 
+│ │     └── has-flag@3.0.0 
+│ ├─┬ postcss-modules-local-by-default@1.2.0 
+│ │ └─┬ postcss@6.0.23 
+│ │   ├─┬ chalk@2.4.2 
+│ │   │ └── ansi-styles@3.2.1 
+│ │   ├── source-map@0.6.1 
+│ │   └─┬ supports-color@5.5.0 
+│ │     └── has-flag@3.0.0 
+│ ├─┬ postcss-modules-scope@1.1.0 
+│ │ └─┬ postcss@6.0.23 
+│ │   ├─┬ chalk@2.4.2 
+│ │   │ └── ansi-styles@3.2.1 
+│ │   ├── source-map@0.6.1 
+│ │   └─┬ supports-color@5.5.0 
+│ │     └── has-flag@3.0.0 
+│ ├─┬ postcss-modules-values@1.3.0 
+│ │ ├── icss-replace-symbols@1.1.0 
+│ │ └─┬ postcss@6.0.23 
+│ │   ├─┬ chalk@2.4.2 
+│ │   │ └── ansi-styles@3.2.1 
+│ │   ├── source-map@0.6.1 
+│ │   └─┬ supports-color@5.5.0 
+│ │     └── has-flag@3.0.0 
+│ ├── postcss-value-parser@3.3.1 
+│ └── source-list-map@2.0.1 
+├─┬ echarts@4.7.0 
+│ └── zrender@4.3.0 
+├─┬ element-ui@2.13.1 
+│ ├── async-validator@1.8.5 
+│ ├── babel-helper-vue-jsx-merge-props@2.0.3 
+│ ├── deepmerge@1.5.2 
+│ ├── normalize-wheel@1.0.1 
+│ ├── resize-observer-polyfill@1.5.1 
+│ └── throttle-debounce@1.1.0 
+├── expose-loader@0.7.5 
+├─┬ file-loader@1.1.11 
+│ └── schema-utils@0.4.7 
+├─┬ html-webpack-plugin@2.30.1 
+│ ├── bluebird@3.7.2 
+│ ├─┬ html-minifier@3.5.21 
+│ │ ├─┬ camel-case@3.0.0 
+│ │ │ ├─┬ no-case@2.3.2 
+│ │ │ │ └── lower-case@1.1.4 
+│ │ │ └── upper-case@1.1.3 
+│ │ ├─┬ clean-css@4.2.3 
+│ │ │ └── source-map@0.6.1 
+│ │ ├── commander@2.17.1 
+│ │ ├── param-case@2.1.1 
+│ │ ├── relateurl@0.2.7 
+│ │ └─┬ uglify-js@3.4.10 
+│ │   ├── commander@2.19.0 
+│ │   └── source-map@0.6.1 
+│ ├─┬ loader-utils@0.2.17 
+│ │ ├── big.js@3.2.0 
+│ │ └── emojis-list@2.1.0 
+│ ├─┬ pretty-error@2.1.1 
+│ │ ├─┬ renderkid@2.0.3 
+│ │ │ ├─┬ css-select@1.2.0 
+│ │ │ │ ├── boolbase@1.0.0 
+│ │ │ │ ├── css-what@2.1.3 
+│ │ │ │ ├─┬ domutils@1.5.1 
+│ │ │ │ │ └─┬ dom-serializer@0.2.2 
+│ │ │ │ │   ├── domelementtype@2.0.1 
+│ │ │ │ │   └── entities@2.0.0 
+│ │ │ │ └── nth-check@1.0.2 
+│ │ │ ├── dom-converter@0.2.0 
+│ │ │ └─┬ htmlparser2@3.10.1 
+│ │ │   ├── domelementtype@1.3.1 
+│ │ │   └── domhandler@2.4.2 
+│ │ └── utila@0.4.0 
+│ └── toposort@1.0.7 
+├── jquery@3.5.0 
+├── js-base64@2.5.2 
+├── js-md5@0.7.3 
+├─┬ less@2.7.3 
+│ ├─┬ errno@0.1.7 
+│ │ └── prr@1.0.1 
+│ ├── graceful-fs@4.2.3 
+│ ├── image-size@0.5.5 
+│ ├── mime@1.6.0 
+│ ├─┬ promise@7.3.1 
+│ │ └── asap@2.0.6 
+│ └─┬ request@2.81.0 
+│   ├── aws-sign2@0.6.0 
+│   ├── aws4@1.9.1 
+│   ├── caseless@0.12.0 
+│   ├─┬ combined-stream@1.0.8 
+│   │ └── delayed-stream@1.0.0 
+│   ├── extend@3.0.2 
+│   ├── forever-agent@0.6.1 
+│   ├─┬ form-data@2.1.4 
+│   │ └── asynckit@0.4.0 
+│   ├─┬ har-validator@4.2.1 
+│   │ ├─┬ ajv@4.11.8 
+│   │ │ └─┬ json-stable-stringify@1.0.1 
+│   │ │   └── jsonify@0.0.0 
+│   │ └── har-schema@1.0.5 
+│   ├─┬ hawk@3.1.3 
+│   │ ├── boom@2.10.1 
+│   │ ├── cryptiles@2.0.5 
+│   │ ├── hoek@2.16.3 
+│   │ └── sntp@1.0.9 
+│   ├─┬ http-signature@1.1.1 
+│   │ ├── assert-plus@0.2.0 
+│   │ ├─┬ jsprim@1.4.1 
+│   │ │ ├── assert-plus@1.0.0 
+│   │ │ ├── extsprintf@1.3.0 
+│   │ │ ├── json-schema@0.2.3 
+│   │ │ └─┬ verror@1.10.0 
+│   │ │   └── assert-plus@1.0.0 
+│   │ └─┬ sshpk@1.16.1 
+│   │   ├── asn1@0.2.4 
+│   │   ├── assert-plus@1.0.0 
+│   │   ├── bcrypt-pbkdf@1.0.2 
+│   │   ├─┬ dashdash@1.14.1 
+│   │   │ └── assert-plus@1.0.0 
+│   │   ├── ecc-jsbn@0.1.2 
+│   │   ├─┬ getpass@0.1.7 
+│   │   │ └── assert-plus@1.0.0 
+│   │   ├── jsbn@0.1.1 
+│   │   ├── safer-buffer@2.1.2 
+│   │   └── tweetnacl@0.14.5 
+│   ├── is-typedarray@1.0.0 
+│   ├── isstream@0.1.2 
+│   ├── json-stringify-safe@5.0.1 
+│   ├─┬ mime-types@2.1.26 
+│   │ └── mime-db@1.43.0 
+│   ├── oauth-sign@0.8.2 
+│   ├── performance-now@0.2.0 
+│   ├── qs@6.4.0 
+│   ├── safe-buffer@5.2.0 
+│   ├── stringstream@0.0.6 
+│   ├─┬ tough-cookie@2.3.4 
+│   │ └── punycode@1.4.1 
+│   ├── tunnel-agent@0.6.0 
+│   └── uuid@3.4.0 
+├─┬ less-loader@4.1.0 
+│ ├── clone@2.1.2 
+│ └── pify@3.0.0 
+├─┬ mockjs@1.1.0 
+│ └── commander@5.0.0 
+├─┬ node-sass@4.13.1 
+│ ├── async-foreach@0.1.3 
+│ ├─┬ chalk@1.1.3 
+│ │ ├── ansi-styles@2.2.1 
+│ │ ├── escape-string-regexp@1.0.5 
+│ │ ├── has-ansi@2.0.0 
+│ │ └── supports-color@2.0.0 
+│ ├─┬ cross-spawn@3.0.1 
+│ │ └─┬ which@1.3.1 
+│ │   └── isexe@2.0.0 
+│ ├─┬ gaze@1.1.3 
+│ │ └── globule@1.3.1 
+│ ├── get-stdin@4.0.1 
+│ ├─┬ glob@7.1.6 
+│ │ ├── fs.realpath@1.0.0 
+│ │ ├─┬ inflight@1.0.6 
+│ │ │ └── wrappy@1.0.2 
+│ │ ├── inherits@2.0.4 
+│ │ └── once@1.4.0 
+│ ├── in-publish@2.0.1 
+│ ├─┬ meow@3.7.0 
+│ │ ├─┬ camelcase-keys@2.1.0 
+│ │ │ └── camelcase@2.1.1 
+│ │ ├─┬ loud-rejection@1.6.0 
+│ │ │ ├─┬ currently-unhandled@0.4.1 
+│ │ │ │ └── array-find-index@1.0.2 
+│ │ │ └── signal-exit@3.0.3 
+│ │ ├── map-obj@1.0.1 
+│ │ ├─┬ normalize-package-data@2.5.0 
+│ │ │ ├── hosted-git-info@2.8.8 
+│ │ │ └─┬ validate-npm-package-license@3.0.4 
+│ │ │   ├─┬ spdx-correct@3.1.0 
+│ │ │   │ └── spdx-license-ids@3.0.5 
+│ │ │   └─┬ spdx-expression-parse@3.0.0 
+│ │ │     └── spdx-exceptions@2.3.0 
+│ │ ├─┬ read-pkg-up@1.0.1 
+│ │ │ ├─┬ find-up@1.1.2 
+│ │ │ │ └── path-exists@2.1.0 
+│ │ │ └─┬ read-pkg@1.1.0 
+│ │ │   ├─┬ load-json-file@1.1.0 
+│ │ │   │ ├── pify@2.3.0 
+│ │ │   │ └─┬ strip-bom@2.0.0 
+│ │ │   │   └── is-utf8@0.2.1 
+│ │ │   └─┬ path-type@1.1.0 
+│ │ │     └── pify@2.3.0 
+│ │ ├─┬ redent@1.0.0 
+│ │ │ ├── indent-string@2.1.0 
+│ │ │ └── strip-indent@1.0.1 
+│ │ └── trim-newlines@1.0.0 
+│ ├── nan@2.14.1 
+│ ├─┬ node-gyp@3.8.0 
+│ │ ├── fstream@1.0.12 
+│ │ ├─┬ nopt@3.0.6 
+│ │ │ └── abbrev@1.1.1 
+│ │ ├── osenv@0.1.5 
+│ │ ├─┬ request@2.88.2 
+│ │ │ ├── aws-sign2@0.7.0 
+│ │ │ ├── form-data@2.3.3 
+│ │ │ ├─┬ har-validator@5.1.3 
+│ │ │ │ └── har-schema@2.0.0 
+│ │ │ ├─┬ http-signature@1.2.0 
+│ │ │ │ └── assert-plus@1.0.0 
+│ │ │ ├── oauth-sign@0.9.0 
+│ │ │ ├── performance-now@2.1.0 
+│ │ │ ├── qs@6.5.2 
+│ │ │ └── tough-cookie@2.5.0 
+│ │ ├── rimraf@2.7.1 
+│ │ ├── semver@5.3.0 
+│ │ └─┬ tar@2.2.2 
+│ │   └── block-stream@0.0.9 
+│ ├─┬ npmlog@4.1.2 
+│ │ ├─┬ are-we-there-yet@1.1.5 
+│ │ │ ├── delegates@1.0.0 
+│ │ │ └─┬ readable-stream@2.3.7 
+│ │ │   ├── safe-buffer@5.1.2 
+│ │ │   └── string_decoder@1.1.1 
+│ │ ├── console-control-strings@1.1.0 
+│ │ ├─┬ gauge@2.7.4 
+│ │ │ ├── aproba@1.2.0 
+│ │ │ ├── has-unicode@2.0.1 
+│ │ │ └── wide-align@1.1.3 
+│ │ └── set-blocking@2.0.0 
+│ ├─┬ request@2.88.2 
+│ │ ├── aws-sign2@0.7.0 
+│ │ ├── form-data@2.3.3 
+│ │ ├─┬ har-validator@5.1.3 
+│ │ │ └── har-schema@2.0.0 
+│ │ ├─┬ http-signature@1.2.0 
+│ │ │ └── assert-plus@1.0.0 
+│ │ ├── oauth-sign@0.9.0 
+│ │ ├── performance-now@2.1.0 
+│ │ ├── qs@6.5.2 
+│ │ └─┬ tough-cookie@2.5.0 
+│ │   ├── psl@1.8.0 
+│ │   └── punycode@2.1.1 
+│ ├─┬ sass-graph@2.2.4 
+│ │ ├─┬ scss-tokenizer@0.2.3 
+│ │ │ └─┬ source-map@0.4.4 
+│ │ │   └── amdefine@1.0.1 
+│ │ └─┬ yargs@7.1.0 
+│ │   ├── camelcase@3.0.0 
+│ │   └─┬ yargs-parser@5.0.0 
+│ │     └── camelcase@3.0.0 
+│ ├─┬ stdout-stream@1.4.1 
+│ │ └─┬ readable-stream@2.3.7 
+│ │   ├── core-util-is@1.0.2 
+│ │   ├── isarray@1.0.0 
+│ │   ├── process-nextick-args@2.0.1 
+│ │   ├── safe-buffer@5.1.2 
+│ │   └── string_decoder@1.1.1 
+│ └── true-case-path@1.0.3 
+├── qs@6.9.3 
+├─┬ sass@1.26.3 
+│ └─┬ chokidar@3.3.1 
+│   ├─┬ anymatch@3.1.1 
+│   │ └── picomatch@2.2.2 
+│   ├─┬ braces@3.0.2 
+│   │ └─┬ fill-range@7.0.1 
+│   │   └─┬ to-regex-range@5.0.1 
+│   │     └── is-number@7.0.0 
+│   ├── glob-parent@5.1.1 
+│   ├─┬ is-binary-path@2.1.0 
+│   │ └── binary-extensions@2.0.0 
+│   ├─┬ is-glob@4.0.1 
+│   │ └── is-extglob@2.1.1 
+│   ├── normalize-path@3.0.0 
+│   └── readdirp@3.3.0 
+├─┬ sass-loader@6.0.7 
+│ ├─┬ clone-deep@2.0.2 
+│ │ ├─┬ for-own@1.0.0 
+│ │ │ └── for-in@1.0.2 
+│ │ ├─┬ is-plain-object@2.0.4 
+│ │ │ └── isobject@3.0.1 
+│ │ ├── kind-of@6.0.3 
+│ │ └─┬ shallow-clone@1.0.0 
+│ │   ├── is-extendable@0.1.1 
+│ │   ├── kind-of@5.1.0 
+│ │   └─┬ mixin-object@2.0.1 
+│ │     └── for-in@0.1.8 
+│ ├── lodash.tail@4.1.1 
+│ └── neo-async@2.6.1 
+├─┬ style-loader@0.19.1 
+│ └─┬ schema-utils@0.3.0 
+│   └─┬ ajv@5.5.2 
+│     ├── co@4.6.0 
+│     ├── fast-deep-equal@1.1.0 
+│     └── json-schema-traverse@0.3.1 
+├─┬ uglifyjs-webpack-plugin@2.2.0 
+│ ├─┬ cacache@12.0.4 
+│ │ ├── chownr@1.1.4 
+│ │ ├── figgy-pudding@3.5.2 
+│ │ ├── infer-owner@1.0.4 
+│ │ ├─┬ lru-cache@5.1.1 
+│ │ │ └── yallist@3.1.1 
+│ │ ├─┬ mississippi@3.0.0 
+│ │ │ ├─┬ concat-stream@1.6.2 
+│ │ │ │ ├── buffer-from@1.1.1 
+│ │ │ │ ├─┬ readable-stream@2.3.7 
+│ │ │ │ │ ├── safe-buffer@5.1.2 
+│ │ │ │ │ └── string_decoder@1.1.1 
+│ │ │ │ └── typedarray@0.0.6 
+│ │ │ ├─┬ duplexify@3.7.1 
+│ │ │ │ ├─┬ readable-stream@2.3.7 
+│ │ │ │ │ ├── safe-buffer@5.1.2 
+│ │ │ │ │ └── string_decoder@1.1.1 
+│ │ │ │ └── stream-shift@1.0.1 
+│ │ │ ├── end-of-stream@1.4.4 
+│ │ │ ├─┬ flush-write-stream@1.1.1 
+│ │ │ │ └─┬ readable-stream@2.3.7 
+│ │ │ │   ├── safe-buffer@5.1.2 
+│ │ │ │   └── string_decoder@1.1.1 
+│ │ │ ├─┬ from2@2.3.0 
+│ │ │ │ └─┬ readable-stream@2.3.7 
+│ │ │ │   ├── safe-buffer@5.1.2 
+│ │ │ │   └── string_decoder@1.1.1 
+│ │ │ ├─┬ parallel-transform@1.2.0 
+│ │ │ │ ├── cyclist@1.0.1 
+│ │ │ │ └─┬ readable-stream@2.3.7 
+│ │ │ │   ├── safe-buffer@5.1.2 
+│ │ │ │   └── string_decoder@1.1.1 
+│ │ │ ├── pump@3.0.0 
+│ │ │ ├─┬ pumpify@1.5.1 
+│ │ │ │ └── pump@2.0.1 
+│ │ │ ├── stream-each@1.2.3 
+│ │ │ └─┬ through2@2.0.5 
+│ │ │   └─┬ readable-stream@2.3.7 
+│ │ │     ├── safe-buffer@5.1.2 
+│ │ │     └── string_decoder@1.1.1 
+│ │ ├─┬ move-concurrently@1.0.1 
+│ │ │ ├─┬ copy-concurrently@1.0.5 
+│ │ │ │ └── iferr@0.1.5 
+│ │ │ ├─┬ fs-write-stream-atomic@1.0.10 
+│ │ │ │ ├── imurmurhash@0.1.4 
+│ │ │ │ └─┬ readable-stream@2.3.7 
+│ │ │ │   ├── safe-buffer@5.1.2 
+│ │ │ │   └── string_decoder@1.1.1 
+│ │ │ └── run-queue@1.0.3 
+│ │ ├── promise-inflight@1.0.1 
+│ │ ├── ssri@6.0.1 
+│ │ ├─┬ unique-filename@1.1.1 
+│ │ │ └── unique-slug@2.0.2 
+│ │ └── y18n@4.0.0 
+│ ├─┬ find-cache-dir@2.1.0 
+│ │ ├─┬ make-dir@2.1.0 
+│ │ │ └── pify@4.0.1 
+│ │ └─┬ pkg-dir@3.0.0 
+│ │   └─┬ find-up@3.0.0 
+│ │     └─┬ locate-path@3.0.0 
+│ │       └─┬ p-locate@3.0.0 
+│ │         └─┬ p-limit@2.3.0 
+│ │           └── p-try@2.2.0 
+│ ├── is-wsl@1.1.0 
+│ ├─┬ schema-utils@1.0.0 
+│ │ └── ajv-errors@1.0.1 
+│ ├── serialize-javascript@1.9.1 
+│ ├── source-map@0.6.1 
+│ ├─┬ uglify-js@3.9.1 
+│ │ └── commander@2.20.3 
+│ ├─┬ webpack-sources@1.4.3 
+│ │ └── source-map@0.6.1 
+│ └── worker-farm@1.7.0 
+├─┬ url-loader@0.6.2 
+│ └─┬ schema-utils@0.3.0 
+│   └─┬ ajv@5.5.2 
+│     ├── fast-deep-equal@1.1.0 
+│     └── json-schema-traverse@0.3.1 
+├── vue@2.6.11 
+├─┬ vue-baidu-map@0.21.22 
+│ ├── bmaplib.curveline@1.0.0 
+│ ├── bmaplib.heatmap@1.0.4 
+│ ├── bmaplib.lushu@1.0.7 
+│ ├─┬ bmaplib.markerclusterer@1.0.13 
+│ │ └── bmaplib.texticonoverlay@1.0.2 
+│ └─┬ markdown-it@8.4.2 
+│   ├─┬ argparse@1.0.10 
+│   │ └── sprintf-js@1.0.3 
+│   ├── entities@1.1.2 
+│   ├── linkify-it@2.2.0 
+│   ├── mdurl@1.0.1 
+│   └── uc.micro@1.0.6 
+├─┬ vue-loader@13.7.3 
+│ ├── consolidate@0.14.5 
+│ ├── hash-sum@1.0.2 
+│ ├─┬ lru-cache@4.1.5 
+│ │ ├── pseudomap@1.0.2 
+│ │ └── yallist@2.1.2 
+│ ├─┬ postcss@6.0.23 
+│ │ ├─┬ chalk@2.4.2 
+│ │ │ └─┬ ansi-styles@3.2.1 
+│ │ │   └─┬ color-convert@1.9.3 
+│ │ │     └── color-name@1.1.3 
+│ │ └─┬ supports-color@5.5.0 
+│ │   └── has-flag@3.0.0 
+│ ├─┬ postcss-load-config@1.2.0 
+│ │ ├─┬ cosmiconfig@2.2.2 
+│ │ │ ├── is-directory@0.3.1 
+│ │ │ ├─┬ js-yaml@3.13.1 
+│ │ │ │ └── esprima@4.0.1 
+│ │ │ ├─┬ parse-json@2.2.0 
+│ │ │ │ └─┬ error-ex@1.3.2 
+│ │ │ │   └── is-arrayish@0.2.1 
+│ │ │ └── require-from-string@1.2.1 
+│ │ ├── postcss-load-options@1.2.0 
+│ │ └── postcss-load-plugins@2.3.0 
+│ ├─┬ postcss-selector-parser@2.2.3 
+│ │ ├── flatten@1.0.3 
+│ │ ├── indexes-of@1.0.1 
+│ │ └── uniq@1.0.1 
+│ ├── prettier@1.19.1 
+│ ├─┬ resolve@1.16.1 
+│ │ └── path-parse@1.0.6 
+│ ├── source-map@0.6.1 
+│ ├── vue-hot-reload-api@2.3.4 
+│ ├── vue-style-loader@3.1.2 
+│ └── vue-template-es2015-compiler@1.9.1 
+├─┬ vue-template-compiler@2.6.11 
+│ ├── de-indent@1.0.2 
+│ └── he@1.2.0 
+├─┬ UNMET PEER DEPENDENCY webpack@3.12.0
+│ ├── acorn@5.7.4 
+│ ├─┬ acorn-dynamic-import@2.0.2 
+│ │ └── acorn@4.0.13 
+│ ├─┬ ajv@6.12.2 
+│ │ ├── fast-deep-equal@3.1.1 
+│ │ ├── fast-json-stable-stringify@2.1.0 
+│ │ ├── json-schema-traverse@0.4.1 
+│ │ └── uri-js@4.2.2 
+│ ├── ajv-keywords@3.4.1 
+│ ├── async@2.6.3 
+│ ├── enhanced-resolve@3.4.1 
+│ ├─┬ escope@3.6.0 
+│ │ ├─┬ es6-map@0.1.5 
+│ │ │ ├─┬ d@1.0.1 
+│ │ │ │ └── type@1.2.0 
+│ │ │ ├─┬ es5-ext@0.10.53 
+│ │ │ │ └── next-tick@1.0.0 
+│ │ │ ├── es6-iterator@2.0.3 
+│ │ │ ├─┬ es6-set@0.1.5 
+│ │ │ │ └── es6-symbol@3.1.1 
+│ │ │ ├─┬ es6-symbol@3.1.3 
+│ │ │ │ └─┬ ext@1.4.0 
+│ │ │ │   └── type@2.0.0 
+│ │ │ └── event-emitter@0.3.5 
+│ │ ├── es6-weak-map@2.0.3 
+│ │ ├── esrecurse@4.2.1 
+│ │ └── estraverse@4.3.0 
+│ ├── interpret@1.2.0 
+│ ├── json-loader@0.5.7 
+│ ├── loader-runner@2.4.0 
+│ ├─┬ memory-fs@0.4.1 
+│ │ └─┬ readable-stream@2.3.7 
+│ │   ├── safe-buffer@5.1.2 
+│ │   └── string_decoder@1.1.1 
+│ ├─┬ node-libs-browser@2.2.1 
+│ │ ├─┬ assert@1.5.0 
+│ │ │ └─┬ util@0.10.3 
+│ │ │   └── inherits@2.0.1 
+│ │ ├─┬ browserify-zlib@0.2.0 
+│ │ │ └── pako@1.0.11 
+│ │ ├─┬ buffer@4.9.2 
+│ │ │ ├── base64-js@1.3.1 
+│ │ │ └── ieee754@1.1.13 
+│ │ ├── console-browserify@1.2.0 
+│ │ ├── constants-browserify@1.0.0 
+│ │ ├─┬ crypto-browserify@3.12.0 
+│ │ │ ├─┬ browserify-cipher@1.0.1 
+│ │ │ │ ├─┬ browserify-aes@1.2.0 
+│ │ │ │ │ └── buffer-xor@1.0.3 
+│ │ │ │ ├─┬ browserify-des@1.0.2 
+│ │ │ │ │ └── des.js@1.0.1 
+│ │ │ │ └── evp_bytestokey@1.0.3 
+│ │ │ ├─┬ browserify-sign@4.0.4 
+│ │ │ │ ├── bn.js@4.11.8 
+│ │ │ │ ├── browserify-rsa@4.0.1 
+│ │ │ │ ├─┬ elliptic@6.5.2 
+│ │ │ │ │ ├── brorand@1.1.0 
+│ │ │ │ │ ├── hash.js@1.1.7 
+│ │ │ │ │ ├── hmac-drbg@1.0.1 
+│ │ │ │ │ └── minimalistic-crypto-utils@1.0.1 
+│ │ │ │ └─┬ parse-asn1@5.1.5 
+│ │ │ │   └── asn1.js@4.10.1 
+│ │ │ ├── create-ecdh@4.0.3 
+│ │ │ ├─┬ create-hash@1.2.0 
+│ │ │ │ ├── cipher-base@1.0.4 
+│ │ │ │ ├─┬ md5.js@1.3.5 
+│ │ │ │ │ └── hash-base@3.0.4 
+│ │ │ │ ├── ripemd160@2.0.2 
+│ │ │ │ └── sha.js@2.4.11 
+│ │ │ ├── create-hmac@1.1.7 
+│ │ │ ├─┬ diffie-hellman@5.0.3 
+│ │ │ │ └── miller-rabin@4.0.1 
+│ │ │ ├── pbkdf2@3.0.17 
+│ │ │ ├── public-encrypt@4.0.3 
+│ │ │ ├── randombytes@2.1.0 
+│ │ │ └── randomfill@1.0.4 
+│ │ ├── domain-browser@1.2.0 
+│ │ ├── events@3.1.0 
+│ │ ├── https-browserify@1.0.0 
+│ │ ├── os-browserify@0.3.0 
+│ │ ├── path-browserify@0.0.1 
+│ │ ├── process@0.11.10 
+│ │ ├── punycode@1.4.1 
+│ │ ├── querystring-es3@0.2.1 
+│ │ ├─┬ readable-stream@2.3.7 
+│ │ │ ├── safe-buffer@5.1.2 
+│ │ │ └── string_decoder@1.1.1 
+│ │ ├─┬ stream-browserify@2.0.2 
+│ │ │ └─┬ readable-stream@2.3.7 
+│ │ │   ├── safe-buffer@5.1.2 
+│ │ │   └── string_decoder@1.1.1 
+│ │ ├─┬ stream-http@2.8.3 
+│ │ │ ├── builtin-status-codes@3.0.0 
+│ │ │ ├─┬ readable-stream@2.3.7 
+│ │ │ │ ├── safe-buffer@5.1.2 
+│ │ │ │ └── string_decoder@1.1.1 
+│ │ │ ├── to-arraybuffer@1.0.1 
+│ │ │ └── xtend@4.0.2 
+│ │ ├── string_decoder@1.3.0 
+│ │ ├─┬ timers-browserify@2.0.11 
+│ │ │ └── setimmediate@1.0.5 
+│ │ ├── tty-browserify@0.0.0 
+│ │ ├─┬ url@0.11.0 
+│ │ │ ├── punycode@1.3.2 
+│ │ │ └── querystring@0.2.0 
+│ │ ├─┬ util@0.11.1 
+│ │ │ └── inherits@2.0.3 
+│ │ └── vm-browserify@1.1.2 
+│ ├─┬ supports-color@4.5.0 
+│ │ └── has-flag@2.0.0 
+│ ├── tapable@0.2.9 
+│ ├─┬ uglifyjs-webpack-plugin@0.4.6 
+│ │ └─┬ uglify-js@2.8.29 
+│ │   ├── uglify-to-browserify@1.0.2 
+│ │   └─┬ yargs@3.10.0 
+│ │     ├── camelcase@1.2.1 
+│ │     ├─┬ cliui@2.1.0 
+│ │     │ ├─┬ center-align@0.1.3 
+│ │     │ │ ├─┬ align-text@0.1.4 
+│ │     │ │ │ ├── kind-of@3.2.2 
+│ │     │ │ │ └── longest@1.0.1 
+│ │     │ │ └── lazy-cache@1.0.4 
+│ │     │ ├── right-align@0.1.3 
+│ │     │ └── wordwrap@0.0.2 
+│ │     └── window-size@0.1.0 
+│ ├─┬ watchpack@1.6.1 
+│ │ └─┬ chokidar@2.1.8 
+│ │   ├─┬ anymatch@2.0.0 
+│ │   │ └── normalize-path@2.1.1 
+│ │   ├─┬ braces@2.3.2 
+│ │   │ ├── extend-shallow@2.0.1 
+│ │   │ └─┬ fill-range@4.0.0 
+│ │   │   ├─┬ is-number@3.0.0 
+│ │   │   │ └── kind-of@3.2.2 
+│ │   │   └── to-regex-range@2.1.1 
+│ │   ├─┬ glob-parent@3.1.0 
+│ │   │ └── is-glob@3.1.0 
+│ │   ├─┬ is-binary-path@1.0.1 
+│ │   │ └── binary-extensions@1.13.1 
+│ │   └─┬ readdirp@2.2.1 
+│ │     └─┬ readable-stream@2.3.7 
+│ │       ├── safe-buffer@5.1.2 
+│ │       └── string_decoder@1.1.1 
+│ └─┬ yargs@8.0.2 
+│   ├── camelcase@4.1.0 
+│   ├─┬ cliui@3.2.0 
+│   │ ├── string-width@1.0.2 
+│   │ └── wrap-ansi@2.1.0 
+│   ├── get-caller-file@1.0.3 
+│   ├─┬ os-locale@2.1.0 
+│   │ ├─┬ execa@0.7.0 
+│   │ │ ├─┬ cross-spawn@5.1.0 
+│   │ │ │ └─┬ shebang-command@1.2.0 
+│   │ │ │   └── shebang-regex@1.0.0 
+│   │ │ ├── get-stream@3.0.0 
+│   │ │ ├─┬ npm-run-path@2.0.2 
+│   │ │ │ └── path-key@2.0.1 
+│   │ │ ├── p-finally@1.0.0 
+│   │ │ └── strip-eof@1.0.0 
+│   │ ├─┬ lcid@1.0.0 
+│   │ │ └── invert-kv@1.0.0 
+│   │ └─┬ mem@1.1.0 
+│   │   └── mimic-fn@1.2.0 
+│   ├─┬ read-pkg-up@2.0.0 
+│   │ └─┬ read-pkg@2.0.0 
+│   │   ├─┬ load-json-file@2.0.0 
+│   │   │ ├── pify@2.3.0 
+│   │   │ └── strip-bom@3.0.0 
+│   │   └── path-type@2.0.0 
+│   ├── require-directory@2.1.1 
+│   ├── require-main-filename@1.0.1 
+│   ├─┬ string-width@2.1.1 
+│   │ ├── is-fullwidth-code-point@2.0.0 
+│   │ └─┬ strip-ansi@4.0.0 
+│   │   └── ansi-regex@3.0.0 
+│   ├── which-module@2.0.0 
+│   ├── y18n@3.2.1 
+│   └─┬ yargs-parser@7.0.0 
+│     └── camelcase@4.1.0 
+└─┬ webpack-dev-server@2.11.5 
+  ├── ansi-html@0.0.7 
+  ├─┬ array-includes@3.1.1 
+  │ ├─┬ define-properties@1.1.3 
+  │ │ └── object-keys@1.1.1 
+  │ ├─┬ es-abstract@1.17.5 
+  │ │ ├─┬ es-to-primitive@1.2.1 
+  │ │ │ └── is-symbol@1.0.3 
+  │ │ ├── has-symbols@1.0.1 
+  │ │ ├── is-callable@1.1.5 
+  │ │ ├── is-regex@1.0.5 
+  │ │ ├── object-inspect@1.7.0 
+  │ │ ├── object.assign@4.1.0 
+  │ │ ├─┬ string.prototype.trimleft@2.1.2 
+  │ │ │ └── string.prototype.trimstart@1.0.1 
+  │ │ └─┬ string.prototype.trimright@2.1.2 
+  │ │   └── string.prototype.trimend@1.0.1 
+  │ └── is-string@1.0.5 
+  ├─┬ bonjour@3.5.0 
+  │ ├── array-flatten@2.1.2 
+  │ ├─┬ deep-equal@1.1.1 
+  │ │ ├── is-arguments@1.0.4 
+  │ │ ├── is-date-object@1.0.2 
+  │ │ ├── object-is@1.1.2 
+  │ │ └── regexp.prototype.flags@1.3.0 
+  │ ├── dns-equal@1.0.0 
+  │ ├─┬ dns-txt@2.0.2 
+  │ │ └── buffer-indexof@1.1.1 
+  │ ├─┬ multicast-dns@6.2.3 
+  │ │ ├── dns-packet@1.3.1 
+  │ │ └── thunky@1.1.0 
+  │ └── multicast-dns-service-types@1.1.0 
+  ├─┬ chokidar@2.1.8 
+  │ ├─┬ anymatch@2.0.0 
+  │ │ └─┬ normalize-path@2.1.1 
+  │ │   └── remove-trailing-separator@1.1.0 
+  │ ├── async-each@1.0.3 
+  │ ├─┬ braces@2.3.2 
+  │ │ ├── arr-flatten@1.1.0 
+  │ │ ├── extend-shallow@2.0.1 
+  │ │ ├─┬ fill-range@4.0.0 
+  │ │ │ ├─┬ is-number@3.0.0 
+  │ │ │ │ └── kind-of@3.2.2 
+  │ │ │ ├── repeat-string@1.6.1 
+  │ │ │ └── to-regex-range@2.1.1 
+  │ │ ├── repeat-element@1.1.3 
+  │ │ ├─┬ snapdragon-node@2.1.1 
+  │ │ │ ├─┬ define-property@1.0.0 
+  │ │ │ │ └─┬ is-descriptor@1.0.2 
+  │ │ │ │   ├── is-accessor-descriptor@1.0.0 
+  │ │ │ │   └── is-data-descriptor@1.0.0 
+  │ │ │ └─┬ snapdragon-util@3.0.1 
+  │ │ │   └─┬ kind-of@3.2.2 
+  │ │ │     └── is-buffer@1.1.6 
+  │ │ └── split-string@3.1.0 
+  │ ├─┬ glob-parent@3.1.0 
+  │ │ ├── is-glob@3.1.0 
+  │ │ └── path-dirname@1.0.2 
+  │ ├─┬ is-binary-path@1.0.1 
+  │ │ └── binary-extensions@1.13.1 
+  │ ├─┬ readdirp@2.2.1 
+  │ │ └─┬ readable-stream@2.3.7 
+  │ │   ├── safe-buffer@5.1.2 
+  │ │   └── string_decoder@1.1.1 
+  │ └── upath@1.2.0 
+  ├─┬ compression@1.7.4 
+  │ ├─┬ accepts@1.3.7 
+  │ │ └── negotiator@0.6.2 
+  │ ├── bytes@3.0.0 
+  │ ├── compressible@2.0.18 
+  │ ├── debug@2.6.9 
+  │ ├── on-headers@1.0.2 
+  │ ├── safe-buffer@5.1.2 
+  │ └── vary@1.1.2 
+  ├── connect-history-api-fallback@1.6.0 
+  ├── debug@3.1.0 
+  ├─┬ del@3.0.0 
+  │ ├─┬ globby@6.1.0 
+  │ │ ├─┬ array-union@1.0.2 
+  │ │ │ └── array-uniq@1.0.3 
+  │ │ ├── pify@2.3.0 
+  │ │ └─┬ pinkie-promise@2.0.1 
+  │ │   └── pinkie@2.0.4 
+  │ ├── is-path-cwd@1.0.0 
+  │ ├─┬ is-path-in-cwd@1.0.1 
+  │ │ └─┬ is-path-inside@1.0.1 
+  │ │   └── path-is-inside@1.0.2 
+  │ └── p-map@1.2.0 
+  ├─┬ express@4.17.1 
+  │ ├── array-flatten@1.1.1 
+  │ ├─┬ body-parser@1.19.0 
+  │ │ ├── bytes@3.1.0 
+  │ │ ├── debug@2.6.9 
+  │ │ ├─┬ http-errors@1.7.2 
+  │ │ │ ├── inherits@2.0.3 
+  │ │ │ └── toidentifier@1.0.0 
+  │ │ ├── iconv-lite@0.4.24 
+  │ │ ├── qs@6.7.0 
+  │ │ └─┬ raw-body@2.4.0 
+  │ │   └── bytes@3.1.0 
+  │ ├─┬ content-disposition@0.5.3 
+  │ │ └── safe-buffer@5.1.2 
+  │ ├── content-type@1.0.4 
+  │ ├── cookie@0.4.0 
+  │ ├── cookie-signature@1.0.6 
+  │ ├── debug@2.6.9 
+  │ ├── depd@1.1.2 
+  │ ├── encodeurl@1.0.2 
+  │ ├── escape-html@1.0.3 
+  │ ├── etag@1.8.1 
+  │ ├─┬ finalhandler@1.1.2 
+  │ │ ├── debug@2.6.9 
+  │ │ └── unpipe@1.0.0 
+  │ ├── fresh@0.5.2 
+  │ ├── merge-descriptors@1.0.1 
+  │ ├── methods@1.1.2 
+  │ ├─┬ on-finished@2.3.0 
+  │ │ └── ee-first@1.1.1 
+  │ ├── parseurl@1.3.3 
+  │ ├── path-to-regexp@0.1.7 
+  │ ├─┬ proxy-addr@2.0.6 
+  │ │ ├── forwarded@0.1.2 
+  │ │ └── ipaddr.js@1.9.1 
+  │ ├── qs@6.7.0 
+  │ ├── range-parser@1.2.1 
+  │ ├── safe-buffer@5.1.2 
+  │ ├─┬ send@0.17.1 
+  │ │ ├─┬ debug@2.6.9 
+  │ │ │ └── ms@2.0.0 
+  │ │ ├── destroy@1.0.4 
+  │ │ └── ms@2.1.1 
+  │ ├── serve-static@1.14.1 
+  │ ├── setprototypeof@1.1.1 
+  │ ├── statuses@1.5.0 
+  │ ├─┬ type-is@1.6.18 
+  │ │ └── media-typer@0.3.0 
+  │ └── utils-merge@1.0.1 
+  ├── html-entities@1.3.1 
+  ├─┬ http-proxy-middleware@0.19.1 
+  │ ├─┬ http-proxy@1.18.0 
+  │ │ ├── eventemitter3@4.0.0 
+  │ │ └── requires-port@1.0.0 
+  │ └─┬ micromatch@3.1.10 
+  │   ├── arr-diff@4.0.0 
+  │   ├── array-unique@0.3.2 
+  │   ├─┬ braces@2.3.2 
+  │   │ ├── extend-shallow@2.0.1 
+  │   │ └─┬ fill-range@4.0.0 
+  │   │   ├── extend-shallow@2.0.1 
+  │   │   ├─┬ is-number@3.0.0 
+  │   │   │ └── kind-of@3.2.2 
+  │   │   └── to-regex-range@2.1.1 
+  │   ├─┬ define-property@2.0.2 
+  │   │ └─┬ is-descriptor@1.0.2 
+  │   │   ├── is-accessor-descriptor@1.0.0 
+  │   │   └── is-data-descriptor@1.0.0 
+  │   ├─┬ extend-shallow@3.0.2 
+  │   │ ├── assign-symbols@1.0.0 
+  │   │ └── is-extendable@1.0.1 
+  │   ├─┬ extglob@2.0.4 
+  │   │ ├─┬ define-property@1.0.0 
+  │   │ │ └─┬ is-descriptor@1.0.2 
+  │   │ │   ├── is-accessor-descriptor@1.0.0 
+  │   │ │   └── is-data-descriptor@1.0.0 
+  │   │ ├─┬ expand-brackets@2.1.4 
+  │   │ │ ├── debug@2.6.9 
+  │   │ │ ├── define-property@0.2.5 
+  │   │ │ ├── extend-shallow@2.0.1 
+  │   │ │ └── posix-character-classes@0.1.1 
+  │   │ └── extend-shallow@2.0.1 
+  │   ├─┬ fragment-cache@0.2.1 
+  │   │ └── map-cache@0.2.2 
+  │   ├─┬ nanomatch@1.2.13 
+  │   │ └── is-windows@1.0.2 
+  │   ├── object.pick@1.3.0 
+  │   ├─┬ regex-not@1.0.2 
+  │   │ └─┬ safe-regex@1.1.0 
+  │   │   └── ret@0.1.15 
+  │   ├─┬ snapdragon@0.8.2 
+  │   │ ├─┬ base@0.11.2 
+  │   │ │ ├─┬ cache-base@1.0.1 
+  │   │ │ │ ├─┬ collection-visit@1.0.0 
+  │   │ │ │ │ ├── map-visit@1.0.0 
+  │   │ │ │ │ └── object-visit@1.0.1 
+  │   │ │ │ ├── get-value@2.0.6 
+  │   │ │ │ ├─┬ has-value@1.0.0 
+  │   │ │ │ │ └─┬ has-values@1.0.0 
+  │   │ │ │ │   ├─┬ is-number@3.0.0 
+  │   │ │ │ │   │ └── kind-of@3.2.2 
+  │   │ │ │ │   └── kind-of@4.0.0 
+  │   │ │ │ ├─┬ set-value@2.0.1 
+  │   │ │ │ │ └── extend-shallow@2.0.1 
+  │   │ │ │ ├─┬ to-object-path@0.3.0 
+  │   │ │ │ │ └── kind-of@3.2.2 
+  │   │ │ │ ├── union-value@1.0.1 
+  │   │ │ │ └─┬ unset-value@1.0.0 
+  │   │ │ │   └─┬ has-value@0.3.1 
+  │   │ │ │     ├── has-values@0.1.4 
+  │   │ │ │     └── isobject@2.1.0 
+  │   │ │ ├─┬ class-utils@0.3.6 
+  │   │ │ │ ├── arr-union@3.1.0 
+  │   │ │ │ ├── define-property@0.2.5 
+  │   │ │ │ └─┬ static-extend@0.1.2 
+  │   │ │ │   ├── define-property@0.2.5 
+  │   │ │ │   └─┬ object-copy@0.1.0 
+  │   │ │ │     ├── copy-descriptor@0.1.1 
+  │   │ │ │     ├── define-property@0.2.5 
+  │   │ │ │     └── kind-of@3.2.2 
+  │   │ │ ├── component-emitter@1.3.0 
+  │   │ │ ├─┬ define-property@1.0.0 
+  │   │ │ │ └─┬ is-descriptor@1.0.2 
+  │   │ │ │   ├── is-accessor-descriptor@1.0.0 
+  │   │ │ │   └── is-data-descriptor@1.0.0 
+  │   │ │ ├─┬ mixin-deep@1.3.2 
+  │   │ │ │ └── is-extendable@1.0.1 
+  │   │ │ └── pascalcase@0.1.1 
+  │   │ ├── debug@2.6.9 
+  │   │ ├─┬ define-property@0.2.5 
+  │   │ │ └─┬ is-descriptor@0.1.6 
+  │   │ │   ├─┬ is-accessor-descriptor@0.1.6 
+  │   │ │   │ └── kind-of@3.2.2 
+  │   │ │   ├─┬ is-data-descriptor@0.1.4 
+  │   │ │   │ └── kind-of@3.2.2 
+  │   │ │   └── kind-of@5.1.0 
+  │   │ ├── extend-shallow@2.0.1 
+  │   │ ├─┬ source-map-resolve@0.5.3 
+  │   │ │ ├── atob@2.1.2 
+  │   │ │ ├── decode-uri-component@0.2.0 
+  │   │ │ ├── resolve-url@0.2.1 
+  │   │ │ ├── source-map-url@0.4.0 
+  │   │ │ └── urix@0.1.0 
+  │   │ └── use@3.1.1 
+  │   └── to-regex@3.0.2 
+  ├─┬ import-local@1.0.0 
+  │ └─┬ resolve-cwd@2.0.0 
+  │   └── resolve-from@3.0.0 
+  ├── internal-ip@1.2.0 
+  ├── ip@1.1.5 
+  ├── killable@1.0.1 
+  ├── loglevel@1.6.8 
+  ├── opn@5.5.0 
+  ├─┬ portfinder@1.0.25 
+  │ └─┬ debug@3.2.6 
+  │   └── ms@2.1.2 
+  ├─┬ selfsigned@1.10.7 
+  │ └── node-forge@0.9.0 
+  ├─┬ serve-index@1.9.1 
+  │ ├── batch@0.6.1 
+  │ ├── debug@2.6.9 
+  │ └─┬ http-errors@1.6.3 
+  │   ├── inherits@2.0.3 
+  │   └── setprototypeof@1.1.0 
+  ├─┬ sockjs@0.3.19 
+  │ └─┬ faye-websocket@0.10.0 
+  │   └─┬ websocket-driver@0.7.3 
+  │     ├── http-parser-js@0.4.10 
+  │     └── websocket-extensions@0.1.3 
+  ├─┬ sockjs-client@1.1.5 
+  │ ├── debug@2.6.9 
+  │ ├─┬ eventsource@0.1.6 
+  │ │ └── original@1.0.2 
+  │ ├── faye-websocket@0.11.3 
+  │ ├── json3@3.3.3 
+  │ └─┬ url-parse@1.4.7 
+  │   └── querystringify@2.1.1 
+  ├─┬ spdy@4.0.2 
+  │ ├─┬ debug@4.1.1 
+  │ │ └── ms@2.1.2 
+  │ ├── handle-thing@2.0.1 
+  │ ├── http-deceiver@1.2.7 
+  │ ├── select-hose@2.0.0 
+  │ └─┬ spdy-transport@3.0.0 
+  │   ├─┬ debug@4.1.1 
+  │   │ └── ms@2.1.2 
+  │   ├── detect-node@2.0.4 
+  │   ├─┬ hpack.js@2.1.6 
+  │   │ └─┬ readable-stream@2.3.7 
+  │   │   ├── safe-buffer@5.1.2 
+  │   │   └── string_decoder@1.1.1 
+  │   ├── obuf@1.1.2 
+  │   └─┬ wbuf@1.7.3 
+  │     └── minimalistic-assert@1.0.1 
+  ├─┬ strip-ansi@3.0.1 
+  │ └── ansi-regex@2.1.1 
+  ├─┬ supports-color@5.5.0 
+  │ └── has-flag@3.0.0 
+  ├─┬ webpack-dev-middleware@1.12.2 
+  │ └── time-stamp@2.2.0 
+  └─┬ yargs@6.6.0 
+    ├── camelcase@3.0.0 
+    ├── cliui@3.2.0 
+    ├── os-locale@1.4.0 
+    ├─┬ string-width@1.0.2 
+    │ ├── code-point-at@1.1.0 
+    │ └─┬ is-fullwidth-code-point@1.0.0 
+    │   └── number-is-nan@1.0.1 
+    ├── which-module@1.0.0 
+    └── yargs-parser@4.2.1 
+
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@~2.1.2 (node_modules/chokidar/node_modules/fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@2.1.3: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@^1.2.7 (node_modules/watchpack/node_modules/chokidar/node_modules/fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.12: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@^1.2.7 (node_modules/webpack-dev-server/node_modules/chokidar/node_modules/fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.12: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+npm WARN uglifyjs-webpack-plugin@2.2.0 requires a peer of webpack@^4.0.0 but none was installed.
+npm WARN 01.webpack-study@1.0.0 No description
+npm WARN 01.webpack-study@1.0.0 No repository field.
