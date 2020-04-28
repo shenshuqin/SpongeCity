@@ -1,19 +1,15 @@
 import request from '../utils/request'
-import { getCookie } from '../public/js/cookie.js';
-
-// const url = 'http://121.199.42.23:80/';
-// const SPONGE_API_ADDR = '121.199.42.23'
-const url = 'http://SPONGE_API_ADDR:80'
+import { getCookie } from '../public/js/cookie.js'
 const headers = {
     'Content-Type': 'application/json',
     'Authorization': "Basic " + getCookie('token'),
 }
-
+// const url =encodeURI(getCookie('url'));
 export default {
     //login
     login(data) {
         const req = request({
-            url: url + 'sponge/user/login',
+            url:'/sponge/user/login',
             method: 'post',
             dataType: "json",
             data: data,
@@ -24,7 +20,7 @@ export default {
     //admin submit
     submit(id) {
         const req = request({
-            url: url + 'sponge/nodes/get?nid=' + id,
+            url:'/sponge/nodes/get?nid=' + id,
             method: 'get',
             dataType: "json",
             headers: headers,
@@ -33,7 +29,7 @@ export default {
     },
     getdata() {
         const req = request({
-            url: url + 'sponge/nodes/list',
+            url: '/sponge/nodes/list',
             method: 'get',
             dataType: "json",
             headers: headers,
@@ -42,7 +38,7 @@ export default {
     },
     add(data) {
         const req = request({
-            url: url + 'sponge/nodes/list',
+            url:'/sponge/nodes/list',
             method: 'post',
             dataType: "json",
             data: data,
@@ -52,7 +48,7 @@ export default {
     },
     select(id) {
         const req = request({
-            url: url + 'sponge/nodes/get?nid='+ id,
+            url:'/sponge/nodes/get?nid='+ id,
             method: 'get',
             dataType: "json",
             headers: headers,
@@ -61,7 +57,7 @@ export default {
     },
     modefy(data) {
         const req = request({
-            url: url + 'sponge/nodes/edit',
+            url: '/sponge/nodes/edit',
             method: 'put',
             dataType: "json",
             data: data,
@@ -72,7 +68,7 @@ export default {
     //map
     nodesData() {
         const req = request({
-            url: url + 'sponge/nodes/list',
+            url: '/sponge/nodes/list',
             method: 'get',
             dataType: "json",
             headers: headers,
@@ -82,7 +78,7 @@ export default {
     //senior
     sensorData(sensorId){
         const req = request({
-            url: url + 'sponge/sensors/list?nid='+sensorId,
+            url: '/sponge/sensors/list?nid='+sensorId,
             method: 'get',
             dataType: "json",
             headers: headers,
@@ -92,7 +88,7 @@ export default {
      //detect
     detectData(args){
         const req = request({
-            url: url + 'sponge/avg_data/sensor?' + args,
+            url:'/sponge/avg_data/sensor?' + args,
             method: 'get',
             dataType: "json",
             headers: headers,
@@ -102,7 +98,7 @@ export default {
     //sensordata
     getsensorData(id) {
         const req = request({
-            url: url + 'sponge/detail_data/sensor?sensor_id=' + id,
+            url: '/sponge/detail_data/sensor?sensor_id=' + id,
             method: 'get',
             dataType: "json",
             headers: headers,
