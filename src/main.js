@@ -1,4 +1,6 @@
-
+// import Vue from 'vue';
+// import VueRouter from 'vue-router'
+Vue.use(VueRouter)
 // 导入bootstrap样式
 import BaiduMap from 'vue-baidu-map'
 Vue.use(BaiduMap, {
@@ -28,11 +30,11 @@ import store from './store'
 // 导入 自定义路由模块
 import router from './router.js'
 Vue.prototype.$md5 = md5;
-    var vm = new Vue({
-        el: '#app',
-        $,
-        render: c => c(app), // render 会把 el 指定的容器中，所有的内容都清空覆盖，所以 不要 把 路由的 router-view 和 router-link 直接写到 el 所控制的元素中
-        router, // 4. 将路由对象挂载到 vm 上
-        store,
-    })
+var vm = new Vue({
+    el: '#app',
+    $,
+    render: c => c(app), // render 会把 el 指定的容器中，所有的内容都清空覆盖，所以 不要 把 路由的 router-view 和 router-link 直接写到 el 所控制的元素中
+    router, // 4. 将路由对象挂载到 vm 上
+    store,
+})
 

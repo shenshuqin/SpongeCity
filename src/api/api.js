@@ -9,7 +9,7 @@ export default {
     //login
     login(data) {
         const req = request({
-            url:'/sponge/user/login',
+            url: '/sponge/user/login',
             method: 'post',
             dataType: "json",
             data: data,
@@ -20,7 +20,7 @@ export default {
     //admin submit
     submit(id) {
         const req = request({
-            url:'/sponge/nodes/get?nid=' + id,
+            url: '/sponge/nodes/get?nid=' + id,
             method: 'get',
             dataType: "json",
             headers: headers,
@@ -38,7 +38,7 @@ export default {
     },
     add(data) {
         const req = request({
-            url:'/sponge/nodes/list',
+            url: '/sponge/nodes/list',
             method: 'post',
             dataType: "json",
             data: data,
@@ -48,7 +48,7 @@ export default {
     },
     select(id) {
         const req = request({
-            url:'/sponge/nodes/get?nid='+ id,
+            url: '/sponge/nodes/get?nid=' + id,
             method: 'get',
             dataType: "json",
             headers: headers,
@@ -76,19 +76,19 @@ export default {
         return req;
     },
     //senior
-    sensorData(sensorId){
+    sensorData(sensorId) {
         const req = request({
-            url: '/sponge/sensors/list?nid='+sensorId,
+            url: '/sponge/sensors/list?nid=' + sensorId,
             method: 'get',
             dataType: "json",
             headers: headers,
         });
         return req;
     },
-     //detect
-    detectData(args){
+    //detect
+    detectData(args) {
         const req = request({
-            url:'/sponge/avg_data/sensor?' + args,
+            url: '/sponge/avg_data/sensor?' + args,
             method: 'get',
             dataType: "json",
             headers: headers,
