@@ -5,7 +5,7 @@
         <img src="../../public/images/cloud01.png" alt />
         <img src="../../public/images/cloud02.png" alt />
       </div>
-      <div class="title_sp">湖南文理学院登录系统</div>
+      <div class="title_sp">海绵城市登录系统</div>
     </div>
     <div class="login-wrap" action>
       <img class="avatar" src="../../public/images/default.png" />
